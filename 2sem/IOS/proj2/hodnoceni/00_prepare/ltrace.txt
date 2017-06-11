@@ -1,0 +1,200 @@
+31944 signal(SIGUSR1, 0x400e96)                  = nil
+31944 signal(SIGTERM, 0x400ec2)                  = nil
+31944 strtol(0x7ffc4683862a, 0, 10, 0)           = 1
+31944 strtol(0x7ffc4683862c, 0, 10, 0)           = 2
+31944 strtol(0x7ffc4683862e, 0, 10, 0)           = 0
+31944 strtol(0x7ffc46838630, 0, 10, 0)           = 0
+31944 strtol(0x7ffc46838632, 0, 10, 0)           = 0
+31944 strtol(0x7ffc46838634, 0, 10, 0)           = 0
+31944 time(nil)                                  = 1493990235
+31944 srand(1493990235)                          = <void>
+31944 sem_open(0x401fb0, 192, 438, 1)            = 0x7f5ceeddc000
+31944 sem_open(0x401fcf, 192, 438, 0)            = 0x7f5ceeddb000
+31944 sem_open(0x401fe1, 192, 438, 0)            = 0x7f5ceedda000
+31944 sem_open(0x401ff3, 192, 438, 0)            = 0x7f5ceedd9000
+31944 shmget(0, 512, 1920, 0x7f5cee7a4680)       = 0x1ca10001
+31944 shmat(0x1ca10001, 0, 0, 0x7f5cee4d7957)    = 0x7f5ceedd8000
+31944 open("proj2.out", 577, 0666)               = 3
+31944 fork()                                     = 31945
+31944 fork( <unfinished ...>
+31945 <... fork resumed> )                       = 0
+31945 shmat(0x1ca10001, 0, 0, 0x1ca10001 <unfinished ...>
+31944 <... fork resumed> )                       = 31946
+31944 wait(nil <unfinished ...>
+31946 <... fork resumed> )                       = 0
+31946 shmat(0x1ca10001, 0, 0, 0x1ca10001 <unfinished ...>
+31945 <... shmat resumed> )                      = 0x7f5ceedd7000
+31945 shmdt(0x7f5ceedd7000, 0, 0, 0x7f5cee4d78f7 <unfinished ...>
+31946 <... shmat resumed> )                      = 0x7f5ceedd7000
+31946 shmdt(0x7f5ceedd7000, 0, 0, 0x7f5cee4d78f7 <unfinished ...>
+31945 <... shmdt resumed> )                      = 0
+31945 fork( <unfinished ...>
+31946 <... shmdt resumed> )                      = 0
+31946 fork( <unfinished ...>
+31945 <... fork resumed> )                       = 31947
+31945 usleep(0 <unfinished ...>
+31947 <... fork resumed> )                       = 0
+31947 rand( <unfinished ...>
+31948 <... fork resumed> )                       = 0
+31947 <... rand resumed> )                       = 2096568310
+31948 rand( <unfinished ...>
+31947 shmat(0x1ca10001, 0, 0, 0 <unfinished ...>
+31946 <... fork resumed> )                       = 31948
+31946 usleep(0 <unfinished ...>
+31948 <... rand resumed> )                       = 2096568310
+31948 shmat(0x1ca10001, 0, 0, 0 <unfinished ...>
+31947 <... shmat resumed> )                      = 0x7f5ceedd7000
+31947 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee4d78f7 <unfinished ...>
+31948 <... shmat resumed> )                      = 0x7f5ceedd7000
+31947 <... sem_wait resumed> )                   = 0
+31948 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee4d78f7 <unfinished ...>
+31947 dprintf(3, 0x402211, 1, 1 <unfinished ...>
+31946 <... usleep resumed> )                     = <void>
+31945 <... usleep resumed> )                     = <void>
+31946 fork( <unfinished ...>
+31945 wait(nil <unfinished ...>
+31947 <... dprintf resumed> )                    = 18
+31947 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31948 <... sem_wait resumed> )                   = 0
+31947 <... sem_post resumed> )                   = 0
+31948 dprintf(3, 0x4022a0, 2, 1 <unfinished ...>
+31949 <... fork resumed> )                       = 0
+31947 sem_wait(0x7f5ceeddc000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31949 rand( <unfinished ...>
+31946 <... fork resumed> )                       = 31949
+31946 usleep(0 <unfinished ...>
+31949 <... rand resumed> )                       = 2096568310
+31949 shmat(0x1ca10001, 0, 0, 0 <unfinished ...>
+31948 <... dprintf resumed> )                    = 18
+31948 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31949 <... shmat resumed> )                      = 0x7f5ceedd7000
+31949 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee4d78f7 <unfinished ...>
+31948 <... sem_post resumed> )                   = 0
+31949 <... sem_wait resumed> )                   = 0
+31948 sem_wait(0x7f5ceeddc000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31949 dprintf(3, 0x4022a0, 3, 2)                 = 18
+31949 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31946 <... usleep resumed> )                     = <void>
+31946 wait(nil <unfinished ...>
+31949 <... sem_post resumed> )                   = 0
+31948 <... sem_wait resumed> )                   = 0
+31949 sem_wait(0x7f5ceeddc000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31948 dprintf(3, 0x4022c8, 4, 1)                 = 26
+31948 sem_post(0x7f5ceeddc000, 0, 1, 1)          = 0
+31947 <... sem_wait resumed> )                   = 0
+31948 sem_wait(0x7f5ceedda000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31947 dprintf(3, 0x402226, 5, 1)                 = 16
+31947 sem_post(0x7f5ceedda000, 0, 0, 0 <unfinished ...>
+31948 <... sem_wait resumed> )                   = 0
+31947 <... sem_post resumed> )                   = 0
+31948 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee7a3957 <unfinished ...>
+31947 sem_post(0x7f5ceeddc000, 1, 0, 0x7f5cee7a3d39 <unfinished ...>
+31948 <... sem_wait resumed> )                   = 0
+31948 dprintf(3, 0x4022b5, 6, 1 <unfinished ...>
+31947 <... sem_post resumed> )                   = 0
+31947 usleep(0 <unfinished ...>
+31948 <... dprintf resumed> )                    = 16
+31948 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31947 <... usleep resumed> )                     = <void>
+31947 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee49a800 <unfinished ...>
+31949 <... sem_wait resumed> )                   = 0
+31948 <... sem_post resumed> )                   = 0
+31949 dprintf(3, 0x4022b5, 7, 2 <unfinished ...>
+31948 usleep(0 <unfinished ...>
+31949 <... dprintf resumed> )                    = 16
+31949 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31948 <... usleep resumed> )                     = <void>
+31949 <... sem_post resumed> )                   = 0
+31948 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee49a800 <unfinished ...>
+31949 usleep(0 <unfinished ...>
+31948 <... sem_wait resumed> )                   = 0
+31948 dprintf(3, 0x4022e7, 8, 1 <unfinished ...>
+31949 <... usleep resumed> )                     = <void>
+31949 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee49a800 <unfinished ...>
+31948 <... dprintf resumed> )                    = 26
+31948 dprintf(3, 0x402304, 9, 1)                 = 16
+31948 sem_post(0x7f5ceeddc000, 0, 1, 0)          = 0
+31947 <... sem_wait resumed> )                   = 0
+31948 sem_wait(0x7f5ceedd9000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31947 dprintf(3, 0x402239, 10, 1)                = 27
+31947 dprintf(3, 0x402258, 11, 1)                = 27
+31947 sem_post(0x7f5ceeddc000, 0, 0, 1 <unfinished ...>
+31949 <... sem_wait resumed> )                   = 0
+31947 <... sem_post resumed> )                   = 0
+31949 dprintf(3, 0x4022e7, 12, 2 <unfinished ...>
+31947 sem_wait(0x7f5ceeddb000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31949 <... dprintf resumed> )                    = 27
+31949 dprintf(3, 0x402304, 13, 2)                = 17
+31949 sem_post(0x7f5ceeddb000, 0, 2, 0)          = 0
+31947 <... sem_wait resumed> )                   = 0
+31949 sem_post(0x7f5ceeddc000, 1, 2, 0x7f5cee7a3d39 <unfinished ...>
+31947 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee7a3957 <unfinished ...>
+31949 <... sem_post resumed> )                   = 0
+31947 <... sem_wait resumed> )                   = 0
+31949 sem_wait(0x7f5ceedd9000, 1, 1, 128 <unfinished ...>
+31947 dprintf(3, 0x402277, 14, 1)                = 17
+31947 sem_post(0x7f5ceedd9000, 0, 3, 0)          = 0
+31948 <... sem_wait resumed> )                   = 0
+31947 sem_post(0x7f5ceedd9000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31948 sem_wait(0x7f5ceeddc000, 0, 0x100000000, 0x7f5cee7a3957 <unfinished ...>
+31949 <... sem_wait resumed> )                   = 0
+31947 <... sem_post resumed> )                   = 0
+31949 sem_wait(0x7f5ceeddc000, 0, 0, 0x7f5cee7a3957 <unfinished ...>
+31947 sem_post(0x7f5ceedd9000, 1, 1, 0x7f5cee7a3d39) = 0
+31947 sem_post(0x7f5ceeddc000, 1, 1, 128 <unfinished ...>
+31948 <... sem_wait resumed> )                   = 0
+31947 <... sem_post resumed> )                   = 0
+31948 dprintf(3, 0x402317, 15, 1 <unfinished ...>
+31947 sem_wait(0x7f5ceedd9000, 1, 1, 0x7f5cee7a3d39) = 0
+31947 sem_wait(0x7f5ceeddc000, 1, 1, 0x7f5cee7a3d39 <unfinished ...>
+31948 <... dprintf resumed> )                    = 20
+31948 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31949 <... sem_wait resumed> )                   = 0
+31948 <... sem_post resumed> )                   = 0
+31949 dprintf(3, 0x402317, 16, 2 <unfinished ...>
+31948 exit(0 <unfinished ...>
+31949 <... dprintf resumed> )                    = 20
+31949 sem_post(0x7f5ceeddc000, 0, 0, 0 <no return ...>
+31948 +++ exited (status 0) +++
+31946 --- SIGCHLD (Child exited) ---
+31949 <... sem_post resumed> )                   = 0
+31947 <... sem_wait resumed> )                   = 0
+31949 exit(0 <unfinished ...>
+31947 dprintf(3, 0x40228a, 17, 1 <unfinished ...>
+31946 <... wait resumed> )                       = 31948
+31946 wait(nil <no return ...>
+31949 +++ exited (status 0) +++
+31946 --- SIGCHLD (Child exited) ---
+31947 <... dprintf resumed> )                    = 20
+31947 sem_post(0x7f5ceeddc000, 0, 0, 0 <unfinished ...>
+31946 <... wait resumed> )                       = 31949
+31947 <... sem_post resumed> )                   = 0
+31946 wait(nil <unfinished ...>
+31947 shmdt(0x7f5ceedd7000, 0, 1, 128 <unfinished ...>
+31946 <... wait resumed> )                       = -1
+31947 <... shmdt resumed> )                      = 0
+31946 exit(0 <unfinished ...>
+31947 exit(0 <no return ...>
+31947 +++ exited (status 0) +++
+31946 +++ exited (status 0) +++
+31945 --- SIGCHLD (Child exited) ---
+31944 --- SIGCHLD (Child exited) ---
+31945 <... wait resumed> )                       = 31947
+31944 <... wait resumed> )                       = 31946
+31945 wait(nil <unfinished ...>
+31944 wait(nil <unfinished ...>
+31945 <... wait resumed> )                       = -1
+31945 exit(0 <no return ...>
+31945 +++ exited (status 0) +++
+31944 --- SIGCHLD (Child exited) ---
+31944 <... wait resumed> )                       = 31945
+31944 wait(nil)                                  = -1
+31944 close(3)                                   = 0
+31944 shmdt(0x7f5ceedd8000, 0, -104, 0x7f5cee7a4680) = 0
+31944 sem_unlink(0x401fb0, 0, -104, 0x7f5cee4d7927) = 0
+31944 sem_unlink(0x401fcf, 0x401fb0, 20, 0x7f5cee4c7427) = 0
+31944 sem_unlink(0x401fe1, 0x401fcf, 18, 0x7f5cee4c7427) = 0
+31944 sem_unlink(0x401ff3, 0x401fe1, 18, 0x7f5cee4c7427) = 0
+31944 shmctl(0x1ca10001, 0, 0, 0x7f5cee4c7427)   = 0
+31944 exit(0 <no return ...>
+31944 +++ exited (status 0) +++

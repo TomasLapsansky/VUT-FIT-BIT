@@ -1,0 +1,57 @@
+7.3: celkem bodu
+
+###### Prehled hodnoceni ##########
+
+#### Hodnoceni obhajoby ####
+3.8: neuplne u obhajoby
+#### Hodnoceni funkcionality ####
+0.65:ok: nacteni a vypis jedineho shluku
+0.65:ok: nacteni a vypis 20 shluku
+0.6:ok: jedna iterace shlukovani nad dvema objekty
+0.6:ok: jedna iterace shlukovani nad 20 objekty
+0.3:ok: 10 shluku
+0.3:ok: 7 shluku
+0:spatne: 3 shluky
+0: pametove chyby
+0.1:ok: reakce na neexistujici soubor
+0.1:ok: reakce na spatny obsah souboru 1
+0.1:ok: reakce na spatny obsah souboru 2
+0.1:ok: reakce na chybejici argumenty
+0:chyba: reakce na spatny 2. argument
+0:chyba: reakce na spatny pocet cilovych shluku
+
+###### Log z prekladu #############
+Ok
+
+###### Analyza kodu ###############
+# globalni promenne a funkce ok
+
+###### Log z jednotlivych testu ###
+0.65:ok: nacteni a vypis jedineho shluku
+0.65:ok: nacteni a vypis 20 shluku
+0.6:ok: jedna iterace shlukovani nad dvema objekty
+0.6:ok: jedna iterace shlukovani nad 20 objekty
+0.3:ok: 10 shluku
+0.3:ok: 7 shluku
+0:spatne: 3 shluky
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test32.clusters        2016-12-18 14:19:16.000000000 +0100
+#   +++ test32.clusters        2016-12-20 10:23:45.645352000 +0100
+#   @@ -1,4 +1,4 @@
+#    Clusters:
+#   -cluster: 40[86,663] 47[285,973] 56[44,854] 61[267,375] 62[85,874] 66[125,211] 68[80,770] 72[277,272] 74[222,444] 75[28,603] 86[238,650] 87[149,304]
+#   +cluster: 0[0,0] 0[0,0] 0[0,0] 40[86,663] 47[285,973] 56[44,854] 62[85,874] 68[80,770] 74[222,444] 75[28,603] 86[238,0] 87[149,304]
+#    cluster: 43[747,938] 93[944,835]
+#    cluster: 49[548,422] 52[741,541] 57[795,59] 79[926,463] 83[603,68] 89[749,190]
+0: pametove chyby
+#    test32.valgrind:==2349== ERROR SUMMARY: 272 errors from 34 contexts (suppressed: 4 from 4)
+0.1:ok: reakce na neexistujici soubor
+#   Cant open file!
+0.1:ok: reakce na spatny obsah souboru 1
+#   Wrong input file!
+0.1:ok: reakce na spatny obsah souboru 2
+#   Wrong input file!
+0.1:ok: reakce na chybejici argumenty
+#   Wrong arguments!
+0:chyba: reakce na spatny 2. argument
+0:chyba: reakce na spatny pocet cilovych shluku

@@ -1,0 +1,181 @@
+6.1: celkem bodu
+
+###### Prehled hodnoceni ##########
+3.5: obhajoba ok
+1: premie
+0.3:ok: prime volani funkce taylor_log pro x=0.5,1,2 a n=1,2,10
+0:spatne: prime volani funkce cfrac_log pro x=0.5,1,2 a n=1,2,10
+0.2:ok: --log 1.131401114526 40
+0.2:ok: --log 1.0 40
+0:spatne: --log 1e-6 40
+0:spatne: i pri snizene presnosti
+0:spatne: --log 1e+6 40
+0:spatne: i pri snizene presnosti
+0.05:ok: --log 0.0 5
+0.1:ok: --log -1 5
+0:spatne: --log inf 5
+0.3:ok: prime volani funkce taylor_pow pro x,y=0.5,1,2 a n=1,2,10
+0:spatne: prime volani funkce taylorcf_pow pro x,y=0.5,1,2 a n=1,2,10
+0.2:ok: --pow 1.23 4.2 40
+0.2:ok: --pow 1.0 1.0 40
+0:spatne: --pow 1e-6 4.2 40
+0:spatne: i pri snizene presnosti
+0:spatne: --pow 1e+6 4.2e1 40
+0:spatne: i pri snizene presnosti
+0:spatne: --pow inf 1.0 4
+0.1:ok: --pow 1.1 inf 4
+0:chyba: reakce na neocekavany argument
+0:chyba: reakce na nekompletni argumenty
+0:chyba: reakce na chybne argumenty
+
+###### Log z prekladu #############
+Ok
+
+###### Analyza kodu ###############
+Ok
+
+###### Log z jednotlivych testu ###
+0.3:ok: prime volani funkce taylor_log pro x=0.5,1,2 a n=1,2,10
+0:spatne: prime volani funkce cfrac_log pro x=0.5,1,2 a n=1,2,10
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test_dclog        2016-12-02 13:56:07.000000000 +0100
+#   +++ test_dclog        2016-12-07 09:04:55.094243000 +0100
+#   @@ -1,9 +1,9 @@
+#   --0.666666666667
+#   +-0.75
+#    0
+#   -0.666666666667
+#   --0.692307692308
+#   +0.75
+#   +-0.69696969697
+#    0
+#   -0.692307692308
+#   +0.69696969697
+#    -0.69314718056
+#    0
+#    0.69314718056
+0.2:ok: --log 1.131401114526 40
+0.2:ok: --log 1.0 40
+0:spatne: --log 1e-6 40
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test12.values        2016-12-02 13:56:07.000000000 +0100
+#   +++ test12.values        2016-12-07 09:04:55.126900000 +0100
+#   @@ -1,2 +1,2 @@
+#   --8.5538094353
+#   +-8.50269105156
+#    -4.27850303933
+0:spatne: i pri snizene presnosti
+# Hodnoty z programu:
+# -8.50269105156 -4.27850303933 
+# neodpovidaji po snizeni presnosti na %.5e hodnotam:
+# -8.5538094353 -4.27850303933 
+0:spatne: --log 1e+6 40
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test13.values        2016-12-02 13:56:07.000000000 +0100
+#   +++ test13.values        2016-12-07 09:04:55.147929000 +0100
+#   @@ -1,2 +1,2 @@
+#   -8.5538094353
+#   +8.50269105156
+#    4.27850303933
+0:spatne: i pri snizene presnosti
+# Hodnoty z programu:
+# 8.50269105156 4.27850303933 
+# neodpovidaji po snizeni presnosti na %.5e hodnotam:
+# 8.5538094353 4.27850303933 
+0.05:ok: --log 0.0 5
+0.1:ok: --log -1 5
+0:spatne: --log inf 5
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test22        2016-12-02 13:56:07.000000000 +0100
+#   +++ test22        2016-12-07 09:04:55.173375000 +0100
+#   @@ -1,3 +1,3 @@
+#           log(inf) = inf
+#   - cfrac_log(inf) = inf
+#   -taylor_log(inf) = inf
+#   +   cfrac_log(  inf) = -nan
+#   +  taylor_log(  inf) = -nan
+0.3:ok: prime volani funkce taylor_pow pro x,y=0.5,1,2 a n=1,2,10
+0:spatne: prime volani funkce taylorcf_pow pro x,y=0.5,1,2 a n=1,2,10
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test_dcpow        2016-12-02 13:56:07.000000000 +0100
+#   +++ test_dcpow        2016-12-07 09:04:55.595992000 +0100
+#   @@ -1,24 +1,24 @@
+#   -0.666666666667
+#   -0.333333333333
+#   --0.333333333333
+#   +0.625
+#   +0.25
+#   +-0.5
+#    1
+#    1
+#    1
+#   -1.33333333333
+#   -1.66666666667
+#   -2.33333333333
+#   -0.71375739645
+#   -0.547337278107
+#   -0.573964497041
+#   +1.375
+#   +1.75
+#   +2.5
+#   +0.712235996327
+#   +0.545913682277
+#   +0.577594123049
+#    1
+#    1
+#    1
+#   -1.40606508876
+#   -1.93195266272
+#   -3.34319526627
+#   +1.4092056933
+#   +1.93985307622
+#   +3.36547291093
+#    0.707106781187
+#    0.50000000042
+#    0.250000815467
+#    1
+#    1
+#    1
+0.2:ok: --pow 1.23 4.2 40
+0.2:ok: --pow 1.0 1.0 40
+0:spatne: --pow 1e-6 4.2 40
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test32.values        2016-12-02 13:56:07.000000000 +0100
+#   +++ test32.values        2016-12-07 09:04:55.630021000 +0100
+#   @@ -1,2 +1,2 @@
+#   -57.0357616027
+#   -9.47735632631e+13
+#   +57.0357616009
+#   +7.43309673374e+13
+0:spatne: i pri snizene presnosti
+# Hodnoty z programu:
+# 57.0357616009 7.43309673374e+13 
+# neodpovidaji po snizeni presnosti na %.5e hodnotam:
+# 57.0357616027 9.47735632631e+13 
+0:spatne: --pow 1e+6 4.2e1 40
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test33.values        2016-12-02 13:56:07.000000000 +0100
+#   +++ test33.values        2016-12-07 09:04:55.650532000 +0100
+#   @@ -1,2 +1,2 @@
+#    2.39045521398e+42
+#   -2.26884338719e+54
+#   +1.78649835296e+54
+0:spatne: i pri snizene presnosti
+# Hodnoty z programu:
+# 2.39045521398e+42 1.78649835296e+54 
+# neodpovidaji po snizeni presnosti na %.5e hodnotam:
+# 2.39045521398e+42 2.26884338719e+54 
+0:spatne: --pow inf 1.0 4
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test40        2016-12-02 13:56:07.000000000 +0100
+#   +++ test40        2016-12-07 09:04:55.665648000 +0100
+#   @@ -1,3 +1,3 @@
+#             pow(inf,1) = inf
+#   -  taylor_pow(inf,1) = inf
+#   -taylorcf_pow(inf,1) = inf
+#   +  taylor_pow(inf,   1) = -nan
+#   +taylorcf_pow(inf,   1) = -nan
+0.1:ok: --pow 1.1 inf 4
+0:chyba: reakce na neocekavany argument
+0:chyba: reakce na nekompletni argumenty
+0:chyba: reakce na chybne argumenty

@@ -1,0 +1,16 @@
+[Z0.5]  Pomocna makra se maji jmenovat BA_[S|G]ET_BIT_. Neignorujte zadani.
+[E0.5] Resource leak - ppm.c: soubor fr neuzavren na radcich 27,33.
+[Z2]   Nevalidni ppm soubor vede k segfaultu.
+[C1]   U steganografie vypisuje jeden znak binarniho smeti navic
+--------------------------------------------------
+Celkove hodnoceni:
+--------------------------------------------------
+11 bodu
+--------------------------------------------------
+Doporuceni
+--------------------------------------------------
+Dokumentujte rozhrani v .h souborech.
+--
+Zkuste si adaptovat styl komentovani kodu a jeho struktury podle generatoru dokumentace (napr. Doxygen)
+--
+

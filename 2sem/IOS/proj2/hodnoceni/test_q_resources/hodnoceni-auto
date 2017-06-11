@@ -1,0 +1,6 @@
+= resources
+2:ok: pocet procesu ok (5, mel by byt 5)
+2:ok: pocet volani wait (waitpid) ok
+2:ok: pripojeni ke sdilene pameti a uvolneni je korektni
+# pocet volani shmat a shmdt se lisi
+0:fail: pojmenovane semafory se nerusi

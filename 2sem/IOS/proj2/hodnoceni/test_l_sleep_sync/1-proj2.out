@@ -1,0 +1,411 @@
+1	: A 1	: started
+2	: C 1	: started
+3	: C 1	: waiting : 0 : 0
+4	: A 1	: enter
+5	: C 1	: enter
+6	: C 1	: trying to leave
+7	: C 1	: leave
+8	: A 1	: trying to leave
+9	: A 1	: leave
+10	: C 2	: started
+11	: A 2	: started
+12	: C 2	: waiting : 0 : 0
+13	: A 2	: enter
+14	: C 2	: enter
+15	: C 2	: trying to leave
+16	: C 2	: leave
+17	: A 2	: trying to leave
+18	: A 2	: leave
+19	: C 3	: started
+20	: A 3	: started
+21	: C 3	: waiting : 0 : 0
+22	: A 3	: enter
+23	: C 3	: enter
+24	: C 3	: trying to leave
+25	: C 3	: leave
+26	: A 3	: trying to leave
+27	: A 3	: leave
+28	: A 4	: started
+29	: C 4	: started
+30	: A 4	: enter
+31	: C 4	: enter
+32	: C 4	: trying to leave
+33	: C 4	: leave
+34	: A 4	: trying to leave
+35	: A 4	: leave
+36	: C 5	: started
+37	: A 5	: started
+38	: C 5	: waiting : 0 : 0
+39	: A 5	: enter
+40	: C 5	: enter
+41	: C 5	: trying to leave
+42	: C 5	: leave
+43	: A 5	: trying to leave
+44	: A 5	: leave
+45	: C 6	: started
+46	: A 6	: started
+47	: C 6	: waiting : 0 : 0
+48	: A 6	: enter
+49	: C 6	: enter
+50	: C 6	: trying to leave
+51	: C 6	: leave
+52	: A 6	: trying to leave
+53	: A 6	: leave
+54	: A 7	: started
+55	: C 7	: started
+56	: A 7	: enter
+57	: C 7	: enter
+58	: C 7	: trying to leave
+59	: C 7	: leave
+60	: A 7	: trying to leave
+61	: A 7	: leave
+62	: C 8	: started
+63	: A 8	: started
+64	: A 8	: enter
+65	: C 8	: enter
+66	: C 8	: trying to leave
+67	: C 8	: leave
+68	: A 8	: trying to leave
+69	: A 8	: leave
+70	: C 9	: started
+71	: A 9	: started
+72	: C 9	: waiting : 0 : 0
+73	: A 9	: enter
+74	: C 9	: enter
+75	: C 9	: trying to leave
+76	: C 9	: leave
+77	: A 9	: trying to leave
+78	: A 9	: leave
+79	: C 10	: started
+80	: A 10	: started
+81	: C 10	: waiting : 0 : 0
+82	: A 10	: enter
+83	: C 10	: enter
+84	: C 10	: trying to leave
+85	: C 10	: leave
+86	: A 10	: trying to leave
+87	: A 10	: leave
+88	: A 11	: started
+89	: C 11	: started
+90	: A 11	: enter
+91	: C 11	: enter
+92	: C 11	: trying to leave
+93	: C 11	: leave
+94	: A 11	: trying to leave
+95	: A 11	: leave
+96	: A 12	: started
+97	: C 12	: started
+98	: A 12	: enter
+99	: C 12	: enter
+100	: C 12	: trying to leave
+101	: C 12	: leave
+102	: A 12	: trying to leave
+103	: A 12	: leave
+104	: A 13	: started
+105	: C 13	: started
+106	: A 13	: enter
+107	: C 13	: enter
+108	: C 13	: trying to leave
+109	: C 13	: leave
+110	: A 13	: trying to leave
+111	: A 13	: leave
+112	: A 14	: started
+113	: C 14	: started
+114	: A 14	: enter
+115	: C 14	: enter
+116	: C 14	: trying to leave
+117	: C 14	: leave
+118	: A 14	: trying to leave
+119	: A 14	: leave
+120	: C 15	: started
+121	: A 15	: started
+122	: C 15	: waiting : 0 : 0
+123	: A 15	: enter
+124	: C 15	: enter
+125	: C 15	: trying to leave
+126	: C 15	: leave
+127	: A 15	: trying to leave
+128	: A 15	: leave
+129	: A 16	: started
+130	: C 16	: started
+131	: A 16	: enter
+132	: C 16	: enter
+133	: C 16	: trying to leave
+134	: C 16	: leave
+135	: A 16	: trying to leave
+136	: A 16	: leave
+137	: C 17	: started
+138	: A 17	: started
+139	: C 17	: waiting : 0 : 0
+140	: A 17	: enter
+141	: C 17	: enter
+142	: C 17	: trying to leave
+143	: C 17	: leave
+144	: A 17	: trying to leave
+145	: A 17	: leave
+146	: A 18	: started
+147	: C 18	: started
+148	: A 18	: enter
+149	: C 18	: enter
+150	: C 18	: trying to leave
+151	: C 18	: leave
+152	: A 18	: trying to leave
+153	: A 18	: leave
+154	: C 19	: started
+155	: A 19	: started
+156	: C 19	: waiting : 0 : 0
+157	: A 19	: enter
+158	: C 19	: enter
+159	: C 19	: trying to leave
+160	: C 19	: leave
+161	: A 19	: trying to leave
+162	: A 19	: leave
+163	: C 20	: started
+164	: A 20	: started
+165	: C 20	: waiting : 0 : 0
+166	: A 20	: enter
+167	: C 20	: enter
+168	: C 20	: trying to leave
+169	: C 20	: leave
+170	: A 20	: trying to leave
+171	: A 20	: leave
+172	: C 21	: started
+173	: C 21	: enter
+174	: C 21	: trying to leave
+175	: C 21	: leave
+176	: C 22	: started
+177	: C 22	: enter
+178	: C 22	: trying to leave
+179	: C 22	: leave
+180	: C 23	: started
+181	: C 23	: enter
+182	: C 23	: trying to leave
+183	: C 23	: leave
+184	: C 24	: started
+185	: C 24	: enter
+186	: C 24	: trying to leave
+187	: C 24	: leave
+188	: C 25	: started
+189	: C 25	: enter
+190	: C 25	: trying to leave
+191	: C 25	: leave
+192	: C 26	: started
+193	: C 26	: enter
+194	: C 26	: trying to leave
+195	: C 26	: leave
+196	: C 27	: started
+197	: C 27	: enter
+198	: C 27	: trying to leave
+199	: C 27	: leave
+200	: C 28	: started
+201	: C 28	: enter
+202	: C 28	: trying to leave
+203	: C 28	: leave
+204	: C 29	: started
+205	: C 29	: enter
+206	: C 29	: trying to leave
+207	: C 29	: leave
+208	: C 30	: started
+209	: C 30	: enter
+210	: C 30	: trying to leave
+211	: C 30	: leave
+212	: C 31	: started
+213	: C 31	: enter
+214	: C 31	: trying to leave
+215	: C 31	: leave
+216	: C 32	: started
+217	: C 32	: enter
+218	: C 32	: trying to leave
+219	: C 32	: leave
+220	: C 33	: started
+221	: C 33	: enter
+222	: C 33	: trying to leave
+223	: C 33	: leave
+224	: C 34	: started
+225	: C 34	: enter
+226	: C 34	: trying to leave
+227	: C 34	: leave
+228	: C 35	: started
+229	: C 35	: enter
+230	: C 35	: trying to leave
+231	: C 35	: leave
+232	: C 36	: started
+233	: C 36	: enter
+234	: C 36	: trying to leave
+235	: C 36	: leave
+236	: C 37	: started
+237	: C 37	: enter
+238	: C 37	: trying to leave
+239	: C 37	: leave
+240	: C 38	: started
+241	: C 38	: enter
+242	: C 38	: trying to leave
+243	: C 38	: leave
+244	: C 39	: started
+245	: C 39	: enter
+246	: C 39	: trying to leave
+247	: C 39	: leave
+248	: C 40	: started
+249	: C 40	: enter
+250	: C 40	: trying to leave
+251	: C 40	: leave
+252	: C 41	: started
+253	: C 41	: enter
+254	: C 41	: trying to leave
+255	: C 41	: leave
+256	: C 42	: started
+257	: C 42	: enter
+258	: C 42	: trying to leave
+259	: C 42	: leave
+260	: C 43	: started
+261	: C 43	: enter
+262	: C 43	: trying to leave
+263	: C 43	: leave
+264	: C 44	: started
+265	: C 44	: enter
+266	: C 44	: trying to leave
+267	: C 44	: leave
+268	: C 45	: started
+269	: C 45	: enter
+270	: C 45	: trying to leave
+271	: C 45	: leave
+272	: C 46	: started
+273	: C 46	: enter
+274	: C 46	: trying to leave
+275	: C 46	: leave
+276	: C 47	: started
+277	: C 47	: enter
+278	: C 47	: trying to leave
+279	: C 47	: leave
+280	: C 48	: started
+281	: C 48	: enter
+282	: C 48	: trying to leave
+283	: C 48	: leave
+284	: C 49	: started
+285	: C 49	: enter
+286	: C 49	: trying to leave
+287	: C 49	: leave
+288	: C 50	: started
+289	: C 50	: enter
+290	: C 50	: trying to leave
+291	: C 50	: leave
+292	: C 51	: started
+293	: C 51	: enter
+294	: C 51	: trying to leave
+295	: C 51	: leave
+296	: C 52	: started
+297	: C 52	: enter
+298	: C 52	: trying to leave
+299	: C 52	: leave
+300	: C 53	: started
+301	: C 53	: enter
+302	: C 53	: trying to leave
+303	: C 53	: leave
+304	: C 54	: started
+305	: C 54	: enter
+306	: C 54	: trying to leave
+307	: C 54	: leave
+308	: C 55	: started
+309	: C 55	: enter
+310	: C 55	: trying to leave
+311	: C 55	: leave
+312	: C 56	: started
+313	: C 56	: enter
+314	: C 56	: trying to leave
+315	: C 56	: leave
+316	: C 57	: started
+317	: C 57	: enter
+318	: C 57	: trying to leave
+319	: C 57	: leave
+320	: C 58	: started
+321	: C 58	: enter
+322	: C 58	: trying to leave
+323	: C 58	: leave
+324	: C 59	: started
+325	: C 59	: enter
+326	: C 59	: trying to leave
+327	: C 59	: leave
+328	: C 60	: started
+329	: C 60	: enter
+330	: C 60	: trying to leave
+331	: C 60	: leave
+332	: C 1	: finished
+333	: A 1	: finished
+334	: C 2	: finished
+335	: A 2	: finished
+336	: C 3	: finished
+337	: A 3	: finished
+338	: C 4	: finished
+339	: A 4	: finished
+340	: C 5	: finished
+341	: A 5	: finished
+342	: C 6	: finished
+343	: A 6	: finished
+344	: C 7	: finished
+345	: A 7	: finished
+346	: C 8	: finished
+347	: A 8	: finished
+348	: C 9	: finished
+349	: A 9	: finished
+350	: C 10	: finished
+351	: A 10	: finished
+352	: C 11	: finished
+353	: A 11	: finished
+354	: C 12	: finished
+355	: A 12	: finished
+356	: C 13	: finished
+357	: A 13	: finished
+358	: C 14	: finished
+359	: A 14	: finished
+360	: C 15	: finished
+361	: A 15	: finished
+362	: C 16	: finished
+363	: A 16	: finished
+364	: C 17	: finished
+365	: A 17	: finished
+366	: C 18	: finished
+367	: A 18	: finished
+368	: C 19	: finished
+369	: A 19	: finished
+370	: C 20	: finished
+371	: A 20	: finished
+372	: C 21	: finished
+373	: C 22	: finished
+374	: C 23	: finished
+375	: C 24	: finished
+376	: C 25	: finished
+377	: C 26	: finished
+378	: C 27	: finished
+379	: C 28	: finished
+380	: C 29	: finished
+381	: C 30	: finished
+382	: C 31	: finished
+383	: C 32	: finished
+384	: C 33	: finished
+385	: C 34	: finished
+386	: C 35	: finished
+387	: C 36	: finished
+388	: C 37	: finished
+389	: C 38	: finished
+390	: C 39	: finished
+391	: C 40	: finished
+392	: C 41	: finished
+393	: C 42	: finished
+394	: C 44	: finished
+395	: C 43	: finished
+396	: C 45	: finished
+397	: C 46	: finished
+398	: C 47	: finished
+399	: C 48	: finished
+400	: C 49	: finished
+401	: C 50	: finished
+402	: C 51	: finished
+403	: C 52	: finished
+404	: C 53	: finished
+405	: C 54	: finished
+406	: C 55	: finished
+407	: C 56	: finished
+408	: C 57	: finished
+409	: C 59	: finished
+410	: C 58	: finished
+411	: C 60	: finished

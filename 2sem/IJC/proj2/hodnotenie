@@ -1,0 +1,12 @@
+[Z1]   [tail] Vypisuje mene/vice radku nez n pro soubory s radky vetsi jak LENGTH znaku.
+[Z2]   [get_word] Nehodnotitelne - program cykli a nebo vypisuje chybove hlaseni.
+[Z8]   Castecne chybi cast b)
+[C0.5] [tail] tail.c:45,117, Memory leak promenne tails.
+==========================================================
+Hodnoceni =  3.5 bodu
+==========================================================
+
+==========================================================
+Doporuceni
+==========================================================a
+-> Snazte se psat komentare ke vsem funkci vcetne toho, co je vstupem a vystupem.

@@ -1,0 +1,17 @@
+
+login     body celkem     body BB   body WB   body TDD
+xlapsa00     12.0            4.0        2         6
+
+poznamky k hodnoceni:
+  BB - dva axiomy selhaly (-2b)
+  WB - bezchybna implementace neprosla bez selhani testu (-4b)
+
+
+vysvetlivky:
+  BB - black box testy
+  WB - white box testy
+  TDD - Test Driven Development
+
+  Body v zavorce u poznamek k hodnoceni, jsou strzene body z dane casti za danou chybu.
+  
+Dalsie body pridane pri konzultacii, vysledok - 12/18
