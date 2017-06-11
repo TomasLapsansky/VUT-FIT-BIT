@@ -1,0 +1,55 @@
+# testbench.fdo: Simulation script 
+# Author: Jan Korenek <korenek at fit.vutbr.cz>
+
+
+# -------------------------------------------------------------------------
+#                        Modules Compilation
+# -------------------------------------------------------------------------
+# work library inicialization
+vlib work
+vdel -all
+vlib work
+
+onerror {resume}
+
+# Addition simulation modules compilation
+vcom -93 -explicit -work work testbench_pkg.vhd 
+file isfile fsm.vhd
+vcom -93 -explicit -work work ../fsm.vhd
+vcom -93 -explicit -work work testbench.vhd
+
+# Starting simulation
+vsim -t 1ps -novopt  -lib work testbench
+#-L xilinxcorelib 
+
+# Suppress warnings from arithm library
+puts "Std Arith Warnings - Disabled"
+set  StdArithNoWarnings 1
+
+# -------------------------------------------------------------------------
+#                       Waveform Definition 
+# -------------------------------------------------------------------------
+view wave
+
+add wave -divider "Controll" 
+add wave -label reset /testbench/uut/reset
+add wave -label clk /testbench/uut/clk
+
+add wave -divider "FSM input" 
+add wave -label key sim:/testbench/key 
+add wave -label cnt_of sim:/testbench/cnt_of 
+
+add wave -divider "FSM output" 
+add wave -label fsm_cnt_ce sim:/testbench/fsm_cnt_ce 
+add wave -label fsm_mx_mem sim:/testbench/fsm_mx_mem 
+add wave -label fsm_mx_lcd sim:/testbench/fsm_mx_lcd 
+add wave -label fsm_lcd_wr sim:/testbench/fsm_lcd_wr 
+add wave -label fsm_lcd_clr sim:/testbench/fsm_lcd_clr 
+
+add wave -divider "Counter of output" 
+add wave -label cnt_mem_ld sim:/testbench/cnt_mem_ld 
+add wave -label cnt_mem sim:/testbench/cnt_mem 
+add wave -label cnt_mem_of sim:/testbench/cnt_mem_of 
+                 
+run 10 ms       
+quit

@@ -1,0 +1,1045 @@
+Release 13.1 - xst O.40d (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to build/fpga
+Parameter xsthdpdir set to build/fpga
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "build/fpga/accterm.prj"
+Input Format                       : mixed
+
+---- Target Parameters
+Output File Name                   : "build/fpga/accterm.ngc"
+Output Format                      : NGC
+Target Device                      : xc3s50-4-pq208
+
+---- Source Options
+Top Module Name                    : fpga
+
+---- General Options
+Optimization Goal                  : SPEED
+Optimization Effort                : 1
+Library Search Order               : build/fpga/accterm.lso
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/lcd/lcd_fsm_main.vhd" in Library work.
+Entity <lcd_fsm_main> compiled.
+Entity <lcd_fsm_main> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/lcd/lcd_fsm_cycle.vhd" in Library work.
+Entity <lcd_fsm_cycle> compiled.
+Entity <lcd_fsm_cycle> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/spi/spi_ctrl.vhd" in Library work.
+Entity <SPI_ctrl> compiled.
+Entity <SPI_ctrl> (Architecture <Arch_SPI_ctrl2>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/spi/spi_adc_entity.vhd" in Library work.
+Entity <SPI_adc> compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_rw.vhd" in Library work.
+Entity <lcd_ctrl_rw> compiled.
+Entity <lcd_ctrl_rw> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl.vhd" in Library work.
+Entity <keyboard_controller> compiled.
+Entity <keyboard_controller> (Architecture <arch_keyboard>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/units/clkgen/clkgen_config.vhd" in Library work.
+Package <clkgen_cfg> compiled.
+Package body <clkgen_cfg> compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/units/math/math_pack.vhd" in Library work.
+Package <math_pack> compiled.
+Package body <math_pack> compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/chips/fpga_xc3s50.vhd" in Library work.
+Entity <fpga> compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl_high.vhd" in Library work.
+Entity <keyboard_controller_high> compiled.
+Entity <keyboard_controller_high> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_high.vhd" in Library work.
+Entity <lcd_ctrl_high> compiled.
+Entity <lcd_ctrl_high> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/apps/demo/terminal/fpga/rom_memory.vhd" in Library work.
+Entity <rom_memory> compiled.
+Entity <rom_memory> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/apps/demo/terminal/fpga/fsm.vhd" in Library work.
+Entity <fsm> compiled.
+Entity <fsm> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/apps/demo/terminal/fpga/fpga_mcu_dbg.vhd" in Library work.
+Entity <fpga_mcu_dbg> compiled.
+Entity <fpga_mcu_dbg> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/fitkitSVN/apps/demo/terminal/fpga/fpga.vhd" in Library work.
+Entity <fpga> (Architecture <main>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/spi/spi_reg.vhd" in Library work.
+Package <spi_cfg> compiled.
+Entity <SPI_reg> compiled.
+Entity <SPI_reg> (Architecture <beh>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/spi/spi_adc_autoincr.vhd" in Library work.
+Entity <SPI_adc> (Architecture <autoincrement>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/ctrls/spi/spi_adc.vhd" in Library work.
+Entity <SPI_adc> (Architecture <basic>) compiled.
+Compiling vhdl file "C:/fitkitSVN/fpga/units/clkgen/clkgen.vhd" in Library work.
+Entity <clkgen> compiled.
+Entity <clkgen> (Architecture <BEHAVIORAL>) compiled.
+Compiling vhdl file "C:/fitkitSVN/apps/demo/terminal/build/fpga/accterm_config.vhd" in Library work.
+Package <fpga_cfg> compiled.
+Package body <fpga_cfg> compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <fpga> in library <work> (architecture <main>).
+
+Analyzing hierarchy for entity <keyboard_controller_high> in library <work> (architecture <behavioral>) with generics.
+	READ_INTERVAL = 16383
+
+Analyzing hierarchy for entity <lcd_ctrl_high> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <rom_memory> in library <work> (architecture <behavioral>) with generics.
+	INIT = "01010000011100100110100101110011011101000111010101110000001000000111000001101111011101100110111101101100011001010110111000100000"
+
+Analyzing hierarchy for entity <rom_memory> in library <work> (architecture <behavioral>) with generics.
+	INIT = "01010000011100100110100101110011011101000111010101110000001000000110111101100100011001010111000001110010011001010110111000100000"
+
+Analyzing hierarchy for entity <fsm> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <fpga_mcu_dbg> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <keyboard_controller> in library <work> (architecture <arch_keyboard>) with generics.
+	READ_INTERVAL = 16383
+
+Analyzing hierarchy for entity <lcd_ctrl_rw> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <SPI_ctrl> in library <work> (architecture <Arch_SPI_ctrl2>).
+
+Analyzing hierarchy for entity <SPI_adc> in library <work> (architecture <basic>) with generics.
+	ADDR_OUT_WIDTH = 6
+	ADDR_WIDTH = 16
+	BASE_ADDR = 0
+	DATA_WIDTH = 8
+	DELAY = 0
+
+Analyzing hierarchy for entity <lcd_fsm_main> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <lcd_fsm_cycle> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <fpga> in library <work> (Architecture <main>).
+Entity <fpga> analyzed. Unit <fpga> generated.
+
+Analyzing generic Entity <keyboard_controller_high> in library <work> (Architecture <behavioral>).
+	READ_INTERVAL = 16383
+Entity <keyboard_controller_high> analyzed. Unit <keyboard_controller_high> generated.
+
+Analyzing generic Entity <keyboard_controller> in library <work> (Architecture <arch_keyboard>).
+	READ_INTERVAL = 16383
+Entity <keyboard_controller> analyzed. Unit <keyboard_controller> generated.
+
+Analyzing Entity <lcd_ctrl_high> in library <work> (Architecture <behavioral>).
+WARNING:Xst:753 - "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_high.vhd" line 151: Unconnected output port 'DOUT' of component 'lcd_ctrl_rw'.
+WARNING:Xst:753 - "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_high.vhd" line 151: Unconnected output port 'DV' of component 'lcd_ctrl_rw'.
+Entity <lcd_ctrl_high> analyzed. Unit <lcd_ctrl_high> generated.
+
+Analyzing Entity <lcd_ctrl_rw> in library <work> (Architecture <behavioral>).
+Entity <lcd_ctrl_rw> analyzed. Unit <lcd_ctrl_rw> generated.
+
+Analyzing Entity <lcd_fsm_main> in library <work> (Architecture <behavioral>).
+Entity <lcd_fsm_main> analyzed. Unit <lcd_fsm_main> generated.
+
+Analyzing Entity <lcd_fsm_cycle> in library <work> (Architecture <behavioral>).
+Entity <lcd_fsm_cycle> analyzed. Unit <lcd_fsm_cycle> generated.
+
+Analyzing generic Entity <rom_memory.1> in library <work> (Architecture <behavioral>).
+	INIT = "01010000011100100110100101110011011101000111010101110000001000000111000001101111011101100110111101101100011001010110111000100000"
+Entity <rom_memory.1> analyzed. Unit <rom_memory.1> generated.
+
+Analyzing generic Entity <rom_memory.2> in library <work> (Architecture <behavioral>).
+	INIT = "01010000011100100110100101110011011101000111010101110000001000000110111101100100011001010111000001110010011001010110111000100000"
+Entity <rom_memory.2> analyzed. Unit <rom_memory.2> generated.
+
+Analyzing Entity <fsm> in library <work> (Architecture <behavioral>).
+Entity <fsm> analyzed. Unit <fsm> generated.
+
+Analyzing Entity <fpga_mcu_dbg> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "C:/fitkitSVN/apps/demo/terminal/fpga/fpga_mcu_dbg.vhd" line 112: Mux is complete : default of case is discarded
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_A =  000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "INIT_B =  000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "SRVAL_A =  000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "SRVAL_B =  000000000" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <RAMB_U> in unit <fpga_mcu_dbg>.
+Entity <fpga_mcu_dbg> analyzed. Unit <fpga_mcu_dbg> generated.
+
+Analyzing Entity <SPI_ctrl> in library <work> (Architecture <Arch_SPI_ctrl2>).
+Entity <SPI_ctrl> analyzed. Unit <SPI_ctrl> generated.
+
+Analyzing generic Entity <SPI_adc> in library <work> (Architecture <basic>).
+	ADDR_OUT_WIDTH = 6
+	ADDR_WIDTH = 16
+	BASE_ADDR = 0
+	DATA_WIDTH = 8
+	DELAY = 0
+Entity <SPI_adc> analyzed. Unit <SPI_adc> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2561 - Always blocking tristate driving signal <X> in unit <fpga> is removed.
+
+Synthesizing Unit <rom_memory_1>.
+    Related source file is "C:/fitkitSVN/apps/demo/terminal/fpga/rom_memory.vhd".
+WARNING:Xst:1781 - Signal <rom> is used but never assigned. Tied to default value.
+    Found 16x8-bit ROM for signal <DATA_OUT>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <rom_memory_1> synthesized.
+
+
+Synthesizing Unit <rom_memory_2>.
+    Related source file is "C:/fitkitSVN/apps/demo/terminal/fpga/rom_memory.vhd".
+WARNING:Xst:1781 - Signal <rom> is used but never assigned. Tied to default value.
+    Found 16x8-bit ROM for signal <DATA_OUT>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <rom_memory_2> synthesized.
+
+
+Synthesizing Unit <fsm>.
+    Related source file is "C:/fitkitSVN/apps/demo/terminal/fpga/fsm.vhd".
+    Found finite state machine <FSM_0> for signal <present_state>.
+    -----------------------------------------------------------------------
+    | States             | 24                                             |
+    | Transitions        | 88                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 4                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RESET                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | test1                                          |
+    | Power Up State     | test1                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <fsm> synthesized.
+
+
+Synthesizing Unit <keyboard_controller>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl.vhd".
+    Found finite state machine <FSM_1> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 8                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RST                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | sinit                                          |
+    | Power Up State     | sinit                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <data_sel>.
+    Found 4-bit tristate buffer for signal <KB_KIN>.
+    Found 15-bit up counter for signal <cntr_reg>.
+    Found 4-bit comparator equal for signal <data_cmp$cmp_eq0000> created at line 185.
+    Found 16-bit register for signal <data_reg>.
+    Found 1-bit register for signal <eq_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Tristate(s).
+Unit <keyboard_controller> synthesized.
+
+
+Synthesizing Unit <lcd_fsm_main>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/lcd/lcd_fsm_main.vhd".
+INFO:Xst:1799 - State read_op is never reached in FSM <present_state>.
+    Found finite state machine <FSM_2> for signal <present_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RESET                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 4-bit up counter for signal <cnt_rdwait>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+Unit <lcd_fsm_main> synthesized.
+
+
+Synthesizing Unit <lcd_fsm_cycle>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/lcd/lcd_fsm_cycle.vhd".
+    Found finite state machine <FSM_3> for signal <present_state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 12                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 10                                             |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RESET                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <lcd_fsm_cycle> synthesized.
+
+
+Synthesizing Unit <SPI_ctrl>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/spi/spi_ctrl.vhd".
+    Found finite state machine <FSM_4> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Clock enable       | dovld                     (positive)           |
+    | Reset              | SPI_CS                    (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | sinit                                          |
+    | Power Up State     | sinit                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 1-bit tristate buffer for signal <SPI_MISO>.
+    Found 1-bit register for signal <spi_clk_1>.
+    Found 1-bit register for signal <spi_clk_2>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Tristate(s).
+Unit <SPI_ctrl> synthesized.
+
+
+Synthesizing Unit <SPI_adc>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/spi/spi_adc.vhd".
+    Found finite state machine <FSM_5> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | CS                        (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | scmdrcv                                        |
+    | Power Up State     | scmdrcv                                        |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Found 1-bit tristate buffer for signal <DI>.
+    Found 5-bit up counter for signal <bitcntr>.
+    Found 16-bit register for signal <shreg_addr>.
+    Found 2-bit register for signal <shreg_cmd>.
+    Found 8-bit register for signal <shreg_di>.
+    Found 8-bit register for signal <shreg_do>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Tristate(s).
+Unit <SPI_adc> synthesized.
+
+
+Synthesizing Unit <keyboard_controller_high>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl_high.vhd".
+Unit <keyboard_controller_high> synthesized.
+
+
+Synthesizing Unit <fpga_mcu_dbg>.
+    Related source file is "C:/fitkitSVN/apps/demo/terminal/fpga/fpga_mcu_dbg.vhd".
+WARNING:Xst:646 - Signal <mcu_re> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <mcu_do<7:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mcu_addr<15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <mcu_addr<10:6>> is used but never assigned. This sourceless signal will be automatically connected to value 00000.
+WARNING:Xst:1780 - Signal <bram_addr<15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <bram_addr<10:6>> is used but never assigned. This sourceless signal will be automatically connected to value 00000.
+    Found 1-of-16 decoder for signal <DO>.
+    Found 6-bit register for signal <bram_addr<5:0>>.
+    Found 6-bit adder for signal <bram_addr_5_0$add0000> created at line 149.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Decoder(s).
+Unit <fpga_mcu_dbg> synthesized.
+
+
+Synthesizing Unit <lcd_ctrl_rw>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_rw.vhd".
+    Found 8-bit tristate buffer for signal <LD>.
+    Found 8-bit register for signal <reg_data_in>.
+    Found 8-bit register for signal <reg_data_out>.
+    Found 1-bit register for signal <reg_rs>.
+    Found 1-bit register for signal <reg_rw>.
+    Summary:
+	inferred  18 D-type flip-flop(s).
+	inferred   8 Tristate(s).
+Unit <lcd_ctrl_rw> synthesized.
+
+
+Synthesizing Unit <lcd_ctrl_high>.
+    Related source file is "C:/fitkitSVN/fpga/ctrls/lcd/lcd_ctrl_high.vhd".
+WARNING:Xst:646 - Signal <fifo_full> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <present_state>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <present_state> of Case statement line 191 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <present_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 4-bit up counter for signal <cnt_addr>.
+    Found 5-bit updown counter for signal <cnt_fifo_addr>.
+    Found 6-bit updown counter for signal <cnt_fifo_count>.
+    Found 320-bit register for signal <fifo>.
+    Found 10-bit 32-to-1 multiplexer for signal <fifo_dout>.
+    Found 9-bit register for signal <present_state>.
+INFO:Xst:738 - HDL ADVISOR - 320 flip-flops were inferred for signal <fifo>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   3 Counter(s).
+	inferred 320 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+Unit <lcd_ctrl_high> synthesized.
+
+
+Synthesizing Unit <fpga>.
+    Related source file is "C:/fitkitSVN/apps/demo/terminal/fpga/fpga.vhd".
+WARNING:Xst:2565 - Inout <RD<3>> is never assigned.
+WARNING:Xst:2565 - Inout <X<30>> is never assigned.
+WARNING:Xst:2565 - Inout <X<25>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<4>> is never assigned.
+WARNING:Xst:2565 - Inout <X<31>> is never assigned.
+WARNING:Xst:2565 - Inout <X<26>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<5>> is never assigned.
+WARNING:Xst:2565 - Inout <X<32>> is never assigned.
+WARNING:Xst:2565 - Inout <X<27>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<6>> is never assigned.
+WARNING:Xst:2565 - Inout <X<33>> is never assigned.
+WARNING:Xst:2565 - Inout <X<28>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<7>> is never assigned.
+WARNING:Xst:2565 - Inout <X<34>> is never assigned.
+WARNING:Xst:2565 - Inout <X<29>> is never assigned.
+WARNING:Xst:647 - Input <ACLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2565 - Inout <X<35>> is never assigned.
+WARNING:Xst:2565 - Inout <X<40>> is never assigned.
+WARNING:Xst:2565 - Inout <X<41>> is never assigned.
+WARNING:Xst:2565 - Inout <X<36>> is never assigned.
+WARNING:Xst:2565 - Inout <X<42>> is never assigned.
+WARNING:Xst:2565 - Inout <X<37>> is never assigned.
+WARNING:Xst:2565 - Inout <X<43>> is never assigned.
+WARNING:Xst:2565 - Inout <X<38>> is never assigned.
+WARNING:Xst:2565 - Inout <X<44>> is never assigned.
+WARNING:Xst:2565 - Inout <X<39>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<10>> is never assigned.
+WARNING:Xst:2565 - Inout <X<45>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<11>> is never assigned.
+WARNING:Xst:2565 - Inout <X<0>> is never assigned.
+WARNING:Xst:2565 - Inout <X<1>> is never assigned.
+WARNING:Xst:647 - Input <FCLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2565 - Inout <X<2>> is never assigned.
+WARNING:Xst:2565 - Inout <X<3>> is never assigned.
+WARNING:Xst:2565 - Inout <X<4>> is never assigned.
+WARNING:Xst:2565 - Inout <X<5>> is never assigned.
+WARNING:Xst:2565 - Inout <X<6>> is never assigned.
+WARNING:Xst:2565 - Inout <X<7>> is never assigned.
+WARNING:Xst:2565 - Inout <X<8>> is never assigned.
+WARNING:Xst:2565 - Inout <X<9>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<0>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<1>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<2>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<0>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<3>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<1>> is never assigned.
+WARNING:Xst:647 - Input <SPI_CS> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2565 - Inout <AFBUS<4>> is never assigned.
+WARNING:Xst:2565 - Inout <X<10>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<2>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<5>> is never assigned.
+WARNING:Xst:2565 - Inout <X<11>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<3>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<6>> is never assigned.
+WARNING:Xst:2565 - Inout <X<12>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<4>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<7>> is never assigned.
+WARNING:Xst:2565 - Inout <X<13>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<5>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<8>> is never assigned.
+WARNING:Xst:2565 - Inout <X<14>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<6>> is never assigned.
+WARNING:Xst:2565 - Inout <AFBUS<9>> is never assigned.
+WARNING:Xst:2565 - Inout <X<20>> is never assigned.
+WARNING:Xst:2565 - Inout <X<15>> is never assigned.
+WARNING:Xst:2565 - Inout <P3M<7>> is never assigned.
+WARNING:Xst:2565 - Inout <X<16>> is never assigned.
+WARNING:Xst:2565 - Inout <X<21>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<0>> is never assigned.
+WARNING:Xst:2565 - Inout <X<22>> is never assigned.
+WARNING:Xst:2565 - Inout <X<17>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<1>> is never assigned.
+WARNING:Xst:2565 - Inout <X<23>> is never assigned.
+WARNING:Xst:2565 - Inout <X<18>> is never assigned.
+WARNING:Xst:2565 - Inout <RD<2>> is never assigned.
+WARNING:Xst:2565 - Inout <X<24>> is never assigned.
+WARNING:Xst:2565 - Inout <X<19>> is never assigned.
+    Found 1-bit tristate buffer for signal <LEDF>.
+    Found 15-bit tristate buffer for signal <RA>.
+    Found 1-bit tristate buffer for signal <RDQM>.
+    Found 1-bit tristate buffer for signal <RCS>.
+    Found 1-bit tristate buffer for signal <RRAS>.
+    Found 1-bit tristate buffer for signal <RCAS>.
+    Found 1-bit tristate buffer for signal <RWE>.
+    Found 1-bit tristate buffer for signal <RCLK>.
+    Found 1-bit tristate buffer for signal <RCKE>.
+    Found 4-bit up counter for signal <cnt_mem>.
+    Found 4-bit up counter for signal <cnt_reset>.
+    Found 4-bit comparator less for signal <cnt_reset_ce$cmp_lt0000> created at line 96.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 Comparator(s).
+	inferred  23 Tristate(s).
+Unit <fpga> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 16x8-bit ROM                                          : 2
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 8
+ 15-bit up counter                                     : 1
+ 4-bit up counter                                      : 4
+ 5-bit up counter                                      : 1
+ 5-bit updown counter                                  : 1
+ 6-bit updown counter                                  : 1
+# Registers                                            : 44
+ 1-bit register                                        : 27
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 10
+ 8-bit register                                        : 4
+ 9-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator less                                 : 1
+# Multiplexers                                         : 10
+ 1-bit 32-to-1 multiplexer                             : 10
+# Decoders                                             : 1
+ 1-of-16 decoder                                       : 1
+# Tristates                                            : 30
+ 1-bit tristate buffer                                 : 29
+ 8-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_5> for best encoding.
+Optimizing FSM <MCUDBG_U/SPIADC_U/pstate/FSM> on signal <pstate[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ scmdrcv  | 00
+ saddrrcv | 01
+ sdatarcv | 10
+ snop     | 11
+----------------------
+Analyzing FSM <FSM_4> for best encoding.
+Optimizing FSM <MCUDBG_U/SPICTRL_U/pstate/FSM> on signal <pstate[1:6]> with one-hot encoding.
+----------------------
+ State    | Encoding
+----------------------
+ sinit    | 000001
+ srcv1    | 000010
+ srcv2    | 001000
+ srcv3    | 010000
+ sactive  | 100000
+ snactive | 000100
+----------------------
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <lcdc_u/lcd_u/FSM_CYCLE/present_state/FSM> on signal <present_state[1:11]> with one-hot encoding.
+----------------------
+ State | Encoding
+----------------------
+ idle  | 00000000001
+ t0    | 00000000010
+ t1    | 00000000100
+ t2    | 00000001000
+ t3    | 00000010000
+ t4    | 00000100000
+ t5    | 00001000000
+ t6    | 00010000000
+ t7    | 00100000000
+ t8    | 01000000000
+ t9    | 10000000000
+----------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <lcdc_u/lcd_u/FSM_MAIN/present_state/FSM> on signal <present_state[1:2]> with gray encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 00
+ read_op   | unreached
+ write_op  | 01
+ read_busy | 11
+ read_wait | 10
+-----------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <kbc_u/key_ctrl_u/pstate/FSM> on signal <pstate[1:6]> with one-hot encoding.
+--------------------
+ State  | Encoding
+--------------------
+ sinit  | 000001
+ sscan0 | 000010
+ sscan1 | 000100
+ sscan2 | 001000
+ sscan3 | 010000
+ swe    | 100000
+--------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <FSM_U/present_state/FSM> on signal <present_state[1:24]> with one-hot encoding.
+-------------------------------------------
+ State         | Encoding
+-------------------------------------------
+ test1         | 000000000000000000000001
+ test2         | 000000000000000000000100
+ test3         | 000000000000000000010000
+ test4a        | 000000000000000000100000
+ test5a        | 000000000000000010000000
+ test6a        | 000000000000000100000000
+ test7a        | 000000000000001000000000
+ test8a        | 000000000000010000000000
+ test9a        | 000000000000100000000000
+ test10a       | 000000000001000000000000
+ test11a       | 000000000010000000000000
+ test4b        | 000000000000000001000000
+ test5b        | 000000001000000000000000
+ test6b        | 000000010000000000000000
+ test7b        | 000000100000000000000000
+ test8b        | 000001000000000000000000
+ test9b        | 000010000000000000000000
+ test10b       | 000100000000000000000000
+ test11b       | 001000000000000000000000
+ testf         | 000000000100000000000000
+ waitend       | 000000000000000000001000
+ bad_message   | 000000000000000000000010
+ right_message | 010000000000000000000000
+ finish        | 100000000000000000000000
+-------------------------------------------
+WARNING:Xst:2677 - Node <reg_data_out_0> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_1> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_2> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_3> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_4> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_5> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <reg_data_out_6> of sequential type is unconnected in block <lcd_u>.
+WARNING:Xst:2677 - Node <shreg_do_4> of sequential type is unconnected in block <SPIADC_U>.
+WARNING:Xst:2677 - Node <shreg_do_5> of sequential type is unconnected in block <SPIADC_U>.
+WARNING:Xst:2677 - Node <shreg_do_6> of sequential type is unconnected in block <SPIADC_U>.
+WARNING:Xst:2677 - Node <shreg_do_7> of sequential type is unconnected in block <SPIADC_U>.
+
+Synthesizing (advanced) Unit <lcd_ctrl_high>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<0>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<1>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<2>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<3>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<6>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<4>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<5>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<9>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<7>>.
+	Found 32-bit dynamic shift register for signal <fifo_dout<8>>.
+Unit <lcd_ctrl_high> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 6
+# ROMs                                                 : 2
+ 16x8-bit ROM                                          : 2
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 8
+ 15-bit up counter                                     : 1
+ 4-bit up counter                                      : 4
+ 5-bit up counter                                      : 1
+ 5-bit updown counter                                  : 1
+ 6-bit updown counter                                  : 1
+# Registers                                            : 86
+ Flip-Flops                                            : 86
+# Shift Registers                                      : 10
+ 32-bit dynamic shift register                         : 10
+# Comparators                                          : 2
+ 4-bit comparator equal                                : 1
+ 4-bit comparator less                                 : 1
+# Decoders                                             : 1
+ 1-of-16 decoder                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:1901 - Instance RAMB_U in unit RAMB_U of type RAMB16_S9_S9 has been replaced by RAMB16
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_0> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_1> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_2> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_3> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_4> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_5> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <lcdc_u/lcd_u/reg_data_out_6> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2041 - Unit SPI_adc: 1 internal tristate is replaced by logic (pull-up yes): DI.
+
+Optimizing unit <fpga> ...
+
+Optimizing unit <SPI_adc> ...
+WARNING:Xst:2677 - Node <MCUDBG_U/SPIADC_U/shreg_do_7> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <MCUDBG_U/SPIADC_U/shreg_do_6> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <MCUDBG_U/SPIADC_U/shreg_do_5> of sequential type is unconnected in block <fpga>.
+WARNING:Xst:2677 - Node <MCUDBG_U/SPIADC_U/shreg_do_4> of sequential type is unconnected in block <fpga>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 171
+ Flip-Flops                                            : 171
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : build\fpga\accterm.ngr
+Top Level Output File Name         : build/fpga/accterm.ngc
+Output Format                      : NGC
+Optimization Goal                  : SPEED
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 124
+
+Cell Usage :
+# BELS                             : 382
+#      GND                         : 2
+#      INV                         : 15
+#      LUT1                        : 14
+#      LUT2                        : 42
+#      LUT2_D                      : 2
+#      LUT2_L                      : 3
+#      LUT3                        : 49
+#      LUT3_D                      : 1
+#      LUT3_L                      : 12
+#      LUT4                        : 172
+#      LUT4_D                      : 9
+#      LUT4_L                      : 13
+#      MUXCY                       : 14
+#      MUXF5                       : 18
+#      VCC                         : 1
+#      XORCY                       : 15
+# FlipFlops/Latches                : 171
+#      FDC                         : 64
+#      FDCE                        : 84
+#      FDE                         : 4
+#      FDP                         : 6
+#      FDPE                        : 7
+#      FDRE                        : 6
+# RAMS                             : 1
+#      RAMB16                      : 1
+# Shift Registers                  : 20
+#      SRL16E                      : 10
+#      SRLC16E                     : 10
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 46
+#      IBUF                        : 7
+#      IOBUF                       : 1
+#      OBUF                        : 3
+#      OBUFT                       : 35
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50pq208-4 
+
+ Number of Slices:                      191  out of    768    24%  
+ Number of Slice Flip Flops:            171  out of   1536    11%  
+ Number of 4 input LUTs:                352  out of   1536    22%  
+    Number used as logic:               332
+    Number used as Shift registers:      20
+ Number of IOs:                         124
+ Number of bonded IOBs:                  47  out of    124    37%  
+ Number of BRAMs:                         1  out of      4    25%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+SMCLK                              | BUFGP                  | 192   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------+-----------------------------------+-------+
+Control Signal                                       | Buffer(FF name)                   | Load  |
+-----------------------------------------------------+-----------------------------------+-------+
+cnt_reset_ce(cnt_reset_ce1:O)                        | NONE(MCUDBG_U/SPICTRL_U/spi_clk_1)| 96    |
+MCUDBG_U/SPIADC_U/CS_inv(MCUDBG_U/SPIADC_U/CS_inv1:O)| NONE(MCUDBG_U/SPIADC_U/bitcntr_0) | 37    |
+fsm_reset(fsm_reset1:O)                              | NONE(FSM_U/present_state_FSM_FFd1)| 23    |
+SPI_FPGA_CS                                          | IBUF                              | 5     |
+-----------------------------------------------------+-----------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 11.985ns (Maximum Frequency: 83.436MHz)
+   Minimum input arrival time before clock: 4.457ns
+   Maximum output required time after clock: 10.907ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'SMCLK'
+  Clock period: 11.985ns (frequency: 83.436MHz)
+  Total number of paths / destination ports: 6110 / 393
+-------------------------------------------------------------------------
+Delay:               11.985ns (Levels of Logic = 5)
+  Source:            kbc_u/key_ctrl_u/data_reg_8 (FF)
+  Destination:       lcdc_u/cnt_fifo_addr_4 (FF)
+  Source Clock:      SMCLK rising
+  Destination Clock: SMCLK rising
+
+  Data Path: kbc_u/key_ctrl_u/data_reg_8 to lcdc_u/cnt_fifo_addr_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.720   1.246  kbc_u/key_ctrl_u/data_reg_8 (kbc_u/key_ctrl_u/data_reg_8)
+     LUT4:I0->O            1   0.551   0.827  FSM_U/present_state_and0000155_SW0 (N133)
+     LUT4:I3->O            1   0.551   0.996  FSM_U/present_state_and0000155 (FSM_U/present_state_and0000155)
+     LUT4:I1->O           26   0.551   1.845  FSM_U/present_state_and0000195 (FSM_U/present_state_and0000)
+     LUT4:I3->O           27   0.551   1.850  MCUDBG_U/bram_we1_1 (MCUDBG_U/bram_we_0)
+     LUT4:I3->O           11   0.551   1.144  lcdc_u/cnt_fifo_addr_ce1 (lcdc_u/cnt_fifo_addr_ce)
+     FDCE:CE                   0.602          lcdc_u/cnt_fifo_count_0
+    ----------------------------------------
+    Total                     11.985ns (4.077ns logic, 7.908ns route)
+                                       (34.0% logic, 66.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SMCLK'
+  Total number of paths / destination ports: 30 / 26
+-------------------------------------------------------------------------
+Offset:              4.457ns (Levels of Logic = 4)
+  Source:            KOUT<2> (PAD)
+  Destination:       kbc_u/key_ctrl_u/eq_reg (FF)
+  Destination Clock: SMCLK rising
+
+  Data Path: KOUT<2> to kbc_u/key_ctrl_u/eq_reg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.821   1.102  KOUT_2_IBUF (KOUT_2_IBUF)
+     LUT4:I1->O            1   0.551   0.000  kbc_u/key_ctrl_u/eq_reg_mux0000601 (kbc_u/key_ctrl_u/eq_reg_mux0000601)
+     MUXF5:I1->O           1   0.360   0.869  kbc_u/key_ctrl_u/eq_reg_mux000060_f5 (kbc_u/key_ctrl_u/eq_reg_mux000060)
+     LUT4:I2->O            1   0.551   0.000  kbc_u/key_ctrl_u/eq_reg_mux000089 (kbc_u/key_ctrl_u/eq_reg_mux0000)
+     FDPE:D                    0.203          kbc_u/key_ctrl_u/eq_reg
+    ----------------------------------------
+    Total                      4.457ns (2.486ns logic, 1.971ns route)
+                                       (55.8% logic, 44.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SMCLK'
+  Total number of paths / destination ports: 78 / 16
+-------------------------------------------------------------------------
+Offset:              10.907ns (Levels of Logic = 3)
+  Source:            lcdc_u/lcd_u/FSM_CYCLE/present_state_FSM_FFd3 (FF)
+  Destination:       LD<7> (PAD)
+  Source Clock:      SMCLK rising
+
+  Data Path: lcdc_u/lcd_u/FSM_CYCLE/present_state_FSM_FFd3 to LD<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.720   1.246  lcdc_u/lcd_u/FSM_CYCLE/present_state_FSM_FFd3 (lcdc_u/lcd_u/FSM_CYCLE/present_state_FSM_FFd3)
+     LUT3:I0->O            1   0.551   0.869  lcdc_u/lcd_u/FSM_CYCLE/FSM_TS_SW0 (N2)
+     LUT4:I2->O            8   0.551   1.083  lcdc_u/lcd_u/FSM_CYCLE/FSM_TS (lcdc_u/lcd_u/LD_reg_data_in_not0000_inv)
+     OBUFT:T->O                5.887          LD_6_OBUFT (LD<6>)
+    ----------------------------------------
+    Total                     10.907ns (7.709ns logic, 3.198ns route)
+                                       (70.7% logic, 29.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.77 secs
+ 
+--> 
+
+Total memory usage is 153248 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  111 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

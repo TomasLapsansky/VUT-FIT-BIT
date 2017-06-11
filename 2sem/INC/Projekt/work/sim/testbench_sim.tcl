@@ -1,0 +1,6 @@
+set TESTBENCH_SCRIPT "isim.tcl"
+set SIM_ENVIRONMENT "isim"
+set ISIM_PRJ "testbench.prj"
+set ISIM_SIMULATOR "testbench_isim"
+set ISIM_SCRIPT "testbench_isim.tcl"
+source "xilinxisim.tcl"

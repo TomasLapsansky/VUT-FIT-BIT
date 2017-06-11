@@ -1,0 +1,1 @@
+./dirgraph -i 'file(b|c)' dir <stdin >>stdout 2>>stderr; echo $? >>errcode

@@ -1,0 +1,44 @@
+15:celkem bodu za projekt
+#-- automaticke hodnoceni -----------------------------
+1:ok: jednoduchy adresar
+1:ok: jednoduche soubory
+1:ok: spusteni bez parametru
+1:ok: soubory s jednou velikosti
+1:ok: soubory s ruznymi velikostmi
+1:ok: normalizovany histogram delek
+1:ok: soubory s jednim typem
+1:ok: soubory s vice typy
+1:ok: normalizovany histogram typu souboru
+1:ok: prazdny adresar
+1:ok: prazdny soubor
+1:ok: skryte soubory
+1:ok: skryte adresare
+1:ok: filtr -i (BRE)
+0:f_ignore2: filtr -i (ERE)
+# ./dirgraph -i 'file(b|c)' dir <stdin >>stdout 2>>stderr; echo $? >>errcode
+# diff -u stdout.ref stdout
+#   --- stdout.ref
+#   +++ stdout
+#   @@ -1,8 +1,8 @@
+#    Root directory: dir
+#    Directories: 4
+#   -All files: 2
+#   +All files: 4
+#    File size histogram:
+#   -  <100 B  : ##
+#   +  <100 B  : ####
+#      <1 KiB  : 
+#      <10 KiB : 
+#      <100 KiB: 
+#   @@ -12,4 +12,4 @@
+#      <1 GiB  : 
+#      >=1 GiB : 
+#    File type histogram:
+#   -  ASCII text                                 : ##
+#   +  ASCII text                                 : ####
+1:ok: komplexni priklad
+1:ok: castecne zbesile nazvy
+0:ok: docasne soubory
+#------------------------------------------------------
+16:celkove score (max pro hodnoceni 15)
+15:celkem bodu za projekt

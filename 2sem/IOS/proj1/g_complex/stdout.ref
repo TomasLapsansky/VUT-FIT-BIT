@@ -1,0 +1,22 @@
+Root directory: dir
+Directories: 3
+All files: 31
+File size histogram:
+  <100 B  : #######
+  <1 KiB  : ###############
+  <10 KiB : ######
+  <100 KiB: ##
+  <1 MiB  : #
+  <10 MiB : 
+  <100 MiB: 
+  <1 GiB  : 
+  >=1 GiB : 
+File type histogram:
+  C source, ASCII text                       : #######
+  GCC gcno coverage (-ftest-coverage), ver...: ######
+  GCC gcda coverage (-fprofile-arcs), vers...: ######
+  ELF 64-bit LSB relocatable, x86-64, vers...: ######
+  makefile script, ASCII text                : ##
+  ELF 64-bit LSB executable, x86-64, versi...: ##
+  POSIX tar archive (GNU)                    : #
+  ASCII text                                 : #

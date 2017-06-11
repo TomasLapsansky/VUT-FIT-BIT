@@ -1,0 +1,247 @@
+#!/bin/sh
+POSIXLY_CORRECT=yes
+
+# vrati prvni sloupec
+prvni_sloupec() {
+	printf %s $1
+}
+
+
+# vrati paty sloupec
+paty_sloupec() {
+	printf %s $5
+}
+
+
+# vstup: $1 chybova hlaska
+odchyceni_chyby() {
+	err=$?				# ziskani navratove hodnoty
+	[ ${err} -eq 0 ] && return 0	# pokud je nulova jdu pryc
+	printf %s\\n "${1}" >&2		# vypsani chybove hlasky
+	exit ${err}			# ponecham chybove cislo testovaneho programu
+}
+
+
+# vstup: $1 = cesta koncici lomitkem
+rekurzivni_prohledavani() {
+	[ -r "$1" ] || { printf  %s\\n "Nemame povolen pristup do adresare: $1" >&1; exit 1; }	# True, if $1 exists and is readable
+
+	# prochazeni adresare vcetne neviditelnych souboru
+	for cesta in "$1".[!.]* "$1"..?* "$1"*  ; do
+		# vyhazeme co nechceme jako symbolicke odkazy a nerozbalene hvezdicky co nenasly cil
+		[ -L "$cesta" ] && continue				# True, if $cesta exists and is a symbolic link.
+		[ -e "$cesta" ] || continue				# True, if $cesta exists.
+
+		# odmazani cesty z jmena souboru
+		jmeno="${cesta##*/}"
+
+		# odstraneni souboru ktere maji shodu v regularnim vyrazu $FILE_ERE
+		if [ "$FILE_ERE" ] ; then
+			x=$(printf %s "$jmeno" | sed -r "s/$FILE_ERE//")
+			odchyceni_chyby "Chyba v 'sed', asi vadny regularni vyraz."
+			[ "$x" != "$jmeno" ] && continue
+		fi
+
+		# pokud je soubor adresar vlezeme do nej
+		if [ -d "$cesta" ] ; then                         # True, if $cesta exists and is a directory.
+			ND=$((ND+1))
+			rekurzivni_prohledavani "$cesta/"
+
+		elif [ -f "$cesta" ] ; then			# True, if $cesta exists and is a regular file.
+			NF=$((NF+1))
+			x=$(ls -nl -- "$cesta")
+			odchyceni_chyby "Chyba v 'ls', nejde zjistit velikost souboru: $cesta"
+ 			x=$(paty_sloupec $x)
+
+ 			# zvyseni konkretniho rozsahu velikosti
+			if [ $x -lt 100 ]; then
+				ls_100_B=$((ls_100_B+1))
+			elif [ $x -lt 1024 ]; then
+				ls_1_KiB=$((ls_1_KiB+1))
+			elif [ $x -lt 10240 ]; then
+				ls_10_KiB=$((ls_10_KiB+1))
+			elif [ $x -lt 102400 ]; then
+				ls_100_KiB=$((ls_100_KiB+1))
+			elif [ $x -lt 1048576 ]; then
+				ls_1_MiB=$((ls_1_MiB+1))
+			elif [ $x -lt 10485760 ]; then
+				ls_10_MiB=$((ls_10_MiB+1))
+			elif [ $x -lt 104857600 ]; then
+				ls_100_MiB=$((ls_100_MiB+1))
+			elif [ $x -lt 1073741824 ]; then
+				ls_1_GiB=$((ls_1_GiB+1))
+			else
+				ge_1_GiB=$((ge_1_GiB+1))
+			fi
+
+			typ=$(file -b -- "$cesta")
+			odchyceni_chyby "Chyba v 'file', nejde zjistit typ souboru: $cesta"
+
+			# orezani dlouhych nazvu
+			if [ ${#typ} -gt 40 ] ; then
+				while [ ${#typ} -gt 40 ] ; do
+					typ="${typ%?}"			# smaze libovolny jeden znak zprava (funguje i na utf8)
+				done
+				typ="$typ..."
+			fi
+
+			# jedna super obri promenna :))
+			[ ${#all_list} -gt 0 ] && all_list="$all_list
+" # pridano zalomeni enterem na konec
+			all_list="$all_list$typ"
+
+		fi
+	done
+}
+
+
+# najde nejvyssi cislo z dodanych parametru
+find_max() {
+	x=$1
+	while [ $# -gt 0 ] ; do			# je tam jeste neco?
+		[ $1 -gt $x ] && x=$1
+		shift
+	done
+	printf %s "$x"
+}
+
+
+# tiskne #########
+tisk_kanalu() {
+	x=" "                   # dodame mezeru za dvojtecku
+	if [ $1 -gt 0 ] ; then
+		citac=$1
+		if [ $delitel -gt 0 ] ; then
+			citac=$((citac*zbyva/delitel))
+		fi
+
+		while test $citac -gt 0 ; do
+			x="$x#"
+			citac=$((citac-1))
+		done
+	fi
+	printf %s\\n "$x"
+}
+
+
+# tiskne zarovnana jmena typu souboru ( radek FTHIST )
+# vstup: "      1 PDF document, version 1.4"
+tisk_radku() {
+
+	text="${1#*[! ]}"		# mazani zleva po prvni znak co neni mezera vcetne
+	text="${text#* }"		# mazani zleva po prvni znak co je mezera vcetne
+	cislo=$(IFS=" "; prvni_sloupec $1)	# odstraneni mezery okolo prvniho sloupce, jinak to sh obcas nebere jako cislo
+	# doplneni mezer zprava
+	while [ ${#text} -lt 43 ] ; do	# doplneni mezer do delky 43 = 40 + "..."
+		text="$text "
+	done
+	printf %s "  $text:"
+
+	tisk_kanalu ${cislo}
+}
+
+
+# **********************************************************
+# *  main()
+# **********************************************************
+
+while [ $# -gt 0 ] ; do        # je tam jeste neco?
+
+	if [ "$1" = "-i" ] ; then
+		[ ! -z "$FILE_ERE" ] && printf %s\\n "Opakovane zadani regularniho vyrazu." >&2 && exit 1
+		[ -z "$2" ] && printf %s\\n "Po parametru \"-i\" je ocekavan regularni vyraz!" >&2 && exit 1
+		FILE_ERE="$2"
+		shift
+	elif [ "$1" = "-n" ] ; then
+		[ ! -z "$NORM" ] && printf %s\\n "Opakovane zadani normalizace." >&2 && exit 1
+		NORM="1"
+	else
+		[ $# -gt 1 ] && printf %s\\n "Adresar musi byt posledni parametr, ocekava se: $0 [-i FILE_ERE] [-n] [DIR]" >&2 && exit 1
+		DIR=$1
+	fi
+
+	shift
+
+done
+
+[ -z "$DIR" ] && DIR="$PWD"
+[ ! -d "$DIR" ] && printf %s\\n "Pozadovany adresar nenalezen." >&2 && exit 1
+
+ND=1					# pocet prohledavanych adresaru
+NF=0
+
+ls_100_B=0
+ls_1_KiB=0
+ls_10_KiB=0
+ls_100_KiB=0
+ls_1_MiB=0
+ls_10_MiB=0
+ls_100_MiB=0
+ls_1_GiB=0
+ge_1_GiB=0
+
+IFS='
+ '
+
+ # zjisteni sirky terminalu
+if [ -t 0 ] || [ -p /dev/stdin ] ; then
+	sirka=$(tput cols)
+	odchyceni_chyby "Nelze zjistit sirku terminalu."
+else
+	sirka=79
+fi
+
+# hlavni funkce
+rekurzivni_prohledavani "${DIR%/}/"     # cesta musi koncit lomitkem, jinak
+
+# nalezeni nejvetsi velikosti souboru
+max_sum=$(find_max $ls_100_B $ls_1_KiB $ls_10_KiB $ls_100_KiB $ls_1_MiB $ls_10_MiB $ls_100_MiB $ls_1_GiB $ge_1_GiB)
+zbyva=$((sirka-13))
+delitel=0
+[ ! -z "$NORM" ] && [ $max_sum -gt $zbyva ] && delitel=$max_sum
+
+all_list=$(printf %s "$all_list" | sort )
+odchyceni_chyby "Chyba pri volani 'sort'."
+
+all_list=$(printf %s "$all_list" | uniq -c)
+odchyceni_chyby "Chyba pri volani 'uniq -c'."
+
+all_list=$(printf %s "$all_list" | sort -n -r)
+odchyceni_chyby "Chyba pri volani 'sort -n -r'."
+
+all_list=$(printf %s "$all_list" | head)
+odchyceni_chyby "Chyba pri volani 'head'."
+
+# vypis ziskanych hodnot --------------------------------
+printf %s\\n "Root directory: $DIR"
+printf %s\\n "Directories: $ND"
+printf %s\\n "All files: $NF"
+printf %s\\n "File size histogram:"
+printf %s "  <100 B  :"; tisk_kanalu $ls_100_B
+printf %s "  <1 KiB  :"; tisk_kanalu $ls_1_KiB
+printf %s "  <10 KiB :"; tisk_kanalu $ls_10_KiB
+printf %s "  <100 KiB:"; tisk_kanalu $ls_100_KiB
+printf %s "  <1 MiB  :"; tisk_kanalu $ls_1_MiB
+printf %s "  <10 MiB :"; tisk_kanalu $ls_10_MiB
+printf %s "  <100 MiB:"; tisk_kanalu $ls_100_MiB
+printf %s "  <1 GiB  :"; tisk_kanalu $ls_1_GiB
+printf %s "  >=1 GiB :"; tisk_kanalu $ge_1_GiB
+printf %s\\n "File type histogram:"
+
+[ -z "$all_list" ] && exit 0        # zadny soubor nenalezen
+
+max_sum=$(prvni_sloupec $all_list)
+
+IFS='
+'
+
+zbyva=$((sirka-48))
+delitel=0
+[ ! -z "$NORM" ] && [ $max_sum -gt $zbyva ] && delitel=$max_sum
+
+for radek in $all_list
+do
+	tisk_radku "$radek"
+done
+
+exit 0

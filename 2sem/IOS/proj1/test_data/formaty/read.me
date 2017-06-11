@@ -1,0 +1,27 @@
+Když se Jiří rozhodl, že se celý prosinec bude učit programovat, dal jsem mu tajnou misi. Misi, kterou dnes splnil a udělal mi tím velkou radost. Pokud chcete, můžete se nad ní taky zamyslet:
+‪#‎CODEcember‬
+----------- Hello Agent, here is your mission -----------
+You are given a secret message. The message is encrypted by shifting letters by a fixed offset. For example, the message "Hello" shifted by one letter would be "Ifmmp". The message "Zebra" shifted by one letter is "Afcsb" because the
+letters wrap around, so 'a' follows 'z'.
+A) Write a function that takes a secret message, and an offset, and outputs the
+encoded string. Letters a-z and A-Z should be shifted, but other characters
+should be left alone.
+String encode(String text, int offset) ...
+encode("Hello!", 1) => "Ifmmp!"
+encode("Ifmmp!", 25) => "Hello!"
+Note that this function can be used to decode messages as well.
+public String encode(String source, int offset){
+}
+
+B) Now imagine that you are a spy. Your contact has sent you a secret message.
+You don't know what the offset is, but you know that a certain word must
+appear in the decoded message.
+Write another function that decodes secret messages. It should take
+a secret message, or ciphertext, and a word known to occur in the decoded
+string. It should then return the decoding of the string that contains the
+known word. If there are more than one possible decodings, it can pick one
+arbitrarily.
+String decode(String ciphertext, String mustOccur) ...
+C) Run the function on the following secret message, with mustOccur = "page".
+What is the decoded text?
+"Zrgnculfvpf vf n erfgnhenag jurer gurl tvir lbh n guvegl gubhfnaq cntr zrah, naq ab sbbq. - Eboreg Z. Cvefvt"

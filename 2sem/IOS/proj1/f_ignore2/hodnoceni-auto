@@ -1,0 +1,22 @@
+0:f_ignore2: filtr -i (ERE)
+# ./dirgraph -i 'file(b|c)' dir <stdin >>stdout 2>>stderr; echo $? >>errcode
+# diff -u stdout.ref stdout
+#   --- stdout.ref
+#   +++ stdout
+#   @@ -1,8 +1,8 @@
+#    Root directory: dir
+#    Directories: 4
+#   -All files: 2
+#   +All files: 4
+#    File size histogram:
+#   -  <100 B  : ##
+#   +  <100 B  : ####
+#      <1 KiB  : 
+#      <10 KiB : 
+#      <100 KiB: 
+#   @@ -12,4 +12,4 @@
+#      <1 GiB  : 
+#      >=1 GiB : 
+#    File type histogram:
+#   -  ASCII text                                 : ##
+#   +  ASCII text                                 : ####

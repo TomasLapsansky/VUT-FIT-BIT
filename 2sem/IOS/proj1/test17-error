@@ -1,0 +1,12 @@
+./dirgraph: line 77: ./test_data/formaty: Is a directory
+./dirgraph: line 78: ./test_data/formaty: Is a directory
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")
+./dirgraph: line 328: ((: i< && i<32: syntax error: operand expected (error token is "&& i<32")

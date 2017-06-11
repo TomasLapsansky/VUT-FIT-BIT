@@ -1,0 +1,33 @@
+1	: C 1	: started
+2	: C 1	: waiting : 0 : 0
+3	: A 1	: started
+4	: A 1	: enter
+5	: C 1	: enter
+6	: C 4	: started
+7	: C 4	: enter
+8	: C 3	: started
+9	: C 3	: enter
+10	: A 1	: trying to leave
+11	: A 1	: waiting : 1 : 3
+12	: C 1	: trying to leave
+13	: C 1	: leave
+14	: C 5	: started
+15	: C 5	: enter
+16	: C 2	: started
+17	: C 2	: waiting : 1 : 3
+18	: C 4	: trying to leave
+19	: C 4	: leave
+20	: C 2	: enter
+21	: C 3	: trying to leave
+22	: C 3	: leave
+23	: C 5	: trying to leave
+24	: C 5	: leave
+25	: C 2	: trying to leave
+26	: C 2	: leave
+27	: A 1	: leave
+28	: A 1	: finished
+29	: C 1	: finished
+30	: C 3	: finished
+31	: C 2	: finished
+32	: C 4	: finished
+33	: C 5	: finished

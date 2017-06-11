@@ -1,0 +1,24 @@
+Root directory: ./test_data/formaty
+Directories: 1
+All files: 46
+File size histogram:
+  <100 B  : #
+  <1 KiB  : ########
+  <10 KiB : ###########
+  <100 KiB: #####################
+  <1 MiB  : #####
+  <10 MiB : 
+  <100 MiB: 
+  <1 GiB  : 
+  >=1 GiB : 
+File type histogram:
+  PNG image data, 640 x 480, 8-bit/color R...: ##########
+  ELF 64-bit LSB executable, x86-64, versi...: #########
+  PDF document, version 1.4                  : #######
+  UTF-8 Unicode text                         : ######
+  Zip archive data, at least v2.0 to extra...: #####
+  ASCII text                                 : ###
+  Spectrum .TZX data version 1.13            : ##
+  Spectrum .TZX data version 1.10            : #
+  Spectrum .TAP data "path_tap  " - BASIC ...: #
+  Spectrum .SCL Betadisk image               : #

@@ -1,0 +1,24 @@
+Root directory: ./test_data
+Directories: 27
+All files: 217
+File size histogram:
+  <100 B  : ########################################################################################################
+  <1 KiB  : ##################################
+  <10 KiB : #####################################
+  <100 KiB: ###################################
+  <1 MiB  : #######
+  <10 MiB : 
+  <100 MiB: 
+  <1 GiB  : 
+  >=1 GiB : 
+File type histogram:
+  empty                                      : #######################################################################################
+  ASCII text, with no line terminators       : ####################
+  data                                       : ##################
+  ASCII text, with CRLF line terminators     : #############
+  PNG image data, 640 x 480, 8-bit/color R...: ###########
+  ELF 64-bit LSB executable, x86-64, versi...: ##########
+  ASCII text                                 : #########
+  UTF-8 Unicode text                         : ########
+  PDF document, version 1.4                  : #######
+  Zip archive data, at least v2.0 to extra...: ######

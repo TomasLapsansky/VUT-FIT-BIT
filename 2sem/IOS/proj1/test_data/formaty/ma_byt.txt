@@ -1,0 +1,52 @@
+$ dirgraph /usr/local/bin
+Root directory: /usr/local/bin
+Directories: 1
+All files: 85
+File size histogram:
+  <100 B  : #######
+  <1 KiB  : ###############
+  <10 KiB : ########################################
+  <100 KiB: ###################
+  <1 MiB  : ###
+  <10 MiB : #
+  <100 MiB:
+  <1 GiB  :
+  >=1 Gib :
+File type histogram:
+  ELF 64-bit LSB executable, x86-64, versi...: ############################
+  a /usr/bin/php script executable (binary...: ###################
+  ELF 64-bit LSB shared object, x86-64, ve...: ##########
+  ELF 32-bit LSB shared object, Intel 8038...: ######
+  a php script, ASCII text executable        : #####
+  Bourne-Again shell script, ASCII text ex...: ####
+  C source, ASCII text                       : ####
+  ELF 32-bit LSB executable, Intel 80386, ...: ####
+  ASCII text                                 : ##
+  Bourne-Again shell script, UTF-8 Unicode...: ##
+  DOS batch file, ASCII text, with CRLF li...: #
+
+$ dirgraph -n /etc
+Root directory: /etc
+Directories: 389
+All files: 1766
+File size histogram:
+  <100 B  : #####################
+  <1 KiB  : ###################################################################
+  <10 KiB : ###############################################################
+  <100 KiB: ##################
+  <1 MiB  : ##
+  <10 MiB :
+  <100 MiB:
+  <1 GiB  :
+  >=1 GiB :
+File type histogram:
+  ASCII text                                 : ################################
+  C source, UTF-8 Unicode text               : ##
+  PGP public key block Public-Key (old)      : #
+  XML 1.0 document, UTF-8 Unicode text, wi...: #
+  UTF-8 Unicode text                         : #
+  XML 1.0 document, ASCII text               : #
+  Python script, ASCII text executable       : #
+  POSIX shell script, ASCII text executabl...: #
+  XML 1.0 document, UTF-8 Unicode text       : #
+  exported SGML document, ASCII text         : #

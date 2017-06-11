@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - tdd_test_coverage.info.cleaned - assignment/tdd_code.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">assignment</a> - tdd_code.cpp<span style="font-size: 80%;"> (source / <a href="tdd_code.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">tdd_test_coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry">83</td>
+            <td class="headerCovTableEntryMed">88.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-03-02 11:48:24</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //======== Copyright (c) 2017, FIT VUT Brno, All rights reserved. ============//</a>
+<span class="lineNum">       2 </span>            : //
+<span class="lineNum">       3 </span>            : // Purpose:     Test Driven Development - priority queue code
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : // $NoKeywords: $ivs_project_1 $tdd_code.cpp
+<span class="lineNum">       6 </span>            : // $Author:     TOMAS LAPSANSKY &lt;xlapsa00@stud.fit.vutbr.cz&gt;
+<span class="lineNum">       7 </span>            : // $Date:       $2017-01-04
+<span class="lineNum">       8 </span>            : //============================================================================//
+<span class="lineNum">       9 </span>            : /**
+<span class="lineNum">      10 </span>            :  * @file tdd_code.cpp
+<span class="lineNum">      11 </span>            :  * @author TOMAS LAPSANSKY
+<span class="lineNum">      12 </span>            :  * 
+<span class="lineNum">      13 </span>            :  * @brief Implementace metod tridy prioritni fronty.
+<span class="lineNum">      14 </span>            :  */
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : #include &lt;stdlib.h&gt;
+<span class="lineNum">      17 </span>            : #include &lt;stdio.h&gt;
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : #include &quot;tdd_code.h&quot;
+<span class="lineNum">      20 </span>            : 
+<span class="lineNum">      21 </span>            : //============================================================================//
+<span class="lineNum">      22 </span>            : // ** ZDE DOPLNTE IMPLEMENTACI **
+<span class="lineNum">      23 </span>            : //
+<span class="lineNum">      24 </span>            : // Zde doplnte implementaci verejneho rozhrani prioritni fronty (Priority Queue)
+<span class="lineNum">      25 </span>            : // 1. Verejne rozhrani fronty specifikovane v: tdd_code.h (sekce &quot;public:&quot;)
+<span class="lineNum">      26 </span>            : //    - Konstruktor (PriorityQueue()), Destruktor (~PriorityQueue())
+<span class="lineNum">      27 </span>            : //    - Metody Insert/Remove/Find a GetHead
+<span class="lineNum">      28 </span>            : //    - Pripadne vase metody definovane v tdd_code.h (sekce &quot;protected:&quot;)
+<span class="lineNum">      29 </span>            : //
+<span class="lineNum">      30 </span>            : // Cilem je dosahnout plne funkcni implementace prioritni fronty implementovane
+<span class="lineNum">      31 </span>            : // pomoci tzv. &quot;double-linked list&quot;, ktera bude splnovat dodane testy 
+<span class="lineNum">      32 </span>            : // (tdd_tests.cpp).
+<span class="lineNum">      33 </span>            : //============================================================================//
+<span class="lineNum">      34 </span>            : 
+<a name="35"><span class="lineNum">      35 </span>            : static PriorityQueue::Element_t *root = NULL;</a>
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span><span class="lineCov">          7 : PriorityQueue::PriorityQueue()</span>
+<span class="lineNum">      38 </span>            : {
+<span class="lineNum">      39 </span><span class="lineCov">          7 :                         root = NULL;</span>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">          7 : }</span></a>
+<span class="lineNum">      41 </span>            : 
+<span class="lineNum">      42 </span><span class="lineCov">          7 : PriorityQueue::~PriorityQueue()</span>
+<span class="lineNum">      43 </span>            : {
+<span class="lineNum">      44 </span><span class="lineCov">          7 :         PriorityQueue::Element_t *tmp = PriorityQueue::GetHead();</span>
+<span class="lineNum">      45 </span><span class="lineCov">          7 :         PriorityQueue::Element_t *next = NULL;</span>
+<span class="lineNum">      46 </span>            :         
+<span class="lineNum">      47 </span><span class="lineCov">         71 :         while(tmp != NULL)</span>
+<span class="lineNum">      48 </span>            :         {
+<span class="lineNum">      49 </span><span class="lineCov">         32 :                 next = tmp-&gt;pNext;</span>
+<span class="lineNum">      50 </span><span class="lineCov">         32 :                 tmp-&gt;pNext = NULL;</span>
+<span class="lineNum">      51 </span><span class="lineCov">         32 :                 tmp-&gt;pPrev = NULL;</span>
+<span class="lineNum">      52 </span><span class="lineCov">         32 :                 tmp-&gt;value = 0;</span>
+<span class="lineNum">      53 </span><span class="lineCov">         32 :                 free(tmp);</span>
+<span class="lineNum">      54 </span><span class="lineCov">         32 :                 tmp = next;</span>
+<span class="lineNum">      55 </span>            :         }
+<a name="56"><span class="lineNum">      56 </span><span class="lineCov">          7 : }</span></a>
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span><span class="lineCov">         60 : void PriorityQueue::Insert(int value)</span>
+<span class="lineNum">      59 </span>            : {
+<span class="lineNum">      60 </span>            :         /* Empty tree */
+<span class="lineNum">      61 </span>            :         PriorityQueue::Element_t *pointer;
+<span class="lineNum">      62 </span><span class="lineCov">         60 :         pointer = PriorityQueue::GetHead();</span>
+<span class="lineNum">      63 </span>            : 
+<span class="lineNum">      64 </span><span class="lineCov">         60 :         if(pointer == NULL)</span>
+<span class="lineNum">      65 </span>            :         {
+<span class="lineNum">      66 </span><span class="lineCov">          5 :                 root = (PriorityQueue::Element_t*)malloc(sizeof(PriorityQueue::Element_t));</span>
+<span class="lineNum">      67 </span><span class="lineCov">          5 :                 root-&gt;pPrev = NULL;</span>
+<span class="lineNum">      68 </span><span class="lineCov">          5 :                 root-&gt;pNext = NULL;</span>
+<span class="lineNum">      69 </span><span class="lineCov">          5 :                 root-&gt;value = value;</span>
+<span class="lineNum">      70 </span>            :         } else
+<span class="lineNum">      71 </span>            :         {
+<span class="lineNum">      72 </span>            :                 /* Non-empty tree */
+<span class="lineNum">      73 </span><span class="lineCov">         55 :                 pointer = PriorityQueue::Find(value);</span>
+<span class="lineNum">      74 </span><span class="lineCov">         55 :                 if(pointer == NULL)</span>
+<span class="lineNum">      75 </span>            :                 {
+<span class="lineNum">      76 </span><span class="lineCov">         55 :                         pointer = PriorityQueue::GetHead(); //hladanie prvku v zozname</span>
+<span class="lineNum">      77 </span><span class="lineCov">         55 :                         PriorityQueue::Element_t *entity = (PriorityQueue::Element_t*)malloc(sizeof(PriorityQueue::Element_t)); //alokacia pamate pre novy prvok</span>
+<span class="lineNum">      78 </span><span class="lineCov">         55 :                         entity-&gt;value = value; //pridelenie value</span>
+<span class="lineNum">      79 </span>            :                         
+<span class="lineNum">      80 </span><span class="lineCov">         55 :                         if(pointer-&gt;value &gt; value)//Zaradenie na zaciatok zoznamu</span>
+<span class="lineNum">      81 </span>            :                         {
+<span class="lineNum">      82 </span><span class="lineCov">          6 :                                 entity-&gt;pPrev = NULL;</span>
+<span class="lineNum">      83 </span><span class="lineCov">          6 :                                 entity-&gt;pNext = pointer;</span>
+<span class="lineNum">      84 </span><span class="lineCov">          6 :                                 pointer-&gt;pPrev = entity;</span>
+<span class="lineNum">      85 </span><span class="lineCov">          6 :                                 root = entity;</span>
+<span class="lineNum">      86 </span><span class="lineCov">          6 :                                 return;</span>
+<span class="lineNum">      87 </span>            :                         }
+<span class="lineNum">      88 </span>            :                         
+<span class="lineNum">      89 </span><span class="lineCov">         49 :                         if((pointer-&gt;pNext == NULL) &amp;&amp; (pointer-&gt;value &lt; value))//Zaradenie na zaciatok zoznamu</span>
+<span class="lineNum">      90 </span>            :                         {
+<span class="lineNum">      91 </span><span class="lineCov">          4 :                                 entity-&gt;pPrev = pointer;</span>
+<span class="lineNum">      92 </span><span class="lineCov">          4 :                                 entity-&gt;pNext = NULL;</span>
+<span class="lineNum">      93 </span><span class="lineCov">          4 :                                 pointer-&gt;pNext = entity;</span>
+<span class="lineNum">      94 </span><span class="lineCov">          4 :                                 return;</span>
+<span class="lineNum">      95 </span>            :                         }
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span><span class="lineCov">        375 :                         while((pointer-&gt;pNext-&gt;value &lt; value))</span>
+<span class="lineNum">      98 </span>            :                         {
+<span class="lineNum">      99 </span><span class="lineCov">        170 :                                 pointer = pointer-&gt;pNext;</span>
+<span class="lineNum">     100 </span><span class="lineCov">        170 :                                 if(pointer-&gt;pNext == NULL)</span>
+<span class="lineNum">     101 </span>            :                                 {
+<span class="lineNum">     102 </span><span class="lineCov">          5 :                                         entity-&gt;pPrev = pointer;</span>
+<span class="lineNum">     103 </span><span class="lineCov">          5 :                                         entity-&gt;pNext = NULL;</span>
+<span class="lineNum">     104 </span><span class="lineCov">          5 :                                         pointer-&gt;pNext = entity;</span>
+<span class="lineNum">     105 </span><span class="lineCov">          5 :                                         return;</span>
+<span class="lineNum">     106 </span>            :                                 }
+<span class="lineNum">     107 </span>            :                         }
+<span class="lineNum">     108 </span>            :                         
+<span class="lineNum">     109 </span><span class="lineCov">         40 :                         entity-&gt;pPrev = pointer;</span>
+<span class="lineNum">     110 </span><span class="lineCov">         40 :                         entity-&gt;pNext = pointer-&gt;pNext;</span>
+<span class="lineNum">     111 </span><span class="lineCov">         40 :                         pointer-&gt;pNext = entity;</span>
+<span class="lineNum">     112 </span><span class="lineCov">         40 :                         entity-&gt;pNext-&gt;pPrev = entity;</span>
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            :                 } else
+<span class="lineNum">     115 </span>            :                 {
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :                         PriorityQueue::Element_t *entity = (PriorityQueue::Element_t*)malloc(sizeof(PriorityQueue::Element_t)); //alokacia pamate pre novy prvok</span>
+<span class="lineNum">     117 </span><span class="lineNoCov">          0 :                         entity-&gt;value = value; //definicia noveho prvku</span>
+<span class="lineNum">     118 </span><span class="lineNoCov">          0 :                         entity-&gt;pNext = pointer;</span>
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 :                         entity-&gt;pPrev = pointer-&gt;pPrev;</span>
+<span class="lineNum">     120 </span><span class="lineNoCov">          0 :                         pointer-&gt;pPrev = pointer;</span>
+<span class="lineNum">     121 </span><span class="lineNoCov">          0 :                         if(pointer-&gt;pPrev == NULL) //prestavenie root v pripade ze prvok je prvy</span>
+<span class="lineNum">     122 </span><span class="lineNoCov">          0 :                                 root = entity;</span>
+<span class="lineNum">     123 </span>            :                         else
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 :                                 entity-&gt;pPrev-&gt;pNext = entity;                    </span>
+<span class="lineNum">     125 </span>            :                 }
+<span class="lineNum">     126 </span>            :         }       
+<a name="127"><span class="lineNum">     127 </span>            : }</a>
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span><span class="lineCov">         31 : bool PriorityQueue::Remove(int value)</span>
+<span class="lineNum">     130 </span>            : {
+<span class="lineNum">     131 </span><span class="lineCov">         31 :         PriorityQueue::Element_t *pointer = PriorityQueue::Find(value);</span>
+<span class="lineNum">     132 </span>            :         
+<span class="lineNum">     133 </span><span class="lineCov">         31 :         if(pointer == NULL)</span>
+<span class="lineNum">     134 </span><span class="lineCov">          3 :                 return false;</span>
+<span class="lineNum">     135 </span>            :         
+<span class="lineNum">     136 </span><span class="lineCov">         28 :         if((pointer-&gt;pPrev == NULL) &amp;&amp; (pointer-&gt;pNext == NULL)) //delete jedineho prvku, root = NULL</span>
+<span class="lineNum">     137 </span>            :         {
+<span class="lineNum">     138 </span><span class="lineCov">          2 :                 root = NULL;</span>
+<span class="lineNum">     139 </span><span class="lineCov">         26 :         } else if(pointer-&gt;pPrev == NULL) //pPrev == NULL, prehodenie root</span>
+<span class="lineNum">     140 </span>            :         {
+<span class="lineNum">     141 </span><span class="lineCov">         13 :                 pointer-&gt;pNext-&gt;pPrev = NULL;</span>
+<span class="lineNum">     142 </span><span class="lineCov">         13 :                 root = pointer-&gt;pNext;</span>
+<span class="lineNum">     143 </span><span class="lineCov">         13 :         } else if(pointer-&gt;pNext == NULL) //Koniec zoznamu, pripisanie iba pNext</span>
+<span class="lineNum">     144 </span>            :         {
+<span class="lineNum">     145 </span><span class="lineCov">         13 :                 pointer-&gt;pPrev-&gt;pNext = NULL;</span>
+<span class="lineNum">     146 </span>            :         } else //default
+<span class="lineNum">     147 </span>            :         {
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :                 pointer-&gt;pNext-&gt;pPrev = pointer-&gt;pPrev;</span>
+<span class="lineNum">     149 </span><span class="lineNoCov">          0 :                 pointer-&gt;pPrev-&gt;pNext = pointer-&gt;pNext;</span>
+<span class="lineNum">     150 </span>            :         }
+<span class="lineNum">     151 </span>            : 
+<span class="lineNum">     152 </span><span class="lineCov">         28 :         pointer-&gt;pPrev = NULL; //Vynulovanie + free</span>
+<span class="lineNum">     153 </span><span class="lineCov">         28 :         pointer-&gt;pNext = NULL;</span>
+<span class="lineNum">     154 </span><span class="lineCov">         28 :         free(pointer);</span>
+<span class="lineNum">     155 </span>            : 
+<span class="lineNum">     156 </span><span class="lineCov">         28 :         pointer = NULL;</span>
+<span class="lineNum">     157 </span>            :         
+<span class="lineNum">     158 </span><span class="lineCov">         28 :         return true;</span>
+<a name="159"><span class="lineNum">     159 </span>            : }</a>
+<span class="lineNum">     160 </span>            : 
+<span class="lineNum">     161 </span><span class="lineCov">        102 : PriorityQueue::Element_t *PriorityQueue::Find(int value)</span>
+<span class="lineNum">     162 </span>            : {
+<span class="lineNum">     163 </span><span class="lineCov">        102 :         PriorityQueue::Element_t *pointer = PriorityQueue::GetHead();</span>
+<span class="lineNum">     164 </span>            : 
+<span class="lineNum">     165 </span><span class="lineCov">       1338 :         while(pointer != NULL)</span>
+<span class="lineNum">     166 </span>            :         {
+<span class="lineNum">     167 </span><span class="lineCov">        660 :                 if(pointer-&gt;value == value) {</span>
+<span class="lineNum">     168 </span><span class="lineCov">         42 :                         return pointer;</span>
+<span class="lineNum">     169 </span>            :                 }
+<span class="lineNum">     170 </span><span class="lineCov">        618 :                 pointer = pointer-&gt;pNext;</span>
+<span class="lineNum">     171 </span>            :         }
+<span class="lineNum">     172 </span>            :         
+<span class="lineNum">     173 </span><span class="lineCov">         60 :     return NULL;</span>
+<a name="174"><span class="lineNum">     174 </span>            : }</a>
+<span class="lineNum">     175 </span>            : 
+<span class="lineNum">     176 </span><span class="lineCov">        259 : PriorityQueue::Element_t *PriorityQueue::GetHead()</span>
+<span class="lineNum">     177 </span>            : {
+<span class="lineNum">     178 </span><span class="lineCov">        259 :     return root;</span>
+<span class="lineNum">     179 </span>            : }
+<span class="lineNum">     180 </span>            : 
+<span class="lineNum">     181 </span>            : /*** Konec souboru tdd_code.cpp ***/
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

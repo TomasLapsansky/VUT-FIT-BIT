@@ -1,0 +1,57 @@
+\hypertarget{proj3_8h}{}\section{proj3.\+h File Reference}
+\label{proj3_8h}\index{proj3.\+h@{proj3.\+h}}
+
+
+Dokumentace zdrojovy kodu I\+ZP.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structobj__t}{obj\+\_\+t}
+\item 
+struct \hyperlink{structcluster__t}{cluster\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___praca_ga96db0862471d90abb3d80103ef3695f7}{init\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, int cap)
+\begin{DoxyCompactList}\small\item\em Alokacia kapacity zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga8289f092f205baeb13cf33cfffa15324}{clear\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Dealokovanie jednotlivych prvkov zhluku. \end{DoxyCompactList}\item 
+struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$ \hyperlink{group___praca_ga0d8702f8bee3bccb81380e012a615a3d}{resize\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, int new\+\_\+cap)
+\begin{DoxyCompactList}\small\item\em Zmena alokovanej pamate zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_gab6269b64b2c7f4842a51c58b2d86a2e5}{append\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, struct \hyperlink{structobj__t}{obj\+\_\+t} obj)
+\item 
+void \hyperlink{group___praca_gac39a25fdec1f4952ec92ee5407893158}{merge\+\_\+clusters} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c1, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Spoji zhluk c1 so zhlukom c2, c2 ostane zachovany. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga12718af9e3e31b61bf703ec260e22450}{sort\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Zoradi objekty zhluku. \end{DoxyCompactList}\item 
+int \hyperlink{group___praca_gaf73744f9128e4605127b40932a730a48}{remove\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr, int idx)
+\begin{DoxyCompactList}\small\item\em Odstrani zhluk na indexe idx z pola, posunie indexy ostatnych prvkov. \end{DoxyCompactList}\item 
+float \hyperlink{group___praca_ga703ce6afddf65026b68645bc5394405b}{obj\+\_\+distance} (struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$o1, struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$o2)
+\begin{DoxyCompactList}\small\item\em Vypocita vzdialenost dvoch objektov na zaklade ich suradnic. \end{DoxyCompactList}\item 
+float \hyperlink{group___praca_gaf336f28a62c28da792f6def84f432bb2}{cluster\+\_\+distance} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c1, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Vypocita vzdialenost dvoch zhlukov na zaklade ich najvziadelenejsich objektov. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga5f16d682e7c859f7bd3f27697c2b7cc0}{find\+\_\+neighbours} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr, int $\ast$c1, int $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Hlada v poli zhlukov zhluky s najmansou vzdialenostou. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga322bfd43ab7a3fa830cd69e79b7eef06}{print\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Vypise objekty zhluku. \end{DoxyCompactList}\item 
+int \hyperlink{group___praca_ga9d928923d43120cb53ddff210a087061}{load\+\_\+clusters} (char $\ast$filename, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$$\ast$arr)
+\begin{DoxyCompactList}\small\item\em Nacita kazdy objekt zapisany v subore filename do samostatneho zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_gad350e6021e5fead00ff2eeec4d134525}{print\+\_\+clusters} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr)
+\begin{DoxyCompactList}\small\item\em vypise vsetky zhluky s ich objektami \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{proj3_8h_afb09f2bf4615f5ac7a91807aa086d4c3}{}\label{proj3_8h_afb09f2bf4615f5ac7a91807aa086d4c3} 
+const int {\bfseries C\+L\+U\+S\+T\+E\+R\+\_\+\+C\+H\+U\+NK}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Dokumentace zdrojovy kodu I\+ZP. 
+
+\begin{DoxyAuthor}{Author}
+Tomas Lapsansky (xlapsa00) 
+\end{DoxyAuthor}

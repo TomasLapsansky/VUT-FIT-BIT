@@ -1,0 +1,217 @@
+IOS - Souborový systém
+======================
+
+Externí fragmentace
+-------------------
+	Související sektory následující za sebou, mohou být promíchávány „cizími“ či prázdnými sektory
+	Minimalizace:
+		1. Rozložení souborů po disku
+		2. Přealokace
+		3. Odložená alokace
+
+Interní fragmentace
+-------------------
+	Při alokaci místo na disku OS, které není využité (zaplněno z části u posledního bloku)
+
+Žurnálování
+-----------
+	Žurnál slouží pro záznam modifikovaných metadat před jejich zápisem na disk
+	Cyklicky přepisovaný buffer
+	Operace poryté žurnálováním jsou atomické
+		1. Vytváří transakce: buď uspějí všechny jejich dílčí kroky, nebo žádný
+	Spolehlivější a rychlejší návrat do konzistentního stavu po chybách
+	Implementace
+		1. REDO
+			Při selhání se dokončí všechny transakce, které jsou v žurnálu zapsány celé
+		2. UNDO
+			Při chybě se eliminují nedokončené transakce
+
+Alternativy
+-----------
+	Copy-on-write
+		1. Nejprve zapisuje nová data, či metadata na disk, poté je zpřístupní
+		2. Jde o vyhledávací strom popisující rozložení dat a metadat na disku
+		3. Průběh
+			Začne měněným uzlem, vytvoří jeho kopii a upraví ji
+			Poté vytvoří kopii uzlu nadřazeného změněnému uzlu a upraví ji tak, aby odkazovala příslušným odkazem na uzel vytvořený v předchozím kroku atd. až po kořenový uzel
+		4. Na nejvyšší úrovni se udržuje několik verzí kořenového záznamu se zabezpečovacím kódem a časovými razítky
+	Soft updates
+		1. Sleduje závislosti mezi změněnými metadaty a daty
+		2. Zaručuje zápis na disk v takovém pořadí, aby byl disk stále konzistentní
+	Log-structured file systems
+
+UNIX
+----
+	Teoretická maximální velikost souboru
+	10 * D + N * D + N^2 * D + N^3 * D
+
+Soubor
+------
+	Posloupnost dat na disku
+
+i-uzel
+------
+	Základní datová struktura popisující soubor v UNIXU
+	Obsahuje metadata
+		1. Stav (alokovaný | volný)
+		2. Typ souboru (obyčejný, adresář, zařízení, …)
+		3. Délka souboru v bajtech
+		4. mtime 	= modifikace souboru
+		5. ctype	= čas poslední modifikace i-uzlu
+		6. atime	= čas posledního přístupu
+		7. UID
+		8. GID
+		9. Přístupová přáva
+		10. Počet pevných odkazů (jmen)
+		11. Tabulka odkazu na datové bloky (10 + 1 + 1 + 1)
+		12. Další informace (ACL, extend attributes, dtime, …)
+
+Organizace souborů
+------------------
+	i-uzly + datové bloky
+	Kontinuální uložení
+		1. problémy se zvětšováním nebo osazením prostoru hned za koncem souboru
+	Zřetězené seznamy bloků
+		1. Každý blok obsahuje kromě dat odkaz na další blok (nebo příznak konce souboru)
+		2. Při přístupu k náhodným blokům, či konci souboru je nutno projít celý soubor
+		3. Chyba kdekoliv na disku může způsobit rozpojení seznamu
+		4. Opět problémy s náhodným přístupem
+	B+ stromy
+		1. Speciální typ stromu
+		2. Všechny uzly se skládají ze zřetězených sekvencí
+		3. Poslední odkaz v listech je užit k odkazu na následující listový uzel pro urychlení lineárního průchodu indexovanými daty
+	Extent => použít u všech B+ stromů
+		1. Posloupnost proměnného počtu bloků uložených na disku fyzicky za sebou
+		2. Zrychluje se práce s velkými soubory => menší objem metadat
+		3. Malé soubory => zbytečná režije: 
+			Přímé uložení v i-uzlu, nebo přímé odkazy na extendy z i-uzlu
+	Ext4
+		1. V principu B+ strom degradovaný na 2 úrovně bez zřetězení listů
+	NTFS 
+		1. MFT (master file table) => alespoň jeden řádek pro každý soubor
+		2. Obsah souboru buď přímo v MFT, nebo rozdělen na extenty, či z pomocných MFT záznamů odkazovaných z primárního MFT záznamu ve stylu B+ stromu
+
+Organizace volného prostoru
+---------------------------
+	Ve většině systémů: bitová mapa s jedním bitem pro každý blok
+	1. Umožňuje zrychlit vyhledávání volné souvislé oblasti => bitové maskování
+	Seznam
+	Označení volných položek v tabulce bloků (FAT)
+	B+ strom (adresace velikostí a|nebo offsetem)
+	Po extentech
+
+Adresář
+-------
+	Soubor obsahující seznam dvojic – hard links (jméno souboru + číslo i-uzlu)
+
+Symlink
+-------
+	Soubor, který odkazuje na soubor, neobsahuje údaje o souboru, pouze cestu a jméno k němu
+	Jádro při otevření automaticky provede otevření cílového souboru
+	Po zrušení cílového souboru otevřením symlinku vede ch chybě
+	Symlink může odkazovat i na jiný logický disk => oproti hard linku
+	(+) rychlé: 	v i-uzlu
+	(-) pomalé: v souboru => příliš dlouhá cesta definující symlink
+
+Speciální soubory
+-----------------
+	Implementují souborové rozhraní k fyzickým, či virtuálním zařízením
+	Použití je pro práci se soubory (čtení + zápis)
+
+Sticky bit
+----------
+	Příznak, který nedovoluje rušit cizí soubory v adresáři, i když mají všichni právo zápisu
+
+SUID
+----
+	Vlastník programu může propůjčit svoje právo komukoli, kdo spustí program s nastavením SUID
+
+Čtení
+-----
+	1. Předělení VP a načtení bloku
+	2. Kopie požadovaných dat do adresového prostoru procesu
+	Dále už jen (2)
+	Při překročení VP (1) a (2)
+
+Zápis
+-----
+	1. Přidělení VP a načtení bloku do VP
+	2. Zápis dat do VP, nastavení příznaku modifikace => Dirty bit
+	3. Zpožděný zápis na disk => nuluje dirty bit (lze vynutit okamžitý zápis)
+
+Otevření souboru pro čtení
+--------------------------
+	1. Vyhodnotí cestu a nalezne číslo i-uzlu hledaného souboru
+	a. (postupně načítá i-uzly adresářů a obsah těchto adresářů)
+	2. V systémové tabulce aktivních i-uzlů vyhradí novou položku a načte do ní i-uzel
+	a. Vzniká kopie i-uzlu => v-uzel
+	3. V systémové tabulce otevřených souborů vyhradí novou položku a naplní ji:
+	a. Odkazem na položku v tabulce v-uzlů
+	b. Režimem otevření
+	c. Pozici v souboru (0)
+	d. Čítačem počtu referencí na tuto položku (1)
+	4. V poli deskriptorů souboru uživatelské oblasti procesu vyhradí novou položku a naplní ji odkazem v tabulce otevřených souborů
+	5. Vrátí index položky v poli deskriptorů
+
+Otevření již otevřeného souboru
+-------------------------------
+	1. Vyhodnotí cestu a nalezne číslo i-uzlu hledaného souboru
+	a. (postupně načítá i-uzly adresářů a obsah těchto adresářů)
+	2. V systémové tabulce v-uzlů nalezne již načtený i-uzel a inkrementuje počítadlo odkazů na v-uzel
+	3. - 5.  To stejné jako při otevření souboru při čtení
+
+	Čtení ze souboru
+----------------
+	1. Kontrola platnosti FD
+	2. V případě prvního přístupu k souboru => alokace VP a na čtení bloků souboru z disku do VP. Jinak dochází k alokaci VP jen, je-li to nutné
+	3. Kopie požadovaných dat z VP do adresového prostoru procesu
+	4. Funkce vrací počet opravdu přečtených bajtů, nebo (-1) při chybě
+
+Uzavření souboru => close
+-------------------------
+	1. Kontrola platnosti FD
+	2. Uvolní se položka v tabulce file descriptorů a decrementuje se počítadlo odkazů v odpovídající položce otevřených souborů
+	3. Pokud je počítadlo odkazů nulové, uvolní se odpovídající položka v tabulce otevřených souborů a decrementuje se počítadlo odkazů v tabulce v-uzlů
+	4. Pokud je počítadlo nulové, i-uzel se z v-uzlu okopíruje do VP a uvolní se
+	5. Funkce vrací (-1) při chybě
+
+Duplikace descriptoru souboru
+-----------------------------
+	1. Kontrola platnosti FD
+	2. Kopíruje se daná položka v tabulce descriptorů do první volné položky, nebo do zadané položky
+	3. Incrementuje se počítadlo odkazů v odpovídající položce tabulky otevřených souborů
+	4. Pokud nastane chyba, vrací (-1) jinak vrací index nové položky
+
+Rušení souboru => unlink
+------------------------
+	1. Kontrola platnosti jména souboru
+	2. Odstranění hard linku mezi jménem a i-uzlem (nutné právo zápisu do adresáře)
+	3. Decrementuje počítadlo jmen v i-uzlu
+	4. Pokud počet jmen je roven 0 a i-uzel nikdo nepoužívá, je i-uzel uvolněn včetně všech používaných bloků souboru. | Jeli používán, bude uvolnění odloženo do okamžiku zavření souboru (počítadlo otevření souboru = 0)
+	5. Při chybě vrací (-1)
+
+Řídký soubor
+------------
+	Vznikne nastavením pozice za konec souboru a zápisem
+	Bloky do kterých se nezapisovalo, nejsou alokovány a nezabírají diskový prostor
+	Při čtení se považují za vynulované
+
+Ovladač
+-------
+	Sada podprogramů pro řízení určitého typu zařízení
+
+Terminály
+---------
+	Zařízení řídící textový vstup/výstup systému
+
+Roury
+-----
+	POJMENOVANÉ + NEPOJMENOVANÉ
+	Jeden z mechanizmů meziprocesové komunikace
+	Implementace: kruhový buffer s omezenou kapacitou
+	Procesy komunikují přes roury a jsou synchronizovány
+
+Spool
+-----
+	Vyrovnávací paměť (typický soubor) pro zařízení (nejčastěji tiskárny), které umožňují prokládané zpracování na různých procesech
+	

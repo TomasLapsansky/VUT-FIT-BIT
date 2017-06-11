@@ -1,0 +1,16 @@
+Root directory: ./test_data/nas_mnogo
+Directories: 1
+All files: 76
+File size histogram:
+  <100 B  : ########################################################################
+  <1 KiB  : ####
+  <10 KiB : 
+  <100 KiB: 
+  <1 MiB  : 
+  <10 MiB : 
+  <100 MiB: 
+  <1 GiB  : 
+  >=1 GiB : 
+File type histogram:
+  empty                                      : ###############################################################
+  ASCII text, with no line terminators       : #############

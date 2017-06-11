@@ -1,0 +1,67 @@
+1	: C 1	: started
+2	: C 1	: waiting : 0 : 0
+3	: A 1	: started
+4	: A 1	: enter
+5	: C 1	: enter
+6	: A 1	: trying to leave
+7	: A 1	: waiting : 1 : 1
+8	: C 1	: trying to leave
+9	: C 1	: leave
+10	: A 1	: leave
+11	: C 2	: started
+12	: C 2	: enter
+13	: C 2	: trying to leave
+14	: C 2	: leave
+15	: C 3	: started
+16	: C 3	: enter
+17	: C 3	: trying to leave
+18	: C 3	: leave
+19	: C 4	: started
+20	: C 4	: enter
+21	: C 4	: trying to leave
+22	: C 4	: leave
+23	: C 5	: started
+24	: C 5	: enter
+25	: C 5	: trying to leave
+26	: C 5	: leave
+27	: C 6	: started
+28	: C 6	: enter
+29	: C 6	: trying to leave
+30	: C 6	: leave
+31	: C 7	: started
+32	: C 7	: enter
+33	: C 7	: trying to leave
+34	: C 7	: leave
+35	: C 8	: started
+36	: C 8	: enter
+37	: C 8	: trying to leave
+38	: C 8	: leave
+39	: C 9	: started
+40	: C 9	: enter
+41	: C 9	: trying to leave
+42	: C 9	: leave
+43	: C 10	: started
+44	: C 10	: enter
+45	: C 10	: trying to leave
+46	: C 10	: leave
+47	: C 11	: started
+48	: C 11	: enter
+49	: C 11	: trying to leave
+50	: C 11	: leave
+51	: C 12	: started
+52	: C 12	: enter
+53	: C 12	: trying to leave
+54	: C 12	: leave
+55	: C 2	: finished
+56	: C 4	: finished
+57	: C 6	: finished
+58	: C 8	: finished
+59	: C 9	: finished
+60	: C 11	: finished
+61	: C 12	: finished
+62	: C 7	: finished
+63	: C 5	: finished
+64	: C 3	: finished
+65	: A 1	: finished
+66	: C 1	: finished
+67	: C 10	: finished

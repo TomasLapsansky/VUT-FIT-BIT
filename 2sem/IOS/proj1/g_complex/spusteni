@@ -1,0 +1,1 @@
+./dirgraph -i '\.git' dir <stdin >>stdout 2>>stderr; echo $? >>errcode

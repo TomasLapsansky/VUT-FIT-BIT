@@ -1,0 +1,35 @@
+# CMake generated Testfile for 
+# Source directory: /home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment
+# Build directory: /home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(EmptyTree.Insert "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=EmptyTree.Insert")
+add_test(EmptyTree.Find "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=EmptyTree.Find")
+add_test(EmptyTree.Delete "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=EmptyTree.Delete")
+add_test(NonEmptyTree.Insert "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.Insert")
+add_test(NonEmptyTree.Find "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.Find")
+add_test(NonEmptyTree.Delete "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.Delete")
+add_test(NonEmptyTree.AXIOM1 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.AXIOM1")
+add_test(NonEmptyTree.AXIOM2 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.AXIOM2")
+add_test(NonEmptyTree.AXIOM3 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/black_box_test" "--gtest_filter=NonEmptyTree.AXIOM3")
+add_test(Construktor.ZeroConstruktor "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Construktor.ZeroConstruktor")
+add_test(Construktor.BadConstruktor "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Construktor.BadConstruktor")
+add_test(Construktor.Construktor_r_c "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Construktor.Construktor_r_c")
+add_test(Empty_Operations.Set_and_Get "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Empty_Operations.Set_and_Get")
+add_test(Operations.Set_Vector_1 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Set_Vector_1")
+add_test(Operations.Set_Vector_2 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Set_Vector_2")
+add_test(Operations.Set_Vector_3 "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Set_Vector_3")
+add_test(Operations.Equal "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Equal")
+add_test(Operations.Plus "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Plus")
+add_test(Operations.Multiple_Matrix "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Multiple_Matrix")
+add_test(Operations.Multiple_Constant "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Operations.Multiple_Constant")
+add_test(Solving.Solve_Equation "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/white_box_test" "--gtest_filter=Solving.Solve_Equation")
+add_test(NonEmptyQueue.Insert "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=NonEmptyQueue.Insert")
+add_test(NonEmptyQueue.RemoveAllForward "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=NonEmptyQueue.RemoveAllForward")
+add_test(NonEmptyQueue.RemoveAllBackward "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=NonEmptyQueue.RemoveAllBackward")
+add_test(NonEmptyQueue.Find "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=NonEmptyQueue.Find")
+add_test(EmptyQueue.Insert "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=EmptyQueue.Insert")
+add_test(EmptyQueue.Remove "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=EmptyQueue.Remove")
+add_test(EmptyQueue.Find "/home/tomas/Desktop/FIT/2sem/IVS/ivs_project_1/assignment/build/tdd_test" "--gtest_filter=EmptyQueue.Find")
+subdirs(googletest-build)

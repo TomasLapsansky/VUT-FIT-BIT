@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Root directory: ./test_data/formaty
+Directories: ./test_data/formaty
+./test_data/formaty/Z80_Compo_6
+./test_data/formaty/Z80_Compo_6/Adrian_Brown_-_Tetris
+./test_data/formaty/Z80_Compo_6/Arcadiy_Gobuzov_-_Cosmic_Race
+./test_data/formaty/Z80_Compo_6/Dworkin_Amberu_-_Gomoku
+./test_data/formaty/Z80_Compo_6/Jim_Bagley_-_Cars
+./test_data/formaty/Z80_Compo_6/Johan_Koelman_-_Asteroid
+./test_data/formaty/Z80_Compo_6/Johan_Koelman_-_Snake
+./test_data/formaty/Z80_Compo_6/John_McManus_-_Flappy_Bird
+./test_data/formaty/Z80_Compo_6/Lucio_Quintal_-_Lander_V2
+./test_data/formaty/Z80_Compo_6/Mark_Kirkby_-_Scramble
+./test_data/formaty/Z80_Compo_6/Mike_Daley_-_TrapIt
+./test_data/formaty/Z80_Compo_6/Peter_Softhouse_Turanyi_-_Space_Invaders
+./test_data/formaty/Z80_Compo_6/Peter_Softhouse_Tur nyi_-_Snake
+./test_data/formaty/Z80_Compo_6/Steve_Wetherill_-_Infinite_Runner
+All files: 100
+File size histogram:
+  <100 B  : ######
+  <1 KiB  : #######################
+  <10 KiB : ##################################
+  <100 KiB: ##############################
+  <1 MiB  : #######
+  <10 MiB : 
+  <100 MiB: 
+  <1 GiB  : 
+  >=1 GiB : 
+File type histogram:
+  data                                       : 
+  ASCII text, with CRLF line terminators     : 
+  PNG image data, 640 x 480, 8-bit/color R...: 
+  ASCII text                                 : 
+  UTF-8 Unicode text                         : 
+  PDF document, version 1.4                  : 
+  Zip archive data, at least v2.0 to extra...: 
+  Spectrum .TAP data "loader    " - BASIC ...: 
+  Spectrum .TZX data version 1.13            : 
+  ELF 64-bit LSB executable, x86-64, versi...: 

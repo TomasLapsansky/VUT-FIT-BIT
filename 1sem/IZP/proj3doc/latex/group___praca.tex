@@ -1,0 +1,336 @@
+\hypertarget{group___praca}{}\section{so zhlukmi}
+\label{group___praca}\index{so zhlukmi@{so zhlukmi}}
+
+
+Praca s jednotlivymi zhlukmi.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___praca_ga96db0862471d90abb3d80103ef3695f7}{init\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, int cap)
+\begin{DoxyCompactList}\small\item\em Alokacia kapacity zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga8289f092f205baeb13cf33cfffa15324}{clear\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Dealokovanie jednotlivych prvkov zhluku. \end{DoxyCompactList}\item 
+struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$ \hyperlink{group___praca_ga0d8702f8bee3bccb81380e012a615a3d}{resize\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, int new\+\_\+cap)
+\begin{DoxyCompactList}\small\item\em Zmena alokovanej pamate zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_gab6269b64b2c7f4842a51c58b2d86a2e5}{append\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c, struct \hyperlink{structobj__t}{obj\+\_\+t} obj)
+\item 
+void \hyperlink{group___praca_gac39a25fdec1f4952ec92ee5407893158}{merge\+\_\+clusters} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c1, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Spoji zhluk c1 so zhlukom c2, c2 ostane zachovany. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga12718af9e3e31b61bf703ec260e22450}{sort\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Zoradi objekty zhluku. \end{DoxyCompactList}\item 
+int \hyperlink{group___praca_gaf73744f9128e4605127b40932a730a48}{remove\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr, int idx)
+\begin{DoxyCompactList}\small\item\em Odstrani zhluk na indexe idx z pola, posunie indexy ostatnych prvkov. \end{DoxyCompactList}\item 
+float \hyperlink{group___praca_ga703ce6afddf65026b68645bc5394405b}{obj\+\_\+distance} (struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$o1, struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$o2)
+\begin{DoxyCompactList}\small\item\em Vypocita vzdialenost dvoch objektov na zaklade ich suradnic. \end{DoxyCompactList}\item 
+float \hyperlink{group___praca_gaf336f28a62c28da792f6def84f432bb2}{cluster\+\_\+distance} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c1, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Vypocita vzdialenost dvoch zhlukov na zaklade ich najvziadelenejsich objektov. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga5f16d682e7c859f7bd3f27697c2b7cc0}{find\+\_\+neighbours} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr, int $\ast$c1, int $\ast$c2)
+\begin{DoxyCompactList}\small\item\em Hlada v poli zhlukov zhluky s najmansou vzdialenostou. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_ga322bfd43ab7a3fa830cd69e79b7eef06}{print\+\_\+cluster} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Vypise objekty zhluku. \end{DoxyCompactList}\item 
+int \hyperlink{group___praca_ga9d928923d43120cb53ddff210a087061}{load\+\_\+clusters} (char $\ast$filename, struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$$\ast$arr)
+\begin{DoxyCompactList}\small\item\em Nacita kazdy objekt zapisany v subore filename do samostatneho zhluku. \end{DoxyCompactList}\item 
+void \hyperlink{group___praca_gad350e6021e5fead00ff2eeec4d134525}{print\+\_\+clusters} (struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$carr, int narr)
+\begin{DoxyCompactList}\small\item\em vypise vsetky zhluky s ich objektami \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Praca s jednotlivymi zhlukmi. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group___praca_gab6269b64b2c7f4842a51c58b2d86a2e5}{}\label{group___praca_gab6269b64b2c7f4842a51c58b2d86a2e5} 
+\index{so zhlukmi@{so zhlukmi}!append\+\_\+cluster@{append\+\_\+cluster}}
+\index{append\+\_\+cluster@{append\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{append\+\_\+cluster()}{append\_cluster()}}
+{\footnotesize\ttfamily void append\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c,  }\item[{struct \hyperlink{structobj__t}{obj\+\_\+t}}]{obj }\end{DoxyParamCaption})}
+
+Prida objekt obj na koniec zhluku c 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+{\em obj} & -\/ objekt \hyperlink{structobj__t}{obj\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+obj bol pridany do zhluku, v pripade potreby bola jeho alokovana pamat navysena 
+\end{DoxyPostcond}
+\hypertarget{group___praca_ga8289f092f205baeb13cf33cfffa15324}{}\label{group___praca_ga8289f092f205baeb13cf33cfffa15324} 
+\index{so zhlukmi@{so zhlukmi}!clear\+\_\+cluster@{clear\+\_\+cluster}}
+\index{clear\+\_\+cluster@{clear\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{clear\+\_\+cluster()}{clear\_cluster()}}
+{\footnotesize\ttfamily void clear\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Dealokovanie jednotlivych prvkov zhluku. 
+
+Dealokovanie prvkov zhluku 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Dealokovana kapacita, capacity = 0, size = 0 
+\end{DoxyPostcond}
+\hypertarget{group___praca_gaf336f28a62c28da792f6def84f432bb2}{}\label{group___praca_gaf336f28a62c28da792f6def84f432bb2} 
+\index{so zhlukmi@{so zhlukmi}!cluster\+\_\+distance@{cluster\+\_\+distance}}
+\index{cluster\+\_\+distance@{cluster\+\_\+distance}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{cluster\+\_\+distance()}{cluster\_distance()}}
+{\footnotesize\ttfamily float cluster\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c1,  }\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vypocita vzdialenost dvoch zhlukov na zaklade ich najvziadelenejsich objektov. 
+
+Vzdialenost dvoch zhlukov 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c1} & -\/ smernik na prvy zhluk \\
+\hline
+{\em $\ast$c2} & -\/ smernik na druhy zhluk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c1 != N\+U\+LL, $\ast$c2 != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Float vzdialenost dvoch zhlukov 
+\end{DoxyReturn}
+\hypertarget{group___praca_ga5f16d682e7c859f7bd3f27697c2b7cc0}{}\label{group___praca_ga5f16d682e7c859f7bd3f27697c2b7cc0} 
+\index{so zhlukmi@{so zhlukmi}!find\+\_\+neighbours@{find\+\_\+neighbours}}
+\index{find\+\_\+neighbours@{find\+\_\+neighbours}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{find\+\_\+neighbours()}{find\_neighbours()}}
+{\footnotesize\ttfamily void find\+\_\+neighbours (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{carr,  }\item[{int}]{narr,  }\item[{int $\ast$}]{c1,  }\item[{int $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Hlada v poli zhlukov zhluky s najmansou vzdialenostou. 
+
+Hlada najblizsie zhluky 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$carr} & -\/ smernik na pole zhlukov \\
+\hline
+{\em narr} & -\/ pocet zhlukov v carr \\
+\hline
+{\em $\ast$c1} & -\/ smernik kde bude zapisany prvy zhluk z dvoch najblizsich \\
+\hline
+{\em $\ast$c2} & -\/ smernik kde bude zapisany druhy zhluk z dvoch najblizsich \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$carr != N\+U\+LL, narr $>$ 1 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Do smernikov $\ast$c1 a $\ast$c2 zapise adresy najblizsich zhlukov 
+\end{DoxyPostcond}
+\hypertarget{group___praca_ga96db0862471d90abb3d80103ef3695f7}{}\label{group___praca_ga96db0862471d90abb3d80103ef3695f7} 
+\index{so zhlukmi@{so zhlukmi}!init\+\_\+cluster@{init\+\_\+cluster}}
+\index{init\+\_\+cluster@{init\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{init\+\_\+cluster()}{init\_cluster()}}
+{\footnotesize\ttfamily void init\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c,  }\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Alokacia kapacity zhluku. 
+
+Inicializacia zhluku 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+{\em cap} & -\/ pozadovana capacita zhluku \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL, cap $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Alokovana kapacita 
+\end{DoxyPostcond}
+\hypertarget{group___praca_ga9d928923d43120cb53ddff210a087061}{}\label{group___praca_ga9d928923d43120cb53ddff210a087061} 
+\index{so zhlukmi@{so zhlukmi}!load\+\_\+clusters@{load\+\_\+clusters}}
+\index{load\+\_\+clusters@{load\+\_\+clusters}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{load\+\_\+clusters()}{load\_clusters()}}
+{\footnotesize\ttfamily int load\+\_\+clusters (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename,  }\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$$\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Nacita kazdy objekt zapisany v subore filename do samostatneho zhluku. 
+
+Nacita zhluky zo suboru 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$filename} & -\/ String s nazvom suboru \\
+\hline
+{\em $\ast$$\ast$arr} & -\/ smernik za zaciatok pola zhlukov \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$filename != N\+U\+LL, $\ast$$\ast$arr != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Vracia pocet nacitanych objektov 
+\end{DoxyReturn}
+\hypertarget{group___praca_gac39a25fdec1f4952ec92ee5407893158}{}\label{group___praca_gac39a25fdec1f4952ec92ee5407893158} 
+\index{so zhlukmi@{so zhlukmi}!merge\+\_\+clusters@{merge\+\_\+clusters}}
+\index{merge\+\_\+clusters@{merge\+\_\+clusters}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{merge\+\_\+clusters()}{merge\_clusters()}}
+{\footnotesize\ttfamily void merge\+\_\+clusters (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c1,  }\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Spoji zhluk c1 so zhlukom c2, c2 ostane zachovany. 
+
+Zlucenie zhlukov 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c1} & -\/ smernik na zhluk1 \\
+\hline
+{\em $\ast$c2} & -\/ smernik na zhluk2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c1 != N\+U\+LL, $\ast$c2 != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+= Spojenie zhlokov 
+\end{DoxyPostcond}
+\hypertarget{group___praca_ga703ce6afddf65026b68645bc5394405b}{}\label{group___praca_ga703ce6afddf65026b68645bc5394405b} 
+\index{so zhlukmi@{so zhlukmi}!obj\+\_\+distance@{obj\+\_\+distance}}
+\index{obj\+\_\+distance@{obj\+\_\+distance}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{obj\+\_\+distance()}{obj\_distance()}}
+{\footnotesize\ttfamily float obj\+\_\+distance (\begin{DoxyParamCaption}\item[{struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$}]{o1,  }\item[{struct \hyperlink{structobj__t}{obj\+\_\+t} $\ast$}]{o2 }\end{DoxyParamCaption})}
+
+
+
+Vypocita vzdialenost dvoch objektov na zaklade ich suradnic. 
+
+Vzdialenost dvoch \hyperlink{structobj__t}{obj\+\_\+t} 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$o1} & -\/ smernik na prvy \hyperlink{structobj__t}{obj\+\_\+t} \\
+\hline
+{\em $\ast$o2} & -\/ smernik na druhy \hyperlink{structobj__t}{obj\+\_\+t} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$o1 != N\+U\+LL, $\ast$o2 != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Float vzdialenost dvoch objektov 
+\end{DoxyReturn}
+\hypertarget{group___praca_ga322bfd43ab7a3fa830cd69e79b7eef06}{}\label{group___praca_ga322bfd43ab7a3fa830cd69e79b7eef06} 
+\index{so zhlukmi@{so zhlukmi}!print\+\_\+cluster@{print\+\_\+cluster}}
+\index{print\+\_\+cluster@{print\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{print\+\_\+cluster()}{print\_cluster()}}
+{\footnotesize\ttfamily void print\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Vypise objekty zhluku. 
+
+Vypisanie zhlukov 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL 
+\end{DoxyPrecond}
+\hypertarget{group___praca_gad350e6021e5fead00ff2eeec4d134525}{}\label{group___praca_gad350e6021e5fead00ff2eeec4d134525} 
+\index{so zhlukmi@{so zhlukmi}!print\+\_\+clusters@{print\+\_\+clusters}}
+\index{print\+\_\+clusters@{print\+\_\+clusters}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{print\+\_\+clusters()}{print\_clusters()}}
+{\footnotesize\ttfamily void print\+\_\+clusters (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{carr,  }\item[{int}]{narr }\end{DoxyParamCaption})}
+
+
+
+vypise vsetky zhluky s ich objektami 
+
+Vypis zhlukov 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$carr} & -\/ smernik na pole zhlukov \\
+\hline
+{\em narr} & -\/ pocet zhlukov v carr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$carr !=N\+U\+LL, narr $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+vypise vsetky zhluky z pola carr 
+\end{DoxyPostcond}
+\hypertarget{group___praca_gaf73744f9128e4605127b40932a730a48}{}\label{group___praca_gaf73744f9128e4605127b40932a730a48} 
+\index{so zhlukmi@{so zhlukmi}!remove\+\_\+cluster@{remove\+\_\+cluster}}
+\index{remove\+\_\+cluster@{remove\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{remove\+\_\+cluster()}{remove\_cluster()}}
+{\footnotesize\ttfamily int remove\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{carr,  }\item[{int}]{narr,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Odstrani zhluk na indexe idx z pola, posunie indexy ostatnych prvkov. 
+
+Odstranenie zhluku 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$carr} & -\/ smernik na pole zhlukov \\
+\hline
+{\em narr} & -\/ pocet zhlukov v carr \\
+\hline
+{\em idx} & -\/ index zhluku ktory ma byt odstraneny \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$carr != N\+U\+LL, narr $>$ 1, idx $>$ 0 
+\end{DoxyPrecond}
+\hypertarget{group___praca_ga0d8702f8bee3bccb81380e012a615a3d}{}\label{group___praca_ga0d8702f8bee3bccb81380e012a615a3d} 
+\index{so zhlukmi@{so zhlukmi}!resize\+\_\+cluster@{resize\+\_\+cluster}}
+\index{resize\+\_\+cluster@{resize\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{resize\+\_\+cluster()}{resize\_cluster()}}
+{\footnotesize\ttfamily struct \hyperlink{structcluster__t}{cluster\+\_\+t}$\ast$ resize\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c,  }\item[{int}]{new\+\_\+cap }\end{DoxyParamCaption})}
+
+
+
+Zmena alokovanej pamate zhluku. 
+
+Realokacia zhluku 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+{\em new\+\_\+cap} & -\/ nova pozadovana capacita zhluku \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL, new\+\_\+cap $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Realokovana kapacita 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Vrati smernik na zhluk 
+\end{DoxyReturn}
+\hypertarget{group___praca_ga12718af9e3e31b61bf703ec260e22450}{}\label{group___praca_ga12718af9e3e31b61bf703ec260e22450} 
+\index{so zhlukmi@{so zhlukmi}!sort\+\_\+cluster@{sort\+\_\+cluster}}
+\index{sort\+\_\+cluster@{sort\+\_\+cluster}!so zhlukmi@{so zhlukmi}}
+\subsubsection{\texorpdfstring{sort\+\_\+cluster()}{sort\_cluster()}}
+{\footnotesize\ttfamily void sort\+\_\+cluster (\begin{DoxyParamCaption}\item[{struct \hyperlink{structcluster__t}{cluster\+\_\+t} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Zoradi objekty zhluku. 
+
+Triedenie zhluku 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$c} & -\/ smernik na zhluk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+$\ast$c != N\+U\+LL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Zhluk ma roztriedene objekty podla ich indexu 
+\end{DoxyPostcond}

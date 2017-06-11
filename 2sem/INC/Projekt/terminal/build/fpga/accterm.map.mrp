@@ -1,0 +1,546 @@
+Release 13.1 Map O.40d (nt)
+Xilinx Mapping Report File for Design 'fpga'
+
+Design Information
+------------------
+Command Line   : map -o build/fpga/accterm.map.ncd build/fpga/accterm.ngd
+build/fpga/accterm.pcf 
+Target Device  : xc3s50
+Target Package : pq208
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Sat Apr 29 16:52:02 2017
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:  100
+Logic Utilization:
+  Number of Slice Flip Flops:           171 out of   1,536   11%
+  Number of 4 input LUTs:               326 out of   1,536   21%
+Logic Distribution:
+  Number of occupied Slices:            210 out of     768   27%
+    Number of Slices containing only related logic:     210 out of     210 100%
+    Number of Slices containing unrelated logic:          0 out of     210   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         340 out of   1,536   22%
+    Number used as logic:               306
+    Number used as a route-thru:         14
+    Number used as Shift registers:      20
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                101 out of     124   81%
+  Number of RAMB16s:                      1 out of       4   25%
+  Number of BUFGMUXs:                     1 out of       8   12%
+
+Average Fanout of Non-Clock Nets:                3.20
+
+Peak Memory Usage:  141 MB
+Total REAL time to MAP completion:  23 secs 
+Total CPU time to MAP completion:   1 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:MapLib:701 - Signal RCKE connected to top level port RCKE has been
+   removed.
+WARNING:MapLib:701 - Signal RCLK connected to top level port RCLK has been
+   removed.
+WARNING:MapLib:701 - Signal RWE connected to top level port RWE has been
+   removed.
+WARNING:MapLib:701 - Signal LEDF connected to top level port LEDF has been
+   removed.
+WARNING:MapLib:701 - Signal RDQM connected to top level port RDQM has been
+   removed.
+WARNING:MapLib:701 - Signal RCS connected to top level port RCS has been
+   removed.
+WARNING:MapLib:701 - Signal RRAS connected to top level port RRAS has been
+   removed.
+WARNING:MapLib:701 - Signal RCAS connected to top level port RCAS has been
+   removed.
+WARNING:MapLib:701 - Signal RA<14> connected to top level port RA<14> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<13> connected to top level port RA<13> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<12> connected to top level port RA<12> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<11> connected to top level port RA<11> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<10> connected to top level port RA<10> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<9> connected to top level port RA<9> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<8> connected to top level port RA<8> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<7> connected to top level port RA<7> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<6> connected to top level port RA<6> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<5> connected to top level port RA<5> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<4> connected to top level port RA<4> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<3> connected to top level port RA<3> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<2> connected to top level port RA<2> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<1> connected to top level port RA<1> has been
+   removed.
+WARNING:MapLib:701 - Signal RA<0> connected to top level port RA<0> has been
+   removed.
+WARNING:PhysDesignRules:367 - The signal <ACLK_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <FCLK_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<3>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<4>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<5>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<7>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<8>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<9>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<10>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<11>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<20>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<12>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<21>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<13>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<22>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<14>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<30>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<23>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<15>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<31>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<24>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<16>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<40>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<32>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<17>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<41>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<33>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<25>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<18>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<42>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<34>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<26>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<19>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<43>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<35>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<27>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<3>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<44>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<36>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<28>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<4>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<45>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<37>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<29>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<5>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<38>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <X<39>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <RD<7>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<3>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<4>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<5>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<6>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <P3M<7>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<10>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<11>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <SPI_CS_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<0>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<1>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<2>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<3>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<4>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<5>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<6>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<7>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<8>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <AFBUS<9>_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:54 - 'xc3s50' is a WebPack part.
+INFO:LIT:243 - Logical network RD<3>_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 76 more times for the
+   following (max. 5 shown):
+   X<30>_IBUF,
+   X<25>_IBUF,
+   RD<4>_IBUF,
+   X<31>_IBUF,
+   X<26>_IBUF
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:159 - Net Timing constraints on signal SMCLK are pushed forward
+   through input buffer.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  46 block(s) removed
+   2 block(s) optimized away
+  23 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "LEDF" is unused and has been removed.
+ Unused block "LEDF_OBUFT" (TRI) removed.
+The signal "RA<0>" is unused and has been removed.
+ Unused block "RA_0_OBUFT" (TRI) removed.
+The signal "RA<10>" is unused and has been removed.
+ Unused block "RA_10_OBUFT" (TRI) removed.
+The signal "RA<11>" is unused and has been removed.
+ Unused block "RA_11_OBUFT" (TRI) removed.
+The signal "RA<12>" is unused and has been removed.
+ Unused block "RA_12_OBUFT" (TRI) removed.
+The signal "RA<13>" is unused and has been removed.
+ Unused block "RA_13_OBUFT" (TRI) removed.
+The signal "RA<14>" is unused and has been removed.
+ Unused block "RA_14_OBUFT" (TRI) removed.
+The signal "RA<1>" is unused and has been removed.
+ Unused block "RA_1_OBUFT" (TRI) removed.
+The signal "RA<2>" is unused and has been removed.
+ Unused block "RA_2_OBUFT" (TRI) removed.
+The signal "RA<3>" is unused and has been removed.
+ Unused block "RA_3_OBUFT" (TRI) removed.
+The signal "RA<4>" is unused and has been removed.
+ Unused block "RA_4_OBUFT" (TRI) removed.
+The signal "RA<5>" is unused and has been removed.
+ Unused block "RA_5_OBUFT" (TRI) removed.
+The signal "RA<6>" is unused and has been removed.
+ Unused block "RA_6_OBUFT" (TRI) removed.
+The signal "RA<7>" is unused and has been removed.
+ Unused block "RA_7_OBUFT" (TRI) removed.
+The signal "RA<8>" is unused and has been removed.
+ Unused block "RA_8_OBUFT" (TRI) removed.
+The signal "RA<9>" is unused and has been removed.
+ Unused block "RA_9_OBUFT" (TRI) removed.
+The signal "RCAS" is unused and has been removed.
+ Unused block "RCAS_OBUFT" (TRI) removed.
+The signal "RCKE" is unused and has been removed.
+ Unused block "RCKE_OBUFT" (TRI) removed.
+The signal "RCLK" is unused and has been removed.
+ Unused block "RCLK_OBUFT" (TRI) removed.
+The signal "RCS" is unused and has been removed.
+ Unused block "RCS_OBUFT" (TRI) removed.
+The signal "RDQM" is unused and has been removed.
+ Unused block "RDQM_OBUFT" (TRI) removed.
+The signal "RRAS" is unused and has been removed.
+ Unused block "RRAS_OBUFT" (TRI) removed.
+The signal "RWE" is unused and has been removed.
+ Unused block "RWE_OBUFT" (TRI) removed.
+Unused block "LEDF" (PAD) removed.
+Unused block "RA<0>" (PAD) removed.
+Unused block "RA<10>" (PAD) removed.
+Unused block "RA<11>" (PAD) removed.
+Unused block "RA<12>" (PAD) removed.
+Unused block "RA<13>" (PAD) removed.
+Unused block "RA<14>" (PAD) removed.
+Unused block "RA<1>" (PAD) removed.
+Unused block "RA<2>" (PAD) removed.
+Unused block "RA<3>" (PAD) removed.
+Unused block "RA<4>" (PAD) removed.
+Unused block "RA<5>" (PAD) removed.
+Unused block "RA<6>" (PAD) removed.
+Unused block "RA<7>" (PAD) removed.
+Unused block "RA<8>" (PAD) removed.
+Unused block "RA<9>" (PAD) removed.
+Unused block "RCAS" (PAD) removed.
+Unused block "RCKE" (PAD) removed.
+Unused block "RCLK" (PAD) removed.
+Unused block "RCS" (PAD) removed.
+Unused block "RDQM" (PAD) removed.
+Unused block "RRAS" (PAD) removed.
+Unused block "RWE" (PAD) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ACLK                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<0>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<1>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<2>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<3>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<4>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<5>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<6>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<7>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<8>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<9>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<10>                          | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AFBUS<11>                          | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| FCLK                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| KIN<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KOUT<0>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| KOUT<1>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| KOUT<2>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| KOUT<3>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| LD<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<2>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<3>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<4>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<5>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<6>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LD<7>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LE                                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LRS                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LRW                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| P3M<0>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| P3M<1>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<2>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<3>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<4>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<5>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<6>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| P3M<7>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RD<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SMCLK                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_CLK                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_CS                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_DI                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SPI_DO                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_FPGA_CS                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<0>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLDOWN |          |
+| X<1>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<2>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<3>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<4>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<5>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<6>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<7>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<8>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<9>                               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<10>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<11>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<12>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<13>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<14>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<15>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<16>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<17>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<18>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<19>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<20>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<21>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<22>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<23>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<24>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<25>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<26>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<27>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<28>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<29>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<30>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<31>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<32>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<33>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<34>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<35>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<36>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<37>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<38>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<39>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<40>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<41>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<42>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<43>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<44>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<45>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

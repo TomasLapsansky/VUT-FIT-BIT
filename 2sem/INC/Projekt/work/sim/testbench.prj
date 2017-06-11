@@ -1,0 +1,3 @@
+vhdl work "testbench_pkg.vhd"
+vhdl work "../fsm.vhd"
+vhdl work "testbench.vhd"

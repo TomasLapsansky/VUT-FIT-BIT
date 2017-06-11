@@ -1,0 +1,89 @@
+Release 13.1 - par O.40d (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Sat Apr 29 16:53:36 2017
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 77 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   ACLK_IBUF
+   AFBUS<0>_IBUF
+   AFBUS<10>_IBUF
+   AFBUS<11>_IBUF
+   AFBUS<1>_IBUF
+   AFBUS<2>_IBUF
+   AFBUS<3>_IBUF
+   AFBUS<4>_IBUF
+   AFBUS<5>_IBUF
+   AFBUS<6>_IBUF
+   AFBUS<7>_IBUF
+   AFBUS<8>_IBUF
+   AFBUS<9>_IBUF
+   FCLK_IBUF
+   P3M<0>_IBUF
+   P3M<1>_IBUF
+   P3M<2>_IBUF
+   P3M<3>_IBUF
+   P3M<4>_IBUF
+   P3M<5>_IBUF
+   P3M<6>_IBUF
+   P3M<7>_IBUF
+   RD<0>_IBUF
+   RD<1>_IBUF
+   RD<2>_IBUF
+   RD<3>_IBUF
+   RD<4>_IBUF
+   RD<5>_IBUF
+   RD<6>_IBUF
+   RD<7>_IBUF
+   SPI_CS_IBUF
+   X<0>_IBUF
+   X<10>_IBUF
+   X<11>_IBUF
+   X<12>_IBUF
+   X<13>_IBUF
+   X<14>_IBUF
+   X<15>_IBUF
+   X<16>_IBUF
+   X<17>_IBUF
+   X<18>_IBUF
+   X<19>_IBUF
+   X<1>_IBUF
+   X<20>_IBUF
+   X<21>_IBUF
+   X<22>_IBUF
+   X<23>_IBUF
+   X<24>_IBUF
+   X<25>_IBUF
+   X<26>_IBUF
+   X<27>_IBUF
+   X<28>_IBUF
+   X<29>_IBUF
+   X<2>_IBUF
+   X<30>_IBUF
+   X<31>_IBUF
+   X<32>_IBUF
+   X<33>_IBUF
+   X<34>_IBUF
+   X<35>_IBUF
+   X<36>_IBUF
+   X<37>_IBUF
+   X<38>_IBUF
+   X<39>_IBUF
+   X<3>_IBUF
+   X<40>_IBUF
+   X<41>_IBUF
+   X<42>_IBUF
+   X<43>_IBUF
+   X<44>_IBUF
+   X<45>_IBUF
+   X<4>_IBUF
+   X<5>_IBUF
+   X<6>_IBUF
+   X<7>_IBUF
+   X<8>_IBUF
+   X<9>_IBUF
+
+

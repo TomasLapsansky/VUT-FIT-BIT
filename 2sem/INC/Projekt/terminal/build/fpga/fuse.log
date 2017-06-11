@@ -1,0 +1,68 @@
+Running: c:\XilinxISE\bin\nt\unwrapped\fuse.exe -intstyle ise --timeprecision_vhdl 1ps -incremental -o accterm_isim -prj accterm_isim.prj testbench 
+ISim O.40d (signature 0x79f3f3a8)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "../../../../../fpga/units/clkgen/clkgen_config.vhd" into library work
+Parsing VHDL file "accterm_config.vhd" into library work
+Parsing VHDL file "../../../../../fpga/units/clkgen/clkgen.vhd" into library work
+Parsing VHDL file "../../../../../fpga/chips/fpga_xc3s50.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/keyboard/keyboard_ctrl.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/keyboard/keyboard_ctrl_high.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/lcd/lcd_fsm_main.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/lcd/lcd_fsm_cycle.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/lcd/lcd_ctrl_rw.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/lcd/lcd_ctrl_high.vhd" into library work
+Parsing VHDL file "../../../../../fpga/units/math/math_pack.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/spi/spi_adc_entity.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/spi/spi_adc.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/spi/spi_adc_autoincr.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/spi/spi_reg.vhd" into library work
+Parsing VHDL file "../../../../../fpga/ctrls/spi/spi_ctrl.vhd" into library work
+Parsing VHDL file "../../fpga/rom_memory.vhd" into library work
+Parsing VHDL file "../../fpga/fsm.vhd" into library work
+Parsing VHDL file "../../fpga/fpga_mcu_dbg.vhd" into library work
+Parsing VHDL file "../../fpga/fpga.vhd" into library work
+Parsing VHDL file "../../../../../fpga/models/keyboard/keyboard.vhd" into library work
+Parsing VHDL file "../../../../../fpga/models/lcd/lcd.vhd" into library work
+Parsing VHDL file "../../fpga/sim/tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 72152 KB
+Fuse CPU Usage: 390 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Using precompiled package textio from library std
+Using precompiled package std_logic_textio from library ieee
+Using precompiled package numeric_std from library ieee
+Using precompiled package vital_timing from library ieee
+Using precompiled package vital_primitives from library ieee
+Compiling package vcomponents
+Compiling architecture arch_keyboard of entity keyboard_controller [\keyboard_controller(32)\]
+Compiling architecture behavioral of entity keyboard_controller_high [\keyboard_controller_high(32)\]
+Compiling architecture behavioral of entity lcd_fsm_main [lcd_fsm_main_default]
+Compiling architecture behavioral of entity lcd_fsm_cycle [lcd_fsm_cycle_default]
+Compiling architecture behavioral of entity lcd_ctrl_rw [lcd_ctrl_rw_default]
+Compiling architecture behavioral of entity lcd_ctrl_high [lcd_ctrl_high_default]
+Compiling architecture behavioral of entity rom_memory [\rom_memory(('0','1','0','1','0'...]
+Compiling architecture behavioral of entity rom_memory [\rom_memory(('0','1','0','1','0'...]
+Compiling architecture behavioral of entity fsm [fsm_default]
+Compiling package vpkg
+Compiling architecture arch_spi_ctrl2 of entity spi_ctrl [spi_ctrl_default]
+Compiling package math_pack
+Compiling architecture autoincrement of entity spi_adc [\SPI_adc(0,16,8,6,0)\]
+WARNING:HDLCompiler:746 - "../../../../../fpga/ctrls/spi/spi_adc_autoincr.vhd" Line 121: Range is empty (null range)
+WARNING:HDLCompiler:746 - "../../../../../fpga/ctrls/spi/spi_adc_autoincr.vhd" Line 123: Range is empty (null range)
+Compiling architecture ramb16_s9_s9_v of entity ramb16_s9_s9 [\ramb16_s9_s9:testbench:uut:mcud...]
+Compiling architecture behavioral of entity fpga_mcu_dbg [\fpga_mcu_dbg:testbench:uut:mcud...]
+Compiling architecture main of entity fpga [\fpga:testbench:uut:\]
+Compiling architecture behavioral of entity keyboard [keyboard_default]
+Compiling architecture behavioral of entity lcd [lcd_default]
+Compiling architecture behavioral of entity testbench
+Time Resolution for simulation is 1ps.
+Compiled 45 VHDL Units
+Built simulation executable accterm_isim.exe
+Fuse Memory Usage: 87004 KB
+Fuse CPU Usage: 580 ms

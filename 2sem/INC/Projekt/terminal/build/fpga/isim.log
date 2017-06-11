@@ -1,0 +1,79 @@
+ISim log file
+Running: C:\FitkitSVN\apps\demo\terminal\build\fpga\accterm_isim.exe -intstyle ise -gui -tclbatch accterm_isim.tcl 
+ISim O.40d (signature 0x79f3f3a8)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# puts ==========================================================
+Initialize simulation
+==========================================================
+type isim_restart to restart simulation
+# set FIRSTRUN 1
+# proc add_divider TEXT 
+    divider add "$TEXT"
+   
+# proc add_wave_label  FLAGS LABEL NAME  
+      set cmd "wave add $FLAGS"
+      if { $LABEL != "" } {
+         append cmd " -name \"$LABEL\""
+      }
+      append cmd " $NAME"
+      if {[catch {eval $cmd } stderr] != 0} {
+         puts "  WARNING : Signal $NAME doesn't exist"
+      }
+   
+# proc add_wave FLAGS NAME 
+    add_wave_label "$FLAGS" "" "$NAME"
+   
+# proc isim_restart  
+      global FIRSTRUN
+      #set TESTBENCH_SCRIPT "C:/FitkitSVN/apps/demo/terminal/build/fpga/../../fpga/sim/isim.tcl"
+      if {$FIRSTRUN == 0} { wcfg new }
+      set FIRSTRUN 0
+      #puts "../../fpga/sim/isim.tcl" 
+      #puts [pwd]
+      if {[catch {source "../../fpga/sim/isim.tcl"}]} { 
+         puts "isim source failed"
+         flush stdout
+      } else {
+         puts "isim found, tb entity: testbench"
+         flush stdout
+         if {[catch {isim_script} stderr] != 0} {
+            puts "ERROR: $stderr"
+         }
+      } 
+   
+# isim_restart
+/testbench/uut/clk : No such HDL object or HDL block
+/testbench/uut/clk : No such HDL object or HDL block
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/lcdc_u/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/ROM_OK/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /testbench/uut/ROM_BAD/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Finished circuit initialization process.
+at 1491600 ps(3): Note: LCD: Cursor Home (/testbench/LCD_U/).
+at 6780 ns(3): Note: LCD: Set Function (/testbench/LCD_U/).
+at 12068400 ps(3): Note: LCD: Display on/off Control (/testbench/LCD_U/).
+at 17356800 ps(3): Note: LCD: Entry Mode Set (/testbench/LCD_U/).
+at 22645200 ps(3): Note: LCD: Clear Display (/testbench/LCD_U/).
+at 41358 ns(2): Error:  Memory Collision Error on RAMB16_S9_S9: :testbench:uut:mcudbg_u:ramb_u: at simulation time 41358 ns.
+ A read was performed on address 000 (hex) of port B while a write was requested to the same address on Port A  The write will be successful however the read value is unknown until the next CLKB cycle  
+at 41358 ns(2): Error:  Memory Collision Error on RAMB16_S9_S9: :testbench:uut:mcudbg_u:ramb_u: at simulation time 41358 ns.
+ A read was performed on address 000 (hex) of port B while a write was requested to the same address on Port A  The write will be successful however the read value is unknown until the next CLKB cycle  
+at 42442800 ps(3): Note: LCD: DDRAM Address Setting (/testbench/LCD_U/).
+at 87190800 ps(3): Note: LCD: Clear Display (/testbench/LCD_U/).
+at 92479200 ps(3): Note: LCD: DDRAM Address Setting (/testbench/LCD_U/).
+at 140074800 ps(3): Note: LCD: DDRAM Address Setting (/testbench/LCD_U/).

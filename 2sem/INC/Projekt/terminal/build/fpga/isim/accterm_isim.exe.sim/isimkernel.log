@@ -1,0 +1,29 @@
+Command line:
+   accterm_isim.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  1480
+
+Sat Apr 29 02:59:13 2017
+
+
+ Elaboration Time: 0.060086 sec
+
+ Current Memory Usage: 461.39 Meg
+
+ Total Signals          : 369
+ Total Nets             : 3575
+ Total Signal Drivers   : 253
+ Total Blocks           : 79
+ Total Primitive Blocks : 71
+ Total Processes        : 211
+ Total Traceable Variables  : 351
+ Total Scalar Nets and Variables : 27982
+Total Line Count : 1107
+
+ Total Simulation Time: 0.660949 sec
+
+ Current Memory Usage: 304.103 Meg
+
+Sat Apr 29 03:06:32 2017
+

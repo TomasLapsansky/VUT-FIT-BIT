@@ -1,0 +1,28 @@
+ISIM testbench script loaded
+Running: c:\XilinxISE\bin\nt\unwrapped\fuse.exe -intstyle ise --timeprecision_vhdl 1ps -incremental -o testbench_isim -prj testbench.prj testbench 
+ISim O.40d (signature 0x79f3f3a8)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "testbench_pkg.vhd" into library work
+Parsing VHDL file "../fsm.vhd" into library work
+Parsing VHDL file "testbench.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 61912 KB
+Fuse CPU Usage: 220 ms
+Using precompiled package standard from library std
+Using precompiled package std_logic_1164 from library ieee
+Using precompiled package std_logic_arith from library ieee
+Using precompiled package std_logic_unsigned from library ieee
+Using precompiled package textio from library std
+Using precompiled package std_logic_textio from library ieee
+Using precompiled package numeric_std from library ieee
+Compiling package testbench_pkg
+Compiling architecture behavioral of entity fsm [fsm_default]
+Compiling architecture behavioral of entity testbench
+Time Resolution for simulation is 1ps.
+Compiled 11 VHDL Units
+Built simulation executable testbench_isim.exe
+Fuse Memory Usage: 69724 KB
+Fuse CPU Usage: 330 ms
