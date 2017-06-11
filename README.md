@@ -18,4 +18,4 @@ IJC DU1 - 11/15		- https://github.com/TomasLapsansky/IJC-proj1<br>
 IJC DU2 - 3.5/15 - neukonceny projekt<br>
 ISJ Projekty - 40/40<br>
 IVS Projekt 1 Testovanie Softwaru - 15/18<br>
-IVS Projekt 2 Tymova spolupraca - 41/52 <br>
+IVS Projekt 2 Tymova spolupraca - 41/52   - https://github.com/TomasLapsansky/IVS-2.-projekt<br>
