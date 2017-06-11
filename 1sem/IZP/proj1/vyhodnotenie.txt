@@ -1,0 +1,64 @@
+4.0: celkem bodu
+
+====== Prehled hodnoceni ==========
+2.5: obhajoba ok
+0:spatne: hexdump jednoducha varianta
+0:spatne: hexdump argumenty
+0:spatne: hexdump netisknutelne
+0.4:ok: prevod na hexadecimalni
+0.6:ok: tist retezcu
+0.2:ok: prevod z hexadecimalniho na binarni
+0.2:ok: prevod z hexadecimalniho na binarni
+0.1:ok: reakce na napovedu
+
+====== Log z prekladu =============
+Ok
+
+====== Analyza kodu ===============
+Ok
+
+====== Log z jednotlivych testu ===
+0:spatne: hexdump jednoducha varianta
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test1        2016-11-13 11:24:21.000000000 +0100
+#   +++ test1        2016-11-13 13:34:18.558355000 +0100
+#   @@ -1,2 +1,3 @@
+#    printf "0123456789ABCDEF" | ./proj1   -->
+#        00000000  30 31 32 33 34 35 36 37  38 39 41 42 43 44 45 46  |0123456789ABCDEF|
+#   +    00000010                                                    |                |
+0:spatne: hexdump argumenty
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test2        2016-11-13 11:24:21.000000000 +0100
+#   +++ test2        2016-11-13 13:34:18.568526000 +0100
+#   @@ -1,4 +1,10 @@
+#    printf "0123456789ABCDEF\n" | ./proj1 -s 1  -->
+#   -    00000001  31 32 33 34 35 36 37 38  39 41 42 43 44 45 46 0a  |123456789ABCDEF.|
+#   +    Wrong argument/s.
+#   +    -----------------
+#   +    Use -r to convert HEX to CHAR
+#   +    Use -x to convert CHAR to HEX
+#   +    Use [-S A] to print Strings larger than A
+#   +    Use no-arguments to convert String to 16xHEX
+#   +    Use [-s A] and [-n B] to skip and display translated String
+#    printf "0123456789ABCDEF\n" | ./proj1 -s 10 -n 6  -->
+#        0000000a  41 42 43 44 45 46                                 |ABCDEF          |
+0:spatne: hexdump netisknutelne
+# Neodpovida vzorovemu vystupu
+#   --- ideal/test3        2016-11-13 11:24:21.000000000 +0100
+#   +++ test3        2016-11-13 13:34:18.576005000 +0100
+#   @@ -1,2 +1,2 @@
+#    printf "\001\002\003\004\0\xff \n" | ./proj1   -->
+#   -    00000000  01 02 03 04 00 ff 20 0a                           |...... .        |
+#   +    00000000                                                    |....            |
+0.4:ok: prevod na hexadecimalni
+0.6:ok: tist retezcu
+0.2:ok: prevod z hexadecimalniho na binarni
+0.2:ok: prevod z hexadecimalniho na binarni
+0.1:ok: reakce na napovedu
+#   Wrong argument/s.
+#   -----------------
+#   Use -r to convert HEX to CHAR
+#   Use -x to convert CHAR to HEX
+#   Use [-S A] to print Strings larger than A
+#   Use no-arguments to convert String to 16xHEX
+#   Use [-s A] and [-n B] to skip and display translated String
