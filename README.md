@@ -3,7 +3,6 @@
 ## 1. semester
 
 IEL Semestralny projekt - 7.5/12
-
 IUS Projekt Model informacneho systemu - /25
 
 IZP Projekt 1 Praca s textom - 4/5
