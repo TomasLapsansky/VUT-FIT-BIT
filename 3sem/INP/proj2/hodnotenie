@@ -1,0 +1,35 @@
+Komentář učitele k hodnocení:
+Odevzdane (validni) soubory:
+
+cpu.vhd ano
+login.b ano
+inp.png ano
+inp.srp ano
+
+Overeni cinnosti kodu CPU:
+#   testovany program (kod)       vysledek
+1.  ++++++++++                    ok
+2.  ----------                    ok
+3.  +>++>+++                      ok
+4.  <+<++<+++                     ok
+5.  .+.+.+.                       ok
+6.  ,+,+,+,                       ok
+7.  [........]noLCD[.........]    ok
+8.  +++[.-]                       ok
+9.  +++++[>++[>+.<-]<-]           ok
+10.  +[+~------------]+            ok
+11.  +[+~[-----]-----]+            ok
+
+Podpora jednoduchych cyklu: ano
+Podpora vnorenych cyklu: ano
+
+Poznamky k implementaci:
+Mozne problematicke rizeni nasledujicich signalu: DATA_RDWR, OUT_DATA
+Celkem bodu za CPU implementaci: 17 (z 17)
+
+
+Vase implementace se umistila na
+
+52. miste (z celkem 106 ruzne rychlych plne funkcnich reseni) z pohledu rychlosti vykonani testu c. 9 a je 1.70 krat pomalejsi nez-li nejrychlejsi odevzdane reseni, 1.05 krat rychlejsi nez-li prumer a 1.98 krat rychlejsi nez-li nejpomalejsi reseni
+
+1. miste (z celkem 45 ruzne velkych plne funkcnich reseni) z pohledu mnozstvi zabranych zdroju v FPGA a zabira 1.00 krat vice plochy oproti nejkompaktnejsimu reseni a 2.83 krat mene plochy oproti nejrozsahlejsimu reseni

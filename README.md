@@ -3,7 +3,7 @@
 ## 1. semester
 
 IEL Semestralny projekt - 7.5/12<br>
-IUS Projekt Model informacneho systemu - /25<br>
+IUS Projekt Model informacneho systemu - 24/25<br>
 IZP Projekt 1 Praca s textom - 4/5<br>
 IZP Projekt 2 Iteracne vypocty - 6/7<br>
 IZP Projekt 3 Jednoducha zhlukova analyza - 7/10<br>
@@ -19,3 +19,12 @@ IJC DU2 - 3.5/15 - neukonceny projekt<br>
 ISJ Projekty - 40/40<br>
 IVS Projekt 1 Testovanie Softwaru - 15/18<br>
 IVS Projekt 2 Tymova spolupraca - 41/52 <br>
+
+## 3. semester
+
+IAL Projekt 1 - 10/10<br>
+IAL Projekt 2 - 10/10<br>
+IFJ Implementacia - 11.3/15		- https://github.com/TomasLapsansky/IFJ-2017<br>
+INP Projekt 1 Řízení maticového displeje pomocí FPGA - 10/10<br>
+INP Projekt 2 Simple 8-bit CPU (BrainLove interpreter) - 23/23<br>
+ISS Projekt - 6/12<br>
