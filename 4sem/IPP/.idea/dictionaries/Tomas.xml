@@ -1,0 +1,23 @@
+<component name="ProjectDictionaryState">
+  <dictionary name="Tomas">
+    <words>
+      <w>createframe</w>
+      <w>defvar</w>
+      <w>dprint</w>
+      <w>getchar</w>
+      <w>idiv</w>
+      <w>jumpifeq</w>
+      <w>jumpifneq</w>
+      <w>opcode</w>
+      <w>pcode</w>
+      <w>popframe</w>
+      <w>pushframe</w>
+      <w>pushs</w>
+      <w>setchar</w>
+      <w>stdin</w>
+      <w>stri</w>
+      <w>strlen</w>
+      <w>symb</w>
+    </words>
+  </dictionary>
+</component>

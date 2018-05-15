@@ -28,3 +28,14 @@ IFJ Implementacia - 11.3/15		- https://github.com/TomasLapsansky/IFJ-2017<br>
 INP Projekt 1 Řízení maticového displeje pomocí FPGA - 10/10<br>
 INP Projekt 2 Simple 8-bit CPU (BrainLove interpreter) - 23/23<br>
 ISS Projekt - 6/12<br>
+
+## 4. semester
+
+IDS Projekt - 16/14<br>
+IPP Projekt 1 PHP 5.6 - 6/6<br>
+IPP Projekt 2 Python 3.6 - 6/11<br>
+IPP Test.php - 0/3 - neukonceny projekt<br>
+IPK Projekt 1 Klient-server pro získání informace o uživatelích - 15/20<br>
+IPK Projekt 2 DHCP Starvation útok - 13.5/20<br>
+IZG Projekt - 18/18 (IZG soutez o nejrychlejsi kod 2. miesto)<br>
+IJA Projekt - Blokove schema    - https://github.com/TomasLapsansky/IJA-2018<br>

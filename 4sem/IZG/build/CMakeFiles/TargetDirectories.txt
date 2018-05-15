@@ -1,0 +1,3 @@
+/mnt/hgfs/FIT/SProjects/4sem/IZG/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/FIT/SProjects/4sem/IZG/build/CMakeFiles/izgProjekt2017.dir
+/mnt/hgfs/FIT/SProjects/4sem/IZG/build/CMakeFiles/edit_cache.dir
