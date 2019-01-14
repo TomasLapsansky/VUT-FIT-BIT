@@ -1,0 +1,45 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Produkty
+{/block}
+
+{block content}
+    <div class="col-10 offset-1">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Meno</th>
+                <th scope="col">Počet</th>
+                <th scope="col">Výrobca</th>
+                <th scope="col">Cena</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {ifset $products}
+                <tr n:foreach="$products as $product">
+                    <th scope="row">{$product->id}</th>
+                    <td>{$product->name}</td>
+                    <td>{$product->count}</td>
+                    <td>{$producers->getByID($product->producer)->name}</td>
+                    <td>{$product->price} €</td>
+                    <td style="text-align:center;">
+                        <a href="/admin/product/{$product->id}"><i class="material-icons" style="color:blue;">description</i></a>
+                        <a href="/admin/product/{$product->id}/edit"><i class="material-icons" style="color:grey;">build</i></a>
+                        <a n:href="delete! $product->id"><i class="material-icons" style="color:hsl(0, 100%, 30%);">delete</i></a>
+                    </td>
+                </tr>
+            {else}
+                <tr>
+                    <td colspan="6">Žiadne produkty</td>
+                </tr>
+            {/ifset}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10 offset-1 d-flex justify-content-end">
+        <a href="/admin/product/add" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Nový produkt</a>
+    </div>
+{/block}

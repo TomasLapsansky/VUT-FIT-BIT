@@ -1,0 +1,46 @@
+{block content}
+	{var $sum = 0}
+	<div style="min-height:75vh; width:100%; padding-right:15px; padding-left:15px;">
+			<div style="margin:auto;margin-top:2rem; width:66%;">
+				<span><h4 style="margin-top:0.5rem; margin-bottom:0.5rem;">Informácie o objednávke:</h4></span><br>
+				<span><b class="pr-3">ID:</b> {$order->id}</span><br>
+				<span><b class="pr-3">Status:</b> {$order->status}</span><br><br>
+			</div>
+			<div style="border-bottom: 1px solid black padding-bottom: 1.5rem; padding-top:1.5rem; width:66%; margin:auto;">
+
+                <table style="width:100%">
+                    <thead>
+                        <tr>
+                            <th style="width:30%; text-align:left;">Nazov:</th>
+                            <th style="width:30%; text-align:left;">Počet:</th>
+                            <th style="width:30%; text-align:left;">Cena:</th>
+                        </tr>
+                    </thead>
+		{foreach $products as $id => [$product, $orderDrug]}
+                    <tbody>
+                        <tr>
+                            <td>{$product->name}</td>
+                            <td>{$orderDrug->count} Ks</td>
+                            <td>{$orderDrug->price} €</td>
+                        </tr>
+                    </tbody>
+			{php $sum += ($orderDrug->count*$orderDrug->price)}
+		{/foreach}
+                </table>
+			</div><br>
+		<div style="width:66%; margin:auto; margin-top:2rem;">
+			<div>
+				<span><b style="padding-right:2rem;">Celkom:</b>{$sum} €</span>
+			</div><br>
+			<div style="margin-top:2rem;">
+				<span><h4 style="margin-top:0.5rem; margin-bottom:0.5rem;">Dodacie informácie:</h4></span><br>
+				{var $sys_user = $userService->getByID($order->user_id)}
+				<span><b class="pr-3">Meno:</b> {$sys_user->name} {$sys_user->surname}</span><br>
+				<span><b class="pr-3">Adresa:</b> {$sys_user->address}</span><br>
+				<span><b class="pr-3">Mesto:</b> {$sys_user->city}</span><br>
+				<span><b class="pr-3">PSČ:</b> {str_pad($sys_user->zip, 5, "0", STR_PAD_LEFT)}</span><br>
+				<span><b class="pr-3">Štát:</b> {$sys_user->country}</span><br>
+			</div>
+		</div>
+	</div>
+{/block}

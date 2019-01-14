@@ -1,0 +1,46 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+	Insurer detail {$id}
+{/block}
+
+{block content}
+	{if $insurer}
+		<div class="col-12 d-flex justify-content-center">
+			<h1>{$insurer->name}</h1>
+		</div>
+		<div class="col-10 offset-1">
+			<table class="table table-binsurered table-hover">
+				<thead class="thead-dark">
+				<tr>
+					<th scope="col">Liek</th>
+					<th scope="col">Cena</th>
+					<th scope="col">Zľava</th>
+				</tr>
+				</thead>
+				<tbody>
+				{if $insuredProducts->count() != 0}
+					<tr n:foreach="$insuredProducts as $insuredProduct">
+						<td>{$products->getById($insuredProduct->drug_id)->name}</td>
+						<td>{$products->getById($insuredProduct->drug_id)->price} €</td>
+						<td>{$products->getById($insuredProduct->drug_id)->price - $insuredProduct->price} €</td>
+					</tr>
+				{else}
+					<tr>
+						<td>Poisťovna k lieku nenájdená</td>
+					</tr>
+				{/if}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-10 offset-1 d-flex justify-content-end">
+			<a href="/admin/insurer/{$id}/add" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Pridať liek</a>
+		</div>
+	{else}
+		<div class="row">
+			<div class="col-12">
+				<h1>Poisťovňa s {$id} neexistuje</h1>
+			</div>
+		</div>
+	{/if}
+{/block}

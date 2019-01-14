@@ -1,0 +1,17 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Úprava produktu
+{/block}
+
+{block content}
+    {if $product}
+        <div class="col-10 offset-1">
+                {control editForm}
+                {control uploadImage}
+            </div>
+    {else}
+        Produkt neexistuje
+    {/if}
+{/block}
+

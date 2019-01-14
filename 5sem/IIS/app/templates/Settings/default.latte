@@ -1,0 +1,22 @@
+{layout '../parts/@layout.latte'}
+
+{block title}
+	Tvoj Profil
+{/block}
+
+{block content}
+	<div class="container-fluid content">
+		<div class="row d-flex justify-content-center">
+			<div class="col-10 offset-2 d-flex justify-content-start pl-0 pr-0">
+				<span class="h4">{$sys_user->name} {$sys_user->surname}</span>
+			</div>
+			<div class="col-4 pl-0">
+				<img src= "{$sys_user->avatar}" alt="profile image" class="img-thumbnail" width="300">
+				{control uploadAvatar}
+			</div>
+			<div class="col-4 pr-0">
+                {control setUser}				
+			</div>
+		</div>
+	</div>
+{/block}

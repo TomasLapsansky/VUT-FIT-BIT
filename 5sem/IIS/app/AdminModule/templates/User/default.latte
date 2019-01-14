@@ -1,0 +1,53 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Používatelia
+{/block}
+
+{block content}
+    <div class="col-12">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Meno</th>
+                        <th scope="col">Priezvisko</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Mesto</th>
+                        <th scope="col">Adresa</th>
+                        <th scope="col">PSČ</th>
+                        <th scope="col">Štát</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {ifset $users}
+                        <tr n:foreach="$users as $sys_user">
+                            <th scope="row">{$sys_user->id}</th>
+                            <td>{$sys_user->name}</td>
+                            <td>{$sys_user->surname}</td>
+                            <td>{$sys_user->email}</td>
+                            <td>{$sys_user->role}</td>
+                            <td>{$sys_user->city}</td>
+                            <td>{$sys_user->address}</td>
+                            <td>{str_pad($sys_user->zip, 5, "0", STR_PAD_LEFT)}</td>
+                            <td>{$sys_user->country}</td>
+                            <td style="text-align:center;">
+                                <a href="/admin/user/{$sys_user->id}"><i class="material-icons" style="color:blue;">description</i></a>
+                                <a href="/admin/user/{$sys_user->id}/edit"><i class="material-icons" style="color:grey;">build</i></a>
+                                <a n:href="delete! $sys_user->id"><i class="material-icons" style="color:hsl(0, 100%, 30%);">delete</i></a>
+                            </td>
+                        </tr>
+                    {else}
+                        <tr>
+                            <td colspan="10">Používateľ nenájdený</td> {*TODO whole row*}
+                        </tr>
+                    {/ifset}
+                </tbody>
+            </table>
+    </div>
+    <div class="col-12 d-flex justify-content-end">
+        <a href="/admin/user/add" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Nový používateľ</a>
+    </div>
+{/block}

@@ -1,0 +1,36 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Detail výrobcu {$id}
+{/block}
+
+{block content}
+    <div class="col-10 offset-1 mb-3">
+        <h1 class="h3">{$producer->name}</h1>
+        <span><b class="pr-3">Čas dodania:</b>{$producer->time_delivery} dní</span>
+    </div>
+    <div class="col-10 offset-1">
+        <table class="table table-bproducered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Liek</th>
+                <th scope="col">Cena</th>
+            </tr>
+            </thead>
+            <tbody>
+            {if $products->count() != 0}
+                <tr n:foreach="$products as $product">
+                    <th scope="row">{$product->id}</th>
+                    <td>{$product->name}</td>
+                    <td>{$product->price} €</td>
+                </tr>
+            {else}
+                <tr>
+                    <td colspan="3">Lieky výrobcu sa nenašli</td>
+                </tr>
+            {/if}
+            </tbody>
+        </table>
+    </div>
+{/block}

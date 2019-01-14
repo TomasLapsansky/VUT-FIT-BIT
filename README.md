@@ -39,3 +39,11 @@ IPK Projekt 1 Klient-server pro získání informace o uživatelích - 15/20<br>
 IPK Projekt 2 DHCP Starvation útok - 13.5/20<br>
 IZG Projekt - 18/18 (IZG soutez o nejrychlejsi kod 2. miesto)<br>
 IJA Projekt - Blokove schema    - https://github.com/TomasLapsansky/IJA-2018<br>
+
+## 5. semester
+
+IIS Projekt Online lekaren - 27/30<br>
+IMP Projekt MSP430 / ARM-FITkit3: Hra Mini-Tetris na maticovém displeji - 13/14<br>
+IMS Projekt Chov hmyzu - 15/20<br>
+ISA Nástroje monitorující a generující zprávy jednoduchých distance-vector protokolů (Dr. Veselý) - 17.5/20<br>
+ITU - 46/55<br>

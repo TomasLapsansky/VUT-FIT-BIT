@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="images/favicon.png">
+</head>
+
+<body>
+	<div id="menu">
+		<div id="menu_button_wrapper">
+			<div class="menu_button" id="bspline_demo">Bspline demo</div>
+			<div class="menu_button" id="bspline_theory">Bspline theory</div>
+			<div class="menu_button" id="ferguson_demo">Ferguson demo</div>
+			<div class="menu_button" id="ferguson_theory">Ferguson theory</div>
+			<div class="menu_button" id="nurbs_demo">Nurbs demo</div>
+			<div class="menu_button" id="nurbs_theory">Nurbs theory</div>
+		</div>
+	</div>
+	<div id="allslides">
+		<div id="slide_1" class="slides">
+			<div class="slides_left">
+			</div>
+			<div class="slides_right">
+				<span class="helper"></span>
+				<img class="instr_imgs" id="mouse_move1" src="static/mouse_move.png">
+			</div>
+			<div class="slides_middle">
+				<div id="v_canvas_wrapper1" class="v_canvas_wrappers">
+						<img id="v_img1" class="v_imgs" src="static/bspline_background.jpg">
+						<canvas id="v_canvas1" class="v_canvases">
+				</div>
+			</div>
+		</div>
+		<div id="slide_2" class="slides">
+			<img class="theory_imgs" src="static/bspline_theory.png">
+		</div>
+		<div id="slide_3" class="slides">
+			<div class="slides_left">
+			</div>
+			<div class="slides_right">
+				<span class="helper"></span>
+				<img class="instr_imgs" id="mouse_move2" src="static/mouse_move.png">
+			</div>
+			<div class="slides_middle">
+				<div id="v_canvas_wrapper2" class="v_canvas_wrappers">
+						<img id="v_img2" class="v_imgs" src="static/ferguson_background.png">
+						<canvas id="v_canvas2" class="v_canvases">
+				</div>
+			</div>
+		</div>
+		<div id="slide_4" class="slides">
+			<img class="theory_imgs" src="static/ferguson_theory.png">
+		</div>
+		<div id="slide_5" class="slides">
+			<div class="slides_left">
+			</div>
+			<div class="slides_right">
+				<span class="helper"></span>
+				<img class="instr_imgs" id="mouse_scroll3" src="static/mouse_scroll.png">
+			</div>
+			<div class="slides_middle">
+				<div id="v_canvas_wrapper3" class="v_canvas_wrappers">
+						<img id="v_img3" class="v_imgs" src="static/nurbs_background.png">
+						<canvas id="v_canvas3" class="v_canvases">
+				</div>
+			</div>
+		</div>
+		<div id="slide_6" class="slides">
+			<img class="theory_imgs" src="static/nurbs_theory.png">
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+	Výrobca
+{/block}
+
+{block content}
+	<div class="col-10 offset-1">
+		<table class="table table-bordered table-hover">
+			<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Meno</th>
+				<th scope="col">Čas dodania</th>
+				<th scope="col"></th>
+			</tr>
+			</thead>
+			<tbody>
+			{ifset $producers}
+				<tr n:foreach="$producers as $producer">
+					<th scope="row">{$producer->id}</th>
+					<td>{$producer->name}</td>
+					{if $producer->time_delivery == 1}
+						<td>{$producer->time_delivery} den</td>
+					{else}
+						<td>{$producer->time_delivery} dni</td>
+					{/if}
+					<td style="text-align:center;">
+						<a href="/admin/producer/{$producer->id}"><i class="material-icons" style="color:blue;">description</i></a>
+						<a href="/admin/producer/{$producer->id}/edit"><i class="material-icons" style="color:grey;">build</i></a>
+						<a n:href="delete! $producer->id"><i class="material-icons" style="color:hsl(0, 100%, 30%);">delete</i></a>
+					</td>
+				</tr>
+			{else}
+				<tr>
+					<td colspan="4">Výrobcovia nenájdený</td>
+				</tr>
+			{/ifset}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-10 offset-1 d-flex justify-content-end">
+		<a href="/admin/producer/add" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Nový výrobca</a>
+	</div>
+{/block}

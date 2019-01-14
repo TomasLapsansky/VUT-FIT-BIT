@@ -1,0 +1,16 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  user edit
+{/block}
+
+{block content}
+    {if $sys_user}
+        <div class="col-10 offset-1">
+                {control editForm}
+            </div>
+    {else}
+        Užívateľ neexistuje
+    {/if}
+{/block}
+

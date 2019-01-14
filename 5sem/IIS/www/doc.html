@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 0.3em 0.5em;
+            text-align: left;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+     podle použitého editoru -->
+
+<h1>Online lekáreň</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+    <dt>Autori</dt>
+    <dd>Tomáš Lapšanský <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+        <a href="mailto:xlapsa00@stud.fit.vutbr.cz">xlapsa00@stud.fit.vutbr.cz</a> -
+        Návrh a vytvorenie backendu a databáze
+    </dd>
+    <dd>Filip Pleško <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+        <a href="mailto:xplesk02@stud.fit.vutbr.cz">xplesk02@stud.fit.vutbr.cz</a> -
+        Frontend
+    </dd>
+    <dt>URL aplikace</dt>
+    <dd><a href="http://lapsansky.phpcode.eu/">http://lapsansky.phpcode.eu/</a></dd>
+</dl>
+
+<h2>Uživatelia systému pre testovanie</h2>
+<table>
+    <tr>
+        <th>Login</th>
+        <th>Heslo</th>
+        <th>Role</th>
+    </tr>
+    <tr>
+        <td>tomas@lapsansky.phpcode.eu</td>
+        <td>12345</td>
+        <td>Administrátor</td>
+    </tr>
+    <tr>
+        <td>juro@gmail.com</td>
+        <td>12345</td>
+        <td>Zákazník</td>
+    </tr>
+</table>
+
+<h2>Implementácia</h2>
+<p>Naša implementácia vychádza z návrhu informačného systému pre sieť lekární. Rozhodli sme sa ale návrh jemne pozmeniť.
+    Zadanie totižto nebolo ani pre jedného člena tímu zadaním aj na predmete IDS alebo IUS, takže bolo potrebné od
+    základu vytvoriť taktiež návrh databáze pre projekt. Projekt lekárne nám prišiel veľmi komplexný a preto sme sa
+    rozhodli implementovať iba takzvanú online lekáreň, čo v praxi znamená, že pre nás nie je potrebné držať údaje o
+    rozmiestnení produktov medzi jednotlivými pobočkami, ale iba na jednom centrálnom sklade.</p>
+<p>Ako vhodný implementačný framework sme sa rozhodli použiť Nette, keďže sa jedná o framework ktorý je v ČR veľmi
+    rožšírený. Taktiež sa s ním výborne pracuje vďaka debugovaciemu rozhraniu Tracy a množstvu ďalších vylepšení ktoré
+    sme použili.</p>
+<p>Aplikácia je rozdelená na dve hlavné časti a tou je administrácia a frontend, ktorý je dostupný pre užívateľa. V
+    administrácií má administrátor plnú moc nad produktami, zákazníkmi, objednávkami a tak ďalej. Užívateľ samozrejme
+    objednáva produkti klasickou formou nákupného košíka. Keďže sa jedná o obchod so zameraním na lieky, užívateľ musí
+    byť prihlásený. Samozrejmosťou sú taktiež PDF faktúry, externý dodávatelia atď.</p>
+
+<h2>Inštalácia</h2>
+<ul>
+    <li>Po exportovaní aplikácie na server je potrebné spustiť composer update</li>
+    <li>Systém vyžaduje verziu PHP 7.1 a vyššiu, keďže využíva Nette 2.4 a špeciálne PHP konštrukcie</li>
+    <li>V hlavnom adresári sú umiestnené .sql scripty pre inicializáciu databáze a taktiež pre naplnenie testovacími
+        dátami
+    </li>
+    <li>V zložke <b>/app/config/config.neon</b> je potrebné nastaviť prístupové údaje na databázový server</li>
+</ul>
+
+<h2>Známé problémy</h2>
+<p>V návrhu systému je na backende vytvorená predpríprava pre zobrazovanie cien liekov, ktoré sú do istej miery
+    preplácané rôznymi poisťovňami, nie je však aplikovaný priamo v systéme pre užívateľa. Nepovažovali by sme to však
+    za problém, skôr možnosť rozšírenia do budúcna.</p>
+
+</body>
+</html>

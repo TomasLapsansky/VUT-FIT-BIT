@@ -1,0 +1,92 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Používateľ {$id}
+{/block}
+
+{block content}
+    {if $sys_user}
+          <div class="row">
+            <div class="col-12">
+              <h1>{$sys_user->name} {$sys_user->surname}</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <img src= "{$sys_user->avatar}" alt="profile image" class="img-thumbnail">
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-11">
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">ID:</span>
+                        <span>
+                            {$sys_user->id}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Email:</span>
+                        <span>
+                            {$sys_user->email}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Role:</span>
+                        <span>
+                            {$sys_user->role}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Mesto:</span>
+                        <span>
+                            {$sys_user->city}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Adresa:</span>
+                        <span>
+                            {$sys_user->address}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">PSČ:</span>
+                        <span>
+                            {str_pad($sys_user->zip, 5, "0", STR_PAD_LEFT)}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Štát:</span>
+                        <span>
+                            {$sys_user->country}
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between">
+                        <span class="h5">Poisťovňa:</span>
+                        <span>
+                            {if $insurer}
+                                {$insurer->name}
+                            {else}
+                                Undefined
+                            {/if}
+                        </span>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 offset-md-7 col-sm-5 offset-sm-6 d-flex justify-content-between">
+                <a href="/admin/user/{$sys_user->id}/edit" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
+                <a n:href="delete! $sys_user->id" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {else}
+            <div class="row">
+                <div class="col-12">
+                    <h1>Používateľ číslo {$id} neexistuje</h1>
+                </div>
+            </div>
+        {/if}
+
+{/block}

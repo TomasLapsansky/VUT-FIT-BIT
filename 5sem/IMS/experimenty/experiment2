@@ -1,0 +1,66 @@
+---------------------Zber 1 ---------------------
++----------------------------------------------------------+
+| STORE Pocet samiciek na produkciu                        |
++----------------------------------------------------------+
+|  Capacity = 10000  (231 used, 9769 free)                 |
+|  Time interval = 0 - 115200                              |
+|  Number of Enter operations = 231                        |
+|  Minimal used capacity = 1                               |
+|  Maximal used capacity = 231                             |
+|  Average used capacity = 0                               |
++----------------------------------------------------------+
+
+--- Odpocet noveho zberu ---
+--- Koniec odpoctu zberu ---
+---------------------Zber 2 ---------------------
++----------------------------------------------------------+
+| STORE Pocet samiciek na produkciu                        |
++----------------------------------------------------------+
+|  Capacity = 10000  (225 used, 9775 free)                 |
+|  Time interval = 115273 - 230473                         |
+|  Number of Enter operations = 225                        |
+|  Minimal used capacity = 1                               |
+|  Maximal used capacity = 225                             |
+|  Average used capacity = 0                               |
++----------------------------------------------------------+
+
+--- Odpocet noveho zberu ---
+--- Koniec odpoctu zberu ---
+---------------------Zber 3 ---------------------
++----------------------------------------------------------+
+| STORE Pocet samiciek na produkciu                        |
++----------------------------------------------------------+
+|  Capacity = 10000  (214 used, 9786 free)                 |
+|  Time interval = 234886 - 350086                         |
+|  Number of Enter operations = 214                        |
+|  Minimal used capacity = 1                               |
+|  Maximal used capacity = 214                             |
+|  Average used capacity = 0                               |
++----------------------------------------------------------+
+
+--- Odpocet noveho zberu ---
+--- Koniec odpoctu zberu ---
+---------------------Zber 4 ---------------------
++----------------------------------------------------------+
+| STORE Pocet samiciek na produkciu                        |
++----------------------------------------------------------+
+|  Capacity = 10000  (237 used, 9763 free)                 |
+|  Time interval = 350088 - 465288                         |
+|  Number of Enter operations = 237                        |
+|  Minimal used capacity = 1                               |
+|  Maximal used capacity = 237                             |
+|  Average used capacity = 0                               |
++----------------------------------------------------------+
+
+--- Odpocet noveho zberu ---
++----------------------------------------------------------+
+| STORE Finalny produkt (10^-6 g)                          |
++----------------------------------------------------------+
+|  Capacity = 71420000  (4949406 used, 66470594 free)      |
+|  Time interval = 0 - 525600                              |
+|  Number of Enter operations = 693                        |
+|  Minimal used capacity = 7142                            |
+|  Maximal used capacity = 4.94941e+06                     |
+|  Average used capacity = 2.32662e+06                     |
++----------------------------------------------------------+
+

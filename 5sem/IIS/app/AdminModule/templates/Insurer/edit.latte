@@ -1,0 +1,16 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Úprava poisťovne
+{/block}
+
+{block content}
+    {if $insurer}
+        <div class="col-10 offset-1">
+                {control editForm}
+        </div>
+    {else}
+        Produkt neexistuje
+    {/if}
+{/block}
+

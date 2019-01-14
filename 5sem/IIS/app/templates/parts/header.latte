@@ -1,0 +1,37 @@
+{foreach $flashes as $flash}
+    <div class="alert alert-info flash {$flash->type}" role="alert">
+        {$flash->message}
+    </div>
+{/foreach}
+
+<header>
+	<div class="container-fluid">
+		<div class="row mt-3">
+			<div class="col-1 offset-2 pl-0">
+				<h1 style="color:#49a927;"><a href="/{$basePath}"><img src="/image/assets/logo.png" width=80></a></h1>
+			</div>
+			<div class="col-5">
+				<ul class="d-flex justify-content-center list-unstyled">
+					<li class="pr-3"><a href="/{$basePath}">Domov</a></li>
+					<li class="pr-3"><a href="{$basePath}/product">Produkty</a></li>
+					<li class="pr-3"><a href="{$basePath}/settings">Profil</a></li>
+					<li class="pr-3"><a href="{$basePath}/order">Tvoje objednávky</a></li>
+				</ul>
+			</div>
+			<div class="col-2 d-flex justify-content-end pr-0">
+				{if $user->isLoggedIn()}
+					{if $user->isInRole('admin')}
+						<a href="/admin" class="d-flex align-items-base pr-3 admin"><span>Admin</span><i class="material-icons rotate">settings</i></a>
+					{/if}
+					<a n:href="logOut!" class="d-flex align-items-base"><span>Odhlásiť</span><i class="material-icons">power_settings_new</i></a>
+				{else}
+					<a href="{$basePath}/register" class="d-flex align-items-base pr-3"><span>Registrácia</span><i class="material-icons ">playlist_add</i></a>
+					<a href="{$basePath}/login" class="d-flex align-items-base"><span>Prihlásiť</span><i class="material-icons">playlist_add_check</i></a>
+				{/if}
+			</div>
+			<div class="col-10 d-flex justify-content-end pr-0">
+				<a href="/cart" class="d-flex align-items-center" style="text-decoration:none;"><i class="material-icons" style="color:#ba0909;">shopping_cart</i><span>Košík</span></a>
+			</div>
+		</div>
+	</div>
+</header>

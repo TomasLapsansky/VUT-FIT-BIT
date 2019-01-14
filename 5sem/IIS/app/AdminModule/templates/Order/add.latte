@@ -1,0 +1,17 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Pridať produkt
+{/block}
+
+{block content}
+    {foreach $flashes as $flash}
+        <div class="alert alert-danger flash {$flash->type}" role="alert">
+            {$flash->message}
+        </div>
+    {/foreach}
+
+  <div class="col-10 offset-1">
+      {control addForm}
+  </div>
+{/block}

@@ -1,0 +1,52 @@
+{layout '../parts/@layout.latte'}
+
+{block title}
+	Detail objednávky {$order->id}
+{/block}
+{block content}
+	{var $sum = 0}
+	<div class="container-fluid content">
+		{foreach $products as $id => [$product, $orderDrug]}
+			<div class="row border-bottom pb-2 pt-2 border-dark">
+				<div class="col-2 offset-2 pl-0 d-flex align-items-center">
+					<img src="{$product->image}" alt="product image" class="img-thumbnail" width="100">
+				</div>
+				<div class="col-2 d-flex align-items-center">
+					{$product->name}
+				</div>
+				<div class="col-2 d-flex align-items-center">
+					{$orderDrug->count} ks
+				</div>
+				<div class="col-2 d-flex align-items-center">
+					X
+				</div>
+				<div class="col-2 d-flex align-items-center">
+					{$orderDrug->price} €
+				</div>
+			</div>
+			{php $sum += ($orderDrug->count*$orderDrug->price)}
+		{/foreach}
+		<div class="row mt-3">
+			<div class="col-8 pr-0 offset-2 d-flex justify-content-between">
+				<span><b class="pr-3">Celkom:</b>{$sum} €</span>
+			</div>
+			<div class="col-8 pr-0 offset-2 d-flex flex-column justify-content-start mt-5">
+				<span><h4>Informácie objednávky:</h4></span>
+				<span><b class="pr-3">ID:</b> {$order->id}</span>
+				<span><b class="pr-3">Status:</b> {$order->status}</span>
+			</div>
+			<div class="col-8 pr-0 offset-2 d-flex flex-column justify-content-start mt-5">
+				<span><h4>Informácie dodania:</h4></span>
+				{var $sys_user = $userService->getByID($order->user_id)}
+				<span><b class="pr-3">Meno:</b> {$sys_user->name} {$sys_user->surname}</span>
+				<span><b class="pr-3">Adresa:</b> {$sys_user->address}</span>
+				<span><b class="pr-3">Mesto:</b> {$sys_user->city}</span>
+				<span><b class="pr-3">PSČ:</b> {str_pad($sys_user->zip, 5, "0", STR_PAD_LEFT)}</span>
+				<span><b class="pr-3">Štát:</b> {$sys_user->country}</span>
+			</div>
+			<div class="col-8 pr-0 offset-2 d-flex justify-content-between">
+				<span><b class="pr-3"><a n:href="createPDF! $order->id">Stiahnuť PDF</a></b></span>
+			</div>
+		</div>
+	</div>
+{/block}

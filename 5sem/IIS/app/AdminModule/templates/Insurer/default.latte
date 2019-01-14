@@ -1,0 +1,39 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Poisťovne
+{/block}
+
+{block content}
+    <div class="col-10 offset-1">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Meno</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {ifset $insurers}
+                <tr n:foreach="$insurers as $insurer">
+                    <th scope="row">{$insurer->id}</th>
+                    <td>{$insurer->name}</td>
+                    <td style="text-align:center;">
+                        <a href="/admin/insurer/{$insurer->id}"><i class="material-icons" style="color:blue;">description</i></a>
+                        <a href="/admin/insurer/{$insurer->id}/edit"><i class="material-icons" style="color:grey;">build</i></a>
+                        <a n:href="delete! $insurer->id"><i class="material-icons" style="color:hsl(0, 100%, 30%);">delete</i></a>
+                    </td>
+                </tr>
+            {else}
+                <tr>
+                    <td colspan="3">Žiadne poisťovne</td>
+                </tr>
+            {/ifset}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10 offset-1 d-flex justify-content-end">
+        <a href="/admin/insurer/add" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Nová poisťovňa</a>
+    </div>
+{/block}

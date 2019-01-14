@@ -1,0 +1,41 @@
+{
+    "name": "joseki/pdf-response",
+    "description": "Pdf response extension for Nette Framework",
+    "authors": [
+        {
+            "name": "Miroslav Paulík",
+            "email": "miras.paulik@seznam.cz"
+        },
+        {
+            "name": "Jan Kuchař"
+        },
+        {
+            "name": "Tomáš Votruba",
+            "email": "tomas.vot@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6 || ~7.0.0 || ~7.1.0 || ~7.2.0",
+        "mpdf/mpdf": "~7.0.0"
+    },
+    "require-dev": {
+        "nette/application": "~2.2",
+        "nette/tester": "~2.0",
+        "symfony/dom-crawler": "~2.5",
+        "symfony/css-selector": "~2.5",
+        "latte/latte": "~2.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
+    },
+    "suggest": {
+        "symfony/dom-crawler": "Allows filtering html tags.",
+        "nette/nette": "PHP framework to which this extension belongs to."
+    },
+    "license": "LGPL-3.0",
+    "autoload": {
+        "classmap": ["src"]
+    }
+}

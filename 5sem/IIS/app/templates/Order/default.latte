@@ -1,0 +1,39 @@
+{layout '../parts/@layout.latte'}
+
+{block title}
+	Tvoje objednávky
+{/block}
+
+{block content}
+	<div class="container content">
+		<div class="row d-flex justify-content-center">
+			<div class="col-10 d-flex justify-content-center">
+				<span class="h4">Tvoje objednávky</span>
+			</div>
+			<div class="col-10 d-flex justify-content-start flex-wrap">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+						<th scope="col">#</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Cena</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {if count($orders) != 0}
+                        <tr n:foreach="$orders as $order">
+							<th scope="row"><a href="/order/detail/{$order->id}">{$order->id}</a></th>
+                            <td>{$order->status}</td>
+							<td>{$orderDrugService->getPrice($order->id)} €</td>
+                        </tr>
+                    {else}
+                        <tr>
+                            <td colspan="3">Žiadne objednávky</td>
+                        </tr>
+                    {/if}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>
+{/block}

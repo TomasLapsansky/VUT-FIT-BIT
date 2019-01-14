@@ -1,0 +1,42 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  orders
+{/block}
+
+{block content}
+    <div class="col-10 offset-1">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Status</th>
+                <th scope="col">Mesto</th>
+                <th scope="col">PSČ</th>
+                <th scope="col">Adresa</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {ifset $orders}
+                <tr n:foreach="$orders as $order">
+                    <th scope="row">{$order->id}</th>
+                    <td>{$order->status}</td>
+                    <td>{$order->city}</td>
+                    <td>{str_pad($order->zip, 5, "0", STR_PAD_LEFT)}</td>
+                    <td>{$order->address}</td>
+                    <td style="text-align:center;">
+                        <a href="/admin/order/{$order->id}"><i class="material-icons" style="color:blue;">description</i></a>
+                        <a href="/admin/order/{$order->id}/edit"><i class="material-icons" style="color:grey;">build</i></a>
+                        <a n:href="delete! $order->id"><i class="material-icons" style="color:hsl(0, 100%, 30%);">delete</i></a>
+                    </td>
+                </tr>
+            {else}
+                <tr>
+                    <td>Objednávka nenájdená</td>
+                </tr>
+            {/ifset}
+            </tbody>
+        </table>
+    </div>
+{/block}

@@ -1,0 +1,59 @@
+body {
+    background: linear-gradient(to bottom, #7cbc0a 0%, #ffffff 60%);
+    background-repeat: no-repeat;
+}
+
+footer {
+    padding-top: 2rem;
+    background-color: lightgray;
+}
+
+a {
+    color: green;
+    font-weight: bolder;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+    color: royalblue;
+}
+
+.h4 {
+    color: royalblue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.content,
+.product-wrap {
+    margin-top: 2rem;
+}
+
+.content {
+    min-height: 75vh;
+}
+
+.price {
+    color: #7cbc0a;
+}
+
+.name {
+    color: royalblue;
+}
+
+.product-min {
+    transition: all 0.3s ease-in-out;
+}
+
+.product-min:hover {
+    box-shadow: 0 0.5rem 1rem #7cbc0a !important;
+}
+
+.rotate{
+    height: fit-content !important;
+    transition: transform 0.5s ease-in-out;
+}
+.admin:hover .rotate{
+    transform: rotateZ(90deg);
+}

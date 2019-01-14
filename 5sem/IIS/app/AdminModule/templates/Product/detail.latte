@@ -1,0 +1,56 @@
+{layout '../Parts/layout.latte'}
+
+{block title}
+  Produkt {$id}
+{/block}
+
+{block content}
+  {if $product}
+      <div class="row">
+        <div class="col-12">
+          <h1>{$product->name}</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+              <img src= "{$product->image}" alt="product image" class="img-thumbnail">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="row">
+            <div class="col-12">
+              <h5>Popis:</h5>
+              <p>
+                {$product->description}
+              </p>
+            </div>
+            <div class="col-12">
+              <h5>Výrobca:</h5>
+              <p>
+                {$producer}
+              </p>
+            </div>
+            <div class="col-12">
+              <h5>Cena:</h5>
+              <p>
+                {$product->price} €
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 offset-8 d-flex justify-content-between">
+            <a href="/admin/product/{$product->id}/edit" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
+            <a n:href="delete! $product->id" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {else}
+        <div class="row">
+          <div class="col-12">
+            <h1>Produkt číslo {$id} neexistuje</h1>
+          </div>
+        </div>
+    {/if}
+
+{/block}
